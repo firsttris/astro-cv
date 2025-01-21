@@ -1,4 +1,4 @@
-import { Icon } from "@iconify-icon/react";
+import { Icon } from 'astro-icon/components';
 import styled from "@emotion/styled";
 
 export interface Skill {
@@ -54,7 +54,7 @@ export const ChipsWithIcon: React.FC<Props> = ({ skills, ...otherProps }) => {
       {skills.map((skill, index) => (
         <StyledLink key={index} href={skill.website} target="_blank" rel="noopener">
           <StyledChip onClick={() => console.log(skill.website)}>
-            <Icon icon={skill.icon} style={{ fontSize: '16px' }} />
+            <Icon name={skill.icon} style={{ fontSize: '16px' }} />
             <StyledTypography>{skill.name}</StyledTypography>
           </StyledChip>
         </StyledLink>

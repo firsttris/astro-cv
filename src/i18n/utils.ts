@@ -7,7 +7,8 @@ export const getLangFromUrl = (pathname: string) => {
   return defaultLang;
 }
 
-export const useTranslations = (lang: keyof typeof ui) => {
+export const useTranslations = (pathname: string) => {
+    const lang = getLangFromUrl(pathname);
     return (key: keyof typeof ui[typeof defaultLang]) => {
       return ui[lang][key] || ui[defaultLang][key];
     }

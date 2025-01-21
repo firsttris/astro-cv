@@ -1,14 +1,11 @@
 ---
-// filepath: /home/tristan/Projects/astro-cv/src/components/ProfileHeader.astro
 import styled from '@emotion/styled';
-
-import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { useTranslations } from '../i18n/utils';
 import { Image } from 'astro:assets';
 import Profile from './../images/profil.png'
 import { Icon } from 'astro-icon/components';
 
-const lang = getLangFromUrl('de');
-const t = useTranslations(lang);
+const t = useTranslations(Astro.url.pathname);
 
 const ContainerBox = styled.div({
   marginTop: "20px",
@@ -21,17 +18,13 @@ const ContainerBox = styled.div({
   }
 });
 
-const IconWithSize = styled(Icon)({
-  fontSize: '22px'
-});
-
 const ImageBox = styled.div({
   borderRadius: "5px",
   display: 'inline-flex',
   boxShadow: "rgba(0, 0, 0, 0.2) 0px 2px 4px -1px, rgba(0, 0, 0, 0.14) 0px 4px 5px 0px, rgba(0, 0, 0, 0.12) 0px 1px 10px 0px"
 });
 
-const BoxWithIcon = styled.div({
+const ContactBox = styled.div({
   display: "flex",
   alignItems: "center",
   gap: "5px",
@@ -49,24 +42,24 @@ const ContentBox = styled.div({
   }
 });
 
-const LinkGrid = styled.div({
+const Grid = styled.div({
   display: "flex",
   gap: "15px",
   margin: "0 auto",
 });
 
-const LinkColumn = styled.div({
+const Column = styled.div({
   display: "flex",
   flexDirection: "column",
   gap: "5px",
 });
 
-const StyledLink = styled.a({
+const Link = styled.a({
   textDecoration: "none",
   color: "#1976d2",
 });
 
-const StyledTypography = styled.p({
+const Typography = styled.p({
   margin: 0,
   padding: 0,
   fontWeight: 400,
@@ -94,6 +87,14 @@ const StyledTypography = styled.p({
     fontSize: '0.75rem',
     lineHeight: '1.66',
     letterSpacing: '0.03333em',
+  },
+  '&.body1': {
+    margin: '0',
+    fontFamily: '"Roboto","Helvetica","Arial",sans-serif',
+    fontWeight: '400',
+    fontSize: '1rem',
+    lineHeight: '1.5',
+    letterSpacing: '0.00938em',
   }
 });
 ---
@@ -104,6 +105,7 @@ const StyledTypography = styled.p({
       <Image
         src={Profile}
         alt="me"
+        loading={"eager"}
         height={225}
         width={240}
         style={{
@@ -115,61 +117,61 @@ const StyledTypography = styled.p({
   </div>
   <ContentBox>
     <div style={{ textAlign: "center", display: "flex", flexDirection: "column" }}>
-      <StyledTypography className="h3">
+      <Typography className="h3">
         Tristan Teufel
-      </StyledTypography>
-      <StyledTypography className="h5">
+      </Typography>
+      <Typography className="h5">
         {t('business-title')}
-      </StyledTypography>
-      <StyledTypography className="caption">
+      </Typography>
+      <Typography className="caption">
         {t('academic-title')}
-      </StyledTypography>
+      </Typography>
     </div>
-    <LinkGrid>
-      <LinkColumn>
-        <BoxWithIcon>
-          <Icon name="openmoji:envelope" font-size={"22px"}  />
-          <StyledLink
+    <Grid>
+      <Column>
+        <ContactBox>
+          <Icon name="openmoji:envelope" font-size={25}  />
+          <Link
             href="mailto:info@teufel-it.de"
             rel="noopener"
             target="_blank"
           >
-            <StyledTypography>info@teufel-it.de</StyledTypography>
-          </StyledLink>
-        </BoxWithIcon>
-        <BoxWithIcon>
-          <Icon name="openmoji:mobile-phone" />
-          <StyledLink
+            <Typography className='body1'>info@teufel-it.de</Typography>
+          </Link>
+        </ContactBox>
+        <ContactBox>
+          <Icon name="openmoji:mobile-phone" font-size={25} />
+          <Link
             href="tel:+49 176 457 44166"
             rel="noopener"
             target="_blank"
           >
-            <StyledTypography>+49 176 457 44166</StyledTypography>
-          </StyledLink>
-        </BoxWithIcon>
-      </LinkColumn>
-      <LinkColumn>
-        <BoxWithIcon>
-          <Icon name="openmoji:github" />
-          <StyledLink
+            <Typography className='body1'>+49 176 457 44166</Typography>
+          </Link>
+        </ContactBox>
+      </Column>
+      <Column>
+        <ContactBox>
+          <Icon name="openmoji:github" font-size={25} />
+          <Link
             href="http://github.com/firsttris"
             rel="noopener"
             target="_blank"
           >
-            <StyledTypography>Github</StyledTypography>
-          </StyledLink>
-        </BoxWithIcon>
-        <BoxWithIcon>
-          <Icon name="openmoji:linkedin" />
-          <StyledLink
+            <Typography className='body1'>Github</Typography>
+          </Link>
+        </ContactBox>
+        <ContactBox>
+          <Icon name="openmoji:linkedin" font-size={25} />
+          <Link
             href="http://de.linkedin.com/in/tristanteufel"
             rel="noopener"
             target="_blank"
           >
-            <StyledTypography>Linkedin</StyledTypography>
-          </StyledLink>
-        </BoxWithIcon>
-      </LinkColumn>
-    </LinkGrid>
+            <Typography className='body1'>Linkedin</Typography>
+          </Link>
+        </ContactBox>
+      </Column>
+    </Grid>
   </ContentBox>
 </ContainerBox>

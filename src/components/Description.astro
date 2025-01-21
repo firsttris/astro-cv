@@ -1,0 +1,9 @@
+---
+import { importMdx } from "./../utils";
+import './../mdx.css';
+const Mdx = importMdx({ filename: "description", pathname: Astro.url.pathname });
+---
+
+<div style={{ marginTop: "20px" }}>
+  <Mdx />
+</div>

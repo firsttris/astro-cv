@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
-import { ChipsWithIcon, Skill } from "../ChipsWithIcon";
+import { ChipsWithIcon } from "../ChipsWithIcon";
+import type { Skill } from "../ChipsWithIcon";
 
 interface SkillGridProps {
   title: string;

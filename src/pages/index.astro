@@ -1,23 +1,44 @@
 ---
-import Layout from "./../layout/layout.astro";
-
-const language = 'de'; // oder 'en', abhängig von deiner Logik
-
-const matches = import.meta.glob('../mdx/**/footer.mdx', { eager: true });
-const posts = Object.values(matches) as Array<{ frontmatter: { locale: string, name: string }, default: any }>;
-const footer = posts.find(post => post.frontmatter.locale === language);
-
-console.log(posts);
 ---
 
-<Layout>
-  <h1>Projects</h1>
-  {footer ? (
-    <div>
-      <h2>{footer.frontmatter.name}</h2>
-      <footer.default />
-    </div>
-  ) : (
-    <p>No footer found for the selected language.</p>
-  )}
-</Layout>
+<script>
+    if (typeof window !== "undefined") {
+      const userLang = navigator.language;
+      if (userLang.startsWith("de")) {
+        window.location.href = "/de";
+      } else {
+        window.location.href = "/en";
+      }
+    }
+  </script>
+  
+  <style>
+    .spinner {
+      border: 4px solid rgba(0, 0, 0, 0.1);
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border-left-color: #09f;
+      animation: spin 1s ease infinite;
+    }
+  
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  
+    .spinner-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+  </style>
+  
+  <div class="spinner-container">
+    <div class="spinner"></div>
+  </div>
