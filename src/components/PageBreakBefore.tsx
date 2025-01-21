@@ -1,11 +1,11 @@
 import styled from "@emotion/styled";
 
-const StyledBox = styled.div({
+const PageBreakBeforeBox = styled.div({
   "@media print": {
     pageBreakBefore: "always",
   },
 });
 
 export const PageBreakBefore = () => {
-  return <StyledBox />;
+  return <PageBreakBeforeBox />;
 };

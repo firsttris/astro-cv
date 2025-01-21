@@ -1,7 +1,6 @@
 import styled from '@emotion/styled';
 
-
-const StyledDiv = styled.div({
+const AvoidPageBreakInsideBox = styled.div({
   "@media print": {
     pageBreakInside: "avoid",
   },
@@ -13,5 +12,5 @@ interface AvoidPageBreakInsideProps
 }
 
 export const AvoidPageBreakInside = ({children}: AvoidPageBreakInsideProps) => {
-  return <StyledDiv>{children}</StyledDiv>;
+  return <AvoidPageBreakInsideBox>{children}</AvoidPageBreakInsideBox>;
 };
