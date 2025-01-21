@@ -1,0 +1,74 @@
+---
+name: "open-source"
+locale: "de"
+---
+
+import { ChipsWithIconAndMargin } from '../../components/ChipsWithIcon'
+import { PageBreakBefore } from '../../components/PageBreakBefore'
+import { AvoidPageBreakInside } from '../../components/AvoidPageBreakInside'
+import { Divider} from "../../components/Divider";
+import { skillsForJestRunner, skillsForSendToKodi, skillsForReactTrack } from '../../components/skills/skillsForProject'
+
+<PageBreakBefore/>
+<div id="openSource"/>
+# Open-Source Software-Entwicklung
+
+<Divider sx={{ margin: "5px 0px 10px 0px"}}/>
+
+<AvoidPageBreakInside>
+## Optimierung von Jest Testing in Visual Studio Code mit VSCode-Jest-Runner
+#### 12/2017 - heute | [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=firsttris.vscode-jest-runner) | [Github Repository](https://github.com/firsttris/vscode-jest-runner.git)
+
+Jest Runner ist eine Visual Studio Code Erweiterung, die es ermöglicht, einzelne Jest Tests oder Test-Suiten einfach auszuführen oder zu debuggen. Jest ist ein beliebtes JavaScript-Test-Framework, das von Facebook verwendet wird. Diese Erweiterung bietet folgende Funktionen:
+
+- Run & Debug Jest Tests aus dem Kontextmenü, CodeLens oder der Befehlspalette
+- Unterstützung für yarn & vscode workspaces (monorepo)
+- Dynamische Jest-Konfigurationsauflösung
+- Yarn 2 pnp Unterstützung
+- CRA & ähnliche Abstraktionen Unterstützung
+- Umfangreiche Anpassungsmöglichkeiten
+
+<br></br>
+Jest Runner – ist seit 2020 eine empfohlene Erweiterung von [NX](https://nx.dev/) mit über 1 Million Installationen und einer 5-Sterne-Bewertung im Visual Studio Marketplace.
+
+<ChipsWithIconAndMargin skills={skillsForJestRunner} />
+</AvoidPageBreakInside>
+
+<AvoidPageBreakInside>
+## SendToKodi ermöglicht es Nutzern, Videostreams von verschiedenen Websites direkt auf Kodi zu streamen.
+#### 01/2016 - heute | [Github Repository](https://github.com/firsttris/plugin.video.sendtokodi)
+
+Dieses Projekt umfasst mehrere maßgebliche Komponenten, die dazu beitragen, Videostreams von verschiedenen Quellen zu extrahieren und nahtlos auf Kodi abzuspielen. Die Hauptkomponenten des Projekts sind:
+
+- Kodi-Addon (Python): Ein speziell entwickeltes Kodi-Addon, das Videostreams von verschiedenen Website-URLs mithilfe von YoutubeDL extrahiert. Dieses Addon bietet den Nutzern die Möglichkeit, eine breite Palette von Inhalten direkt auf Kodi anzusehen.
+- Github Actions Job: Zur kontinuierlichen Aktualisierung des Kodi-Addons wird ein Github Actions Job verwendet. Dieser sorgt dafür, dass das Kodi-Addon stets die neueste Version von YoutubeDL verwendet, um eine optimale Performance und Kompatibilität sicherzustellen.
+- Native iOS-App (Swift): Eine eigenständige iOS-App, die eine nahtlose Integration mit Kodi ermöglicht. Benutzer können Links und Inhalte direkt von ihren iOS-Geräten an Kodi senden und sie auf ihrem Fernseher anzeigen.
+- Einnahmen durch In-App-Zahlungen: Durch die Implementierung der In-App-Zahlungsoption wurden Einnahmen generiert, die es ermöglichen, die laufenden Entwicklergebühren für das Projekt zu decken. Diese Einnahmen belaufen sich auf ungefähr 15 US-Dollar pro Quartal.
+- Offizielle Kodi-App Kore: Das Projekt wird von der offiziellen Kodi-App Kore unterstützt, was die Integration und Nutzung des Kodi-Addons weiter vereinfacht.
+- Chrome-Addon: Neben der iOS-App gibt es auch ein Chrome-Addon, das es den Nutzern ermöglicht, Video-Links direkt an Kodi zu senden und sie auf ihrem Fernseher wiederzugeben.
+
+<br></br>
+Dieses Projekt hat in der Entwicklergemeinschaft Beachtung gefunden, was sich in einer beachtlichen Anzahl von 105 Sternen auf GitHub widerspiegelt. Zwei engagierte Mitarbeiter und elf Mitwirkende haben dazu beigetragen, SendToKodi zu einem vielseitigen und erfolgreichen Multimedia-Projekt zu machen."
+
+<ChipsWithIconAndMargin skills={skillsForSendToKodi} />
+</AvoidPageBreakInside>
+
+<AvoidPageBreakInside>
+## Entwicklung eines benutzerfreundlichen Zeiterfassungstools mit ReactJS und LowDB
+#### 01/2018 - heute | [Github Repository](https://github.com/firsttris/react-track)
+Unser Projekt bestand darin, ein einfaches und effizientes Zeiterfassungstool zu entwickeln, das auf modernen Webtechnologien basiert und gleichzeitig erschwinglich ist. Ein Kunde hatte den Bedarf nach einer benutzerfreundlichen Zeiterfassungsanwendung geäußert, die sowohl auf Desktop- als auch auf Mobilgeräten nahtlos funktioniert.
+<br></br>
+Die wichtigsten Aspekte unseres Projekts sind wie folgt:
+
+- Responsive Webdesign: Um sicherzustellen, dass das Zeiterfassungstool auf verschiedenen Bildschirmgrößen und Gerätetypen optimal funktioniert, haben wir ein responsive Webdesign implementiert. Dies ermöglicht eine komfortable Nutzung sowohl auf Desktop- als auch auf Mobilgeräten.
+- Plattformübergreifende Kompatibilität: Die entwickelte Anwendung ist plattformunabhängig und kann auf verschiedenen Betriebssystemen und Browsern reibungslos ausgeführt werden. Dies gewährleistet, dass die Mitarbeiter das Tool auf ihren bevorzugten Geräten verwenden können.
+- Benutzerverwaltung: Um den spezifischen Anforderungen des Kunden gerecht zu werden, haben wir eine umfassende Benutzerverwaltung integriert. Dies ermöglicht es, Mitarbeiterprofile zu erstellen, Zugriffsrechte zuzuweisen und die Nutzerverwaltung effizient zu gestalten.
+- Zeiterfassungsberichte: Das Zeiterfassungstool ermöglicht es den Benutzern, ihre Arbeitszeiten einfach und effizient zu erfassen. Darüber hinaus können detaillierte Berichte über die erfassten Zeiten generiert werden, um die Arbeitsleistung zu überwachen und Auswertungen vorzunehmen.
+- Zusammenarbeit mit 5 kleinen Unternehmen: Unser Zeiterfassungstool wird erfolgreich von fünf kleinen Unternehmen genutzt, um die Arbeitszeit ihrer Mitarbeiter zu verfolgen und abzurechnen.
+- Mitwirkende: Bei der Entwicklung dieses Projekts haben zwei engagierte Mitwirkende ihre Fähigkeiten und Erfahrungen eingebracht, um sicherzustellen, dass das Zeiterfassungstool den Anforderungen des Kunden entspricht.
+
+<br></br>
+Insgesamt hat unser Zeiterfassungstool die Art und Weise, wie diese kleinen Unternehmen ihre Arbeitszeiten verwalten, erheblich vereinfacht und optimiert. Es bietet eine kostengünstige und effiziente Lösung, um die Arbeitszeiten der Mitarbeiter zu überwachen und Arbeitsberichte zu erstellen."
+
+<ChipsWithIconAndMargin skills={skillsForReactTrack} />
+</AvoidPageBreakInside>

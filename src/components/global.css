@@ -1,0 +1,9 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+@media print {
+    @page {
+        size: portrait;
+    }
+}

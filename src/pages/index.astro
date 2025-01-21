@@ -1,16 +1,23 @@
 ---
+import Layout from "./../layout/layout.astro";
 
+const language = 'de'; // oder 'en', abhängig von deiner Logik
+
+const matches = import.meta.glob('../mdx/**/footer.mdx', { eager: true });
+const posts = Object.values(matches) as Array<{ frontmatter: { locale: string, name: string }, default: any }>;
+const footer = posts.find(post => post.frontmatter.locale === language);
+
+console.log(posts);
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout>
+  <h1>Projects</h1>
+  {footer ? (
+    <div>
+      <h2>{footer.frontmatter.name}</h2>
+      <footer.default />
+    </div>
+  ) : (
+    <p>No footer found for the selected language.</p>
+  )}
+</Layout>

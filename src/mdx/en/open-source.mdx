@@ -1,0 +1,73 @@
+---
+name: "open-source"
+locale: "en"
+---
+
+import { ChipsWithIconAndMargin } from '../../components/ChipsWithIcon'
+import { PageBreakBefore } from '../../components/PageBreakBefore'
+import { AvoidPageBreakInside } from '../../components/AvoidPageBreakInside'
+import { Divider} from "../../components/Divider";
+import { skillsForJestRunner, skillsForSendToKodi, skillsForReactTrack } from '../../components/skills/skillsForProject'
+
+<PageBreakBefore/>
+<div id="openSource"/>
+# Open-Source Entwicklung
+
+<Divider sx={{ margin: "5px 0px 10px 0px"}}/>
+
+<AvoidPageBreakInside>
+## Optimizing Jest Testing in Visual Studio Code with VSCode Jest Runner
+#### 12/2017 - today | [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=firsttris.vscode-jest-runner) | [Github Repository](https://github.com/firsttris/vscode-jest-runner.git)
+
+Jest Runner is a Visual Studio Code extension that allows you to easily run or debug individual Jest tests or test suites. Jest is a popular JavaScript testing framework used by Facebook. This extension offers the following features:
+
+- Run & Debug Jest Tests from the context menu, CodeLens or Command Palette
+- Support for yarn & vscode workspaces (monorepo)
+- Dynamic Jest configuration resolution
+- Yarn 2 pnp support
+- CRA & similar abstractions support
+- Extensive customization options
+
+<br></br>
+Jest Runner – is a recommended extension by [NX](https://nx.dev/) since 2020 with over 1 million installs and a 5-star rating in the Visual Studio Marketplace.
+
+<ChipsWithIconAndMargin skills={skillsForJestRunner} />
+</AvoidPageBreakInside>
+
+<AvoidPageBreakInside>
+## SendToKodi allows users to stream video from various websites directly to Kodi.
+#### 01/2016 - today | [Github Repository](https://github.com/firsttris/plugin.video.sendtokodi)
+
+This project includes several instrumental components that help extract video streams from various sources and play them seamlessly on Kodi. The main components of the project are:
+
+- Kodi Addon (Python): A specially designed Kodi addon that extracts video streams from various website URLs using YoutubeDL. This addon offers users the ability to watch a wide range of content directly on Kodi.
+- Github Actions Job: A Github Actions Job is used to continuously update the Kodi addon. This ensures that the Kodi addon always uses the latest version of YoutubeDL to ensure optimal performance and compatibility.
+- Native iOS App (Swift): A standalone iOS app that allows seamless integration with Kodi. Users can send links and content to Kodi directly from their iOS devices and view it on their TV.
+- Revenue from in-app payments: The implementation of the in-app payment option has generated revenue that allows to cover the ongoing developer fees for the project. This revenue is approximately $15 per quarter.
+- Official Kodi App Kore: The project is powered by the official Kodi app Kore, which further simplifies the integration and use of the Kodi addon.
+- Chrome Addon: Alongside the iOS app, there is also a Chrome addon that allows users to send video links directly to Kodi and play them on their TV.
+<br></br>
+This project has garnered attention from the developer community, reflected in a whopping 105 stars on GitHub. Two dedicated employees and eleven contributors have helped make SendToKodi a diverse and successful multimedia project."
+
+<ChipsWithIconAndMargin skills={skillsForSendToKodi} />
+</AvoidPageBreakInside>
+
+<AvoidPageBreakInside>
+## Development of a user-friendly time tracking tool with ReactJS and LowDB
+#### 01/2018 - heute | [Github Repository](https://github.com/firsttris/react-track)
+Our project was to create a simple and efficient time tracking tool based on modern web technologies while being affordable. A customer had expressed the need for an easy-to-use time tracking application that works seamlessly on both desktop and mobile devices.
+<br></br>
+The main aspects of our project are as follows:
+
+- Responsive web design: To ensure that the time tracking tool works optimally on different screen sizes and device types, we have implemented a responsive web design. This enables convenient use on both desktop and mobile devices.
+- Cross-platform compatibility: The developed application is platform-independent and can run smoothly on different operating systems and browsers. This ensures that employees can use the tool on their preferred devices.
+- User management: In order to meet the specific requirements of the customer, we have integrated comprehensive user management. This makes it possible to create employee profiles, assign access rights and make user management efficient.
+- Time Tracking Reports: The time tracking tool allows the users to record their working hours easily and efficiently. In addition, detailed reports on the recorded times can be generated in order to monitor work performance and make evaluations.
+- Working with 5 Small Businesses: Our time tracking tool is successfully used by 5 small businesses to track and bill their employees' hours worked.
+- Contributors: In the development of this project, two dedicated contributors brought their skills and experience to ensure the time tracking tool met the needs of the client.
+<br></br>
+Overall, our time tracking tool has greatly simplified and streamlined the way these small businesses manage their hours. It offers a cost-effective and efficient solution to monitor employee working hours and generate work reports."
+
+
+<ChipsWithIconAndMargin skills={skillsForReactTrack} />
+</AvoidPageBreakInside>
