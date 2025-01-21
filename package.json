@@ -15,6 +15,7 @@
     "@emotion/styled": "^11.14.0",
     "@fontsource/roboto": "^5.1.1",
     "@iconify-icon/react": "^2.3.0",
+    "@iconify-json/openmoji": "^1.2.5",
     "@types/react": "^19.0.7",
     "@types/react-dom": "^19.0.3",
     "astro": "^5.1.7",
