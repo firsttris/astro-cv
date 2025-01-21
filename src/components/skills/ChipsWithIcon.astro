@@ -1,3 +1,6 @@
+---
+
+
 import { Icon } from 'astro-icon/components';
 import styled from "@emotion/styled";
 
@@ -48,22 +51,15 @@ const StyledTypography = styled.div({
   letterSpacing: '0.00938em',
 });
 
-export const ChipsWithIcon: React.FC<Props> = ({ skills, ...otherProps }) => {
-  return (
-    <StyledBox {...otherProps}>
-      {skills.map((skill, index) => (
-        <StyledLink key={index} href={skill.website} target="_blank" rel="noopener">
-          <StyledChip onClick={() => console.log(skill.website)}>
-            <Icon name={skill.icon} style={{ fontSize: '16px' }} />
-            <StyledTypography>{skill.name}</StyledTypography>
-          </StyledChip>
-        </StyledLink>
-      ))}
-    </StyledBox>
-  );
-};
-
-export const ChipsWithIconAndMargin = styled(ChipsWithIcon)({
-  marginTop: '10px',
-  marginBottom: '30px',
-});
+const { skills } = Astro.props;
+---
+<StyledBox>
+  {skills.map((skill, index) => (
+    <StyledLink key={index} href={skill.website} target="_blank" rel="noopener">
+      <StyledChip onClick={() => console.log(skill.website)}>
+        <Icon name={skill.icon} style={{ fontSize: '16px' }} />
+        <StyledTypography>{skill.name}</StyledTypography>
+      </StyledChip>
+    </StyledLink>
+  ))}
+</StyledBox>

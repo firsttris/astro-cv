@@ -1,6 +1,6 @@
 ---
 import { useTranslations } from '../../i18n/utils';
-import { SkillGrid } from './SkillGrid';
+import Skill from './Skill.astro';
 import {
   bundlers,
   databases,
@@ -107,8 +107,8 @@ const skills = [
 ];
 ---
 
-<div>
+<div style={{ marginTop: "20px" }}>
   {skills.map((skill) => (
-    <SkillGrid {...skill} />
+    <Skill {...skill} />
   ))}
 </div>

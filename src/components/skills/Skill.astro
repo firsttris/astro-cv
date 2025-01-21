@@ -1,0 +1,40 @@
+---
+
+import styled from "@emotion/styled";
+import ChipsWithIcon from "./ChipsWithIcon.astro";
+import type { Skill } from "./ChipsWithIcon.astro";
+
+interface Props {
+  title: string;
+  skills: Skill[];
+}
+
+const Container = styled.div({
+  display: "flex",
+  //alignItems: "top",
+});
+
+const TitleBox = styled.div({
+  marginTop: "2px",
+  minWidth: "100px",
+});
+
+const Title = styled.p({
+  fontSize: "12px",
+  margin: 0
+});
+
+const SkillsBox = styled.div({
+  maxWidth: "500px",
+});
+
+const { title, skills } = Astro.props;
+---
+<Container>
+  <TitleBox>
+    <Title>{title}</Title>
+  </TitleBox>
+  <SkillsBox>
+    <ChipsWithIcon skills={skills} />
+  </SkillsBox>
+</Container>

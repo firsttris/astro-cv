@@ -1,4 +1,4 @@
-import { getLangFromUrl } from "./i18n/utils";
+import { getLangFromUrl } from "../i18n/utils";
 
 export type MDXFile = {
   frontmatter: {
@@ -16,7 +16,7 @@ export const importMdx = ({
   filename: string;
 }) => {
   const language = getLangFromUrl(pathname);
-  const matches = import.meta.glob("./mdx/**/*.mdx", { eager: true });
+  const matches = import.meta.glob("./**/*.mdx", { eager: true });
   const values = Object.values(matches) as Array<MDXFile>;
   const result = values.find(
     (value) =>
