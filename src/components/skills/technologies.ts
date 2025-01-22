@@ -423,7 +423,7 @@ export const projectMethology = {
 
 export const authentication = {
   msal: {
-    name: "Microsoft Authentication Library (MSAL)",
+    name: "MSAL",
     icon: "vscode-icons:file-type-azure",
     website:
       "https://docs.microsoft.com/en-us/azure/active-directory/develop/msal-overview",
