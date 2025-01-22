@@ -18,25 +18,25 @@ const t = useTranslations(Astro.url.pathname)
 <style>
   .footer {
     margin-top: 20px;
-    font-size: 0.9em;
+    font-size: 12px;
     color: #555;
     text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
   }
   .version {
-    display: block;
-    margin-top: 10px;
-    margin-bottom: 10px;
   }
   .source-link {
-    color: #317EFB;
     text-decoration: none;
-  }
-  .source-link:hover {
-    text-decoration: underline;
   }
 </style>
 
 <div class="footer">
-  <span class="version">{t('generatedat')} {buildTime}, {t('version')} {version}</span>
+  <span class="generatedat">{t('generatedat')} {buildTime}</span>
+  <span class="or">|</span>
+  <span class="version">{t('version')} {version}</span>
+  <span class="or">|</span>
   <a class="source-link" href="https://github.com/firsttris/astro-cv" target="_blank">Source Code</a>
 </div>
