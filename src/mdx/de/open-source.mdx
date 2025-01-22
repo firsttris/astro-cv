@@ -3,10 +3,10 @@ name: "open-source"
 locale: "de"
 ---
 
-import ChipsWithIconAndMargin from '../../components/skills/ChipsWithIcon.astro'
-import { PageBreakBefore } from '../../components/PageBreakBefore'
-import { AvoidPageBreakInside } from '../../components/AvoidPageBreakInside'
-import { Divider} from "../../components/Divider";
+import ChipsWithIcon from '../../components/skills/ChipsWithIcon.astro'
+import PageBreakBefore from '../../components/PageBreakBefore.astro'
+import AvoidPageBreakInside from '../../components/AvoidPageBreakInside.astro'
+import Divider from "../../components/Divider.astro";
 import { skillsForJestRunner, skillsForSendToKodi, skillsForReactTrack } from '../../components/skills/skillsForProject'
 
 <PageBreakBefore/>
@@ -31,7 +31,7 @@ Jest Runner ist eine Visual Studio Code Erweiterung, die es ermöglicht, einzeln
 <br></br>
 Jest Runner – ist seit 2020 eine empfohlene Erweiterung von [NX](https://nx.dev/) mit über 1 Million Installationen und einer 5-Sterne-Bewertung im Visual Studio Marketplace.
 
-<ChipsWithIconAndMargin skills={skillsForJestRunner} />
+<ChipsWithIcon skills={skillsForJestRunner} />
 </AvoidPageBreakInside>
 
 <AvoidPageBreakInside>
@@ -50,7 +50,7 @@ Dieses Projekt umfasst mehrere maßgebliche Komponenten, die dazu beitragen, Vid
 <br></br>
 Dieses Projekt hat in der Entwicklergemeinschaft Beachtung gefunden, was sich in einer beachtlichen Anzahl von 105 Sternen auf GitHub widerspiegelt. Zwei engagierte Mitarbeiter und elf Mitwirkende haben dazu beigetragen, SendToKodi zu einem vielseitigen und erfolgreichen Multimedia-Projekt zu machen."
 
-<ChipsWithIconAndMargin skills={skillsForSendToKodi} />
+<ChipsWithIcon skills={skillsForSendToKodi} />
 </AvoidPageBreakInside>
 
 <AvoidPageBreakInside>
@@ -70,5 +70,5 @@ Die wichtigsten Aspekte unseres Projekts sind wie folgt:
 <br></br>
 Insgesamt hat unser Zeiterfassungstool die Art und Weise, wie diese kleinen Unternehmen ihre Arbeitszeiten verwalten, erheblich vereinfacht und optimiert. Es bietet eine kostengünstige und effiziente Lösung, um die Arbeitszeiten der Mitarbeiter zu überwachen und Arbeitsberichte zu erstellen."
 
-<ChipsWithIconAndMargin skills={skillsForReactTrack} />
+<ChipsWithIcon skills={skillsForReactTrack} />
 </AvoidPageBreakInside>

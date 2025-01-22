@@ -3,10 +3,10 @@ name: "open-source"
 locale: "en"
 ---
 
-import ChipsWithIconAndMargin from '../../components/skills/ChipsWithIcon.astro'
-import { PageBreakBefore } from '../../components/PageBreakBefore'
-import { AvoidPageBreakInside } from '../../components/AvoidPageBreakInside'
-import { Divider} from "../../components/Divider";
+import ChipsWithIcon from '../../components/skills/ChipsWithIcon.astro'
+import PageBreakBefore from '../../components/PageBreakBefore.astro'
+import AvoidPageBreakInside from '../../components/AvoidPageBreakInside.astro'
+import Divider from "../../components/Divider.astro";
 import { skillsForJestRunner, skillsForSendToKodi, skillsForReactTrack } from '../../components/skills/skillsForProject'
 
 <PageBreakBefore/>
@@ -31,7 +31,7 @@ Jest Runner is a Visual Studio Code extension that allows you to easily run or d
 <br></br>
 Jest Runner – is a recommended extension by [NX](https://nx.dev/) since 2020 with over 1 million installs and a 5-star rating in the Visual Studio Marketplace.
 
-<ChipsWithIconAndMargin skills={skillsForJestRunner} />
+<ChipsWithIcon skills={skillsForJestRunner} />
 </AvoidPageBreakInside>
 
 <AvoidPageBreakInside>
@@ -49,7 +49,7 @@ This project includes several instrumental components that help extract video st
 <br></br>
 This project has garnered attention from the developer community, reflected in a whopping 105 stars on GitHub. Two dedicated employees and eleven contributors have helped make SendToKodi a diverse and successful multimedia project."
 
-<ChipsWithIconAndMargin skills={skillsForSendToKodi} />
+<ChipsWithIcon skills={skillsForSendToKodi} />
 </AvoidPageBreakInside>
 
 <AvoidPageBreakInside>
@@ -69,5 +69,5 @@ The main aspects of our project are as follows:
 Overall, our time tracking tool has greatly simplified and streamlined the way these small businesses manage their hours. It offers a cost-effective and efficient solution to monitor employee working hours and generate work reports."
 
 
-<ChipsWithIconAndMargin skills={skillsForReactTrack} />
+<ChipsWithIcon skills={skillsForReactTrack} />
 </AvoidPageBreakInside>

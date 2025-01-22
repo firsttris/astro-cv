@@ -3,6 +3,7 @@
 
 import { Icon } from 'astro-icon/components';
 import styled from "@emotion/styled";
+import { Typography } from '../Typography';
 
 export interface Skill {
   name: string;
@@ -14,17 +15,17 @@ interface Props {
   skills: Skill[];
 }
 
-const StyledBox = styled.div({
+const FlexWrap = styled.div({
   display: 'flex',
   flexWrap: 'wrap',
 });
 
-const StyledLink = styled.a({
+const Link = styled.a({
   textDecoration: 'none',
   color: 'black',
 });
 
-const StyledChip = styled.div({
+const Chip = styled.div({
   cursor: 'pointer',
   margin: '2px 3px',
   height: '20px',
@@ -42,24 +43,15 @@ const StyledChip = styled.div({
   },
 });
 
-const StyledTypography = styled.div({
-  fontSize: '16px',
-  margin: 0,
-  fontFamily: 'Roboto, Helvetica, Arial, sans-serif',
-  fontWeight: 400,
-  lineHeight: 1.5,
-  letterSpacing: '0.00938em',
-});
-
 const { skills } = Astro.props;
 ---
-<StyledBox>
+<FlexWrap>
   {skills.map((skill, index) => (
-    <StyledLink key={index} href={skill.website} target="_blank" rel="noopener">
-      <StyledChip onClick={() => console.log(skill.website)}>
+    <Link key={index} href={skill.website} target="_blank" rel="noopener">
+      <Chip onClick={() => console.log(skill.website)}>
         <Icon name={skill.icon} style={{ fontSize: '16px' }} />
-        <StyledTypography>{skill.name}</StyledTypography>
-      </StyledChip>
-    </StyledLink>
+        <Typography className='body1'>{skill.name}</Typography>
+      </Chip>
+    </Link>
   ))}
-</StyledBox>
+</FlexWrap>

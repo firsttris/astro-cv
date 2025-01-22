@@ -4,6 +4,7 @@ import { useTranslations } from '../i18n/utils';
 import { Image } from 'astro:assets';
 import Profile from './../images/profil.png'
 import { Icon } from 'astro-icon/components';
+import { Typography } from './Typography';
 
 const t = useTranslations(Astro.url.pathname);
 
@@ -59,44 +60,6 @@ const Link = styled.a({
   color: "#1976d2",
 });
 
-const Typography = styled.p({
-  margin: 0,
-  padding: 0,
-  fontWeight: 400,
-  '&.h3': {
-    margin: '0',
-    fontFamily: '"Roboto","Helvetica","Arial",sans-serif',
-    fontWeight: '400',
-    fontSize: '3rem',
-    lineHeight: '1.167',
-    letterSpacing: '0em',
-    textTransform: 'uppercase'
-  },
-  '&.h5': {
-    margin: '0',
-    fontFamily: '"Roboto","Helvetica","Arial",sans-serif',
-    fontWeight: '400',
-    fontSize: '1.5rem',
-    lineHeight: '1.334',
-    letterSpacing: '0em'
-  },
-  '&.caption': {
-    margin: '0',
-    fontFamily: '"Roboto","Helvetica","Arial",sans-serif',
-    fontWeight: '400',
-    fontSize: '0.75rem',
-    lineHeight: '1.66',
-    letterSpacing: '0.03333em',
-  },
-  '&.body1': {
-    margin: '0',
-    fontFamily: '"Roboto","Helvetica","Arial",sans-serif',
-    fontWeight: '400',
-    fontSize: '1rem',
-    lineHeight: '1.5',
-    letterSpacing: '0.00938em',
-  }
-});
 ---
 
 <ContainerBox>
