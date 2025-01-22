@@ -1,14 +1,13 @@
-# Astro Starter Kit: Minimal
+# Astro with Curriculum Vitae
 
-```sh
-npm create astro@latest -- --template minimal
-```
+Curriculum Vitae with [Astro](https://astro.build/)
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+## Motivation
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+- Recruiters often request a CV in Word format to convert it to their layout, sometimes even altering the content. To prevent this, I decided to create an HTML CV that cannot be changed.
+- A CV coded in JavaScript allows you to showcase your skills directly through the CV itself.
+- It ensures consistent styling and format, making it easier to update the data.
+- I wanted to create a multi-language CV.
 
 ## 🚀 Project Structure
 
@@ -44,4 +43,4 @@ All commands are run from the root of the project, from a terminal:
 
 ## 👀 Want to learn more?
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Feel free to check [our documentation](https://docs.astro.build)
