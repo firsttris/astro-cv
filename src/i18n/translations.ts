@@ -1,8 +1,3 @@
-export const languages = {
-    en: 'English',
-    de: 'German',
-};
-
 export const defaultLang = (() => typeof window !== "undefined" && navigator.language.includes('de') ? 'de' : 'en')(); 
 
 export const translations = {
