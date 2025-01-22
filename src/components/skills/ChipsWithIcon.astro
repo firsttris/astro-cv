@@ -1,9 +1,7 @@
 ---
-
-
-import { Icon } from 'astro-icon/components';
+import { Icon } from "astro-icon/components";
 import styled from "@emotion/styled";
-import { Typography } from '../Typography';
+import { Typography } from "../Typography";
 
 export interface Skill {
   name: string;
@@ -16,42 +14,45 @@ interface Props {
 }
 
 const FlexWrap = styled.div({
-  display: 'flex',
-  flexWrap: 'wrap',
+  display: "flex",
+  flexWrap: "wrap",
 });
 
 const Link = styled.a({
-  textDecoration: 'none',
-  color: 'black',
+  textDecoration: "none",
+  color: "black",
 });
 
 const Chip = styled.div({
-  cursor: 'pointer',
-  margin: '2px 3px',
-  height: '20px',
-  backgroundColor: 'white',
-  border: '1px solid black',
-  borderRadius: '6px',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  gap: '5px',
-  padding: '0 8px',
-  '&:hover': {
-    backgroundColor: 'rgba(0, 0, 0, 0.08)',
-    color: 'inherit',
+  cursor: "pointer",
+  margin: "2px 3px",
+  height: "20px",
+  backgroundColor: "white",
+  border: "1px solid black",
+  borderRadius: "6px",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  gap: "5px",
+  padding: "0 8px",
+  "&:hover": {
+    backgroundColor: "rgba(0, 0, 0, 0.08)",
+    color: "inherit",
   },
 });
 
 const { skills } = Astro.props;
 ---
+
 <FlexWrap>
-  {skills.map((skill, index) => (
-    <Link key={index} href={skill.website} target="_blank" rel="noopener">
-      <Chip onClick={() => console.log(skill.website)}>
-        <Icon name={skill.icon} style={{ fontSize: '16px' }} />
-        <Typography className='body1'>{skill.name}</Typography>
-      </Chip>
-    </Link>
-  ))}
+  {
+    skills.map((skill, index) => (
+      <Link key={index} href={skill.website} target="_blank" rel="noopener">
+        <Chip onClick={() => console.log(skill.website)}>
+          <Icon name={skill.icon} style={{ fontSize: "16px" }} />
+          <Typography className="body1">{skill.name}</Typography>
+        </Chip>
+      </Link>
+    ))
+  }
 </FlexWrap>

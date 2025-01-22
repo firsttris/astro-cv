@@ -5,7 +5,7 @@ export const languages = {
 
 export const defaultLang = (() => typeof window !== "undefined" && navigator.language.includes('de') ? 'de' : 'en')(); 
 
-export const ui = {
+export const translations = {
     en: {
         'business-title': 'Senior Software Developer',
         'academic-title': 'Business Informatics (B.Sc.)',

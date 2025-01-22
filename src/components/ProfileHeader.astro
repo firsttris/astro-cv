@@ -1,28 +1,29 @@
 ---
-import styled from '@emotion/styled';
-import { useTranslations } from '../i18n/utils';
-import { Image } from 'astro:assets';
-import Profile from './../images/profil.png'
-import { Icon } from 'astro-icon/components';
-import { Typography } from './Typography';
+import styled from "@emotion/styled";
+import { useTranslations } from "../i18n/utils";
+import { Image } from "astro:assets";
+import Profile from "./../images/profil.png";
+import { Icon } from "astro-icon/components";
+import { Typography } from "./Typography";
 
 const t = useTranslations(Astro.url.pathname);
 
 const ContainerBox = styled.div({
   marginTop: "20px",
   display: "flex",
-  '@media (max-width: 960px)': {
+  "@media (max-width: 960px)": {
     flexDirection: "column",
   },
-  '@media print': {
-    flexDirection: 'row'
-  }
+  "@media print": {
+    flexDirection: "row",
+  },
 });
 
 const ImageBox = styled.div({
   borderRadius: "5px",
-  display: 'inline-flex',
-  boxShadow: "rgba(0, 0, 0, 0.2) 0px 2px 4px -1px, rgba(0, 0, 0, 0.14) 0px 4px 5px 0px, rgba(0, 0, 0, 0.12) 0px 1px 10px 0px"
+  display: "inline-flex",
+  boxShadow:
+    "rgba(0, 0, 0, 0.2) 0px 2px 4px -1px, rgba(0, 0, 0, 0.14) 0px 4px 5px 0px, rgba(0, 0, 0, 0.12) 0px 1px 10px 0px",
 });
 
 const ContactBox = styled.div({
@@ -38,9 +39,9 @@ const ContentBox = styled.div({
   gap: "20px",
   margin: "10px",
   width: "100%",
-  '@media (max-width: 960px)': {
+  "@media (max-width: 960px)": {
     marginTop: "20px",
-  }
+  },
 });
 
 const Grid = styled.div({
@@ -59,7 +60,6 @@ const Link = styled.a({
   textDecoration: "none",
   color: "#1976d2",
 });
-
 ---
 
 <ContainerBox>
@@ -79,37 +79,29 @@ const Link = styled.a({
     </ImageBox>
   </div>
   <ContentBox>
-    <div style={{ textAlign: "center", display: "flex", flexDirection: "column" }}>
-      <Typography className="h3">
-        Tristan Teufel
-      </Typography>
+    <div
+      style={{ textAlign: "center", display: "flex", flexDirection: "column" }}
+    >
+      <Typography className="h3"> Tristan Teufel </Typography>
       <Typography className="h5">
-        {t('business-title')}
+        {t("business-title")}
       </Typography>
       <Typography className="caption">
-        {t('academic-title')}
+        {t("academic-title")}
       </Typography>
     </div>
     <Grid>
       <Column>
         <ContactBox>
-          <Icon name="openmoji:envelope" font-size={25}  />
-          <Link
-            href="mailto:info@teufel-it.de"
-            rel="noopener"
-            target="_blank"
-          >
-            <Typography className='body1'>info@teufel-it.de</Typography>
+          <Icon name="openmoji:envelope" font-size={25} />
+          <Link href="mailto:info@teufel-it.de" rel="noopener" target="_blank">
+            <Typography className="body1">info@teufel-it.de</Typography>
           </Link>
         </ContactBox>
         <ContactBox>
           <Icon name="openmoji:mobile-phone" font-size={25} />
-          <Link
-            href="tel:+49 176 457 44166"
-            rel="noopener"
-            target="_blank"
-          >
-            <Typography className='body1'>+49 176 457 44166</Typography>
+          <Link href="tel:+49 176 457 44166" rel="noopener" target="_blank">
+            <Typography className="body1">+49 176 457 44166</Typography>
           </Link>
         </ContactBox>
       </Column>
@@ -121,7 +113,7 @@ const Link = styled.a({
             rel="noopener"
             target="_blank"
           >
-            <Typography className='body1'>Github</Typography>
+            <Typography className="body1">Github</Typography>
           </Link>
         </ContactBox>
         <ContactBox>
@@ -131,7 +123,7 @@ const Link = styled.a({
             rel="noopener"
             target="_blank"
           >
-            <Typography className='body1'>Linkedin</Typography>
+            <Typography className="body1">Linkedin</Typography>
           </Link>
         </ContactBox>
       </Column>

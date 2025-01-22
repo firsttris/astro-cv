@@ -1,9 +1,13 @@
 ---
 import { importMdx } from "../mdx/utils";
-import './../mdx/mdx.css';
-const Mdx = importMdx({ filename: "description", pathname: Astro.url.pathname });
+import "./../mdx/mdx.css";
+const Mdx = importMdx({
+  filename: "description",
+  pathname: Astro.url.pathname,
+});
 ---
 
 <div>
   <Mdx />
 </div>
+
