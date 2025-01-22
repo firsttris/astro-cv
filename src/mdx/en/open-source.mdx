@@ -4,18 +4,15 @@ locale: "en"
 ---
 
 import ChipsWithIcon from '../../components/skills/ChipsWithIcon.astro'
-import PageBreakBefore from '../../components/PageBreakBefore.astro'
 import AvoidPageBreakInside from '../../components/AvoidPageBreakInside.astro'
 import Divider from "../../components/Divider.astro";
 import { skillsForJestRunner, skillsForSendToKodi, skillsForReactTrack } from '../../components/skills/skillsForProject'
 
-<PageBreakBefore/>
+<AvoidPageBreakInside>
 <div id="openSource"/>
 # Open-Source Entwicklung
+<Divider />
 
-<Divider sx={{ margin: "5px 0px 10px 0px"}}/>
-
-<AvoidPageBreakInside>
 ## Optimizing Jest Testing in Visual Studio Code with VSCode Jest Runner
 #### 12/2017 - today | [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=firsttris.vscode-jest-runner) | [Github Repository](https://github.com/firsttris/vscode-jest-runner.git)
 

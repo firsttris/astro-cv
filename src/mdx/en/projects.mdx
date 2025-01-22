@@ -4,7 +4,6 @@ locale: "en"
 ---
 
 import ChipsWithIcon from '../../components/skills/ChipsWithIcon.astro'
-import PageBreakBefore from '../../components/PageBreakBefore.astro'
 import AvoidPageBreakInside from '../../components/AvoidPageBreakInside.astro'
 import Divider from "../../components/Divider.astro";
 import { 
@@ -24,13 +23,11 @@ import {
     skillsForEc4u
     } from '../../components/skills/skillsForProject'
 
-<PageBreakBefore/>
+<AvoidPageBreakInside>
 
 # Project experience
+<Divider />
 
-<Divider sx={{ margin: "5px 0px 10px 0px"}}/>
-
-<AvoidPageBreakInside>
 ## Test automation with Cypress and Jest for web applications in the energy sector
 RWE AG
 ### 09/2023 - today in Essen/DE | freelancing via Soorce | Scrum | Remote & On Site

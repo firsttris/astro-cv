@@ -8,7 +8,7 @@ const t = useTranslations(Astro.url.pathname);
 
 ---
 
-<div style={{ marginTop: "20px" }}>
+<div>
   {mySkills.map((skill) => (
     <Skill title={t(skill.title as LocaType)} skills={skill.skills} />
   ))}
