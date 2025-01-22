@@ -1,5 +1,6 @@
 import { ui, defaultLang } from './ui';
 
+export type LocaType = keyof (typeof ui)[typeof defaultLang];
 
 export const getLangFromUrl = (pathname: string) => {
   const lang = pathname.includes('/de') ? 'de' : 'en';

@@ -2,6 +2,7 @@
 import { useTranslations } from '../../i18n/utils';
 import Skill from './Skill.astro';
 import { mySkills } from './mySkills';
+import {type LocaType} from '../../i18n/utils';
 
 const t = useTranslations(Astro.url.pathname);
 
@@ -9,6 +10,6 @@ const t = useTranslations(Astro.url.pathname);
 
 <div style={{ marginTop: "20px" }}>
   {mySkills.map((skill) => (
-    <Skill title={skill.title} skills={skill.skills} />
+    <Skill title={t(skill.title as LocaType)} skills={skill.skills} />
   ))}
 </div>
