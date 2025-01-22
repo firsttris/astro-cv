@@ -4,6 +4,10 @@ import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import "./../mdx/mdx.css";
+
+import { useTranslations } from "../i18n/utils";
+
+const t = useTranslations(Astro.url.pathname);
 ---
 
 <html lang="en">
@@ -17,11 +21,11 @@ import "./../mdx/mdx.css";
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content="Clean Code and Test Automation Specialist with experience in React, TypeScript, MUI, and Node.js." />
     <meta name="keywords" content="Softwareentwickler, Software developer, CV, Resume, Freelance, Clean Code, Test Automation, React, TypeScript, MUI, Node.js" />
-    <meta property="og:title" content="Teufel IT - CV" />
+		<meta property="og:title" content=`CV Tristan Teufel, ${t('business-title')}` />
     <meta property="og:description" content="Clean Code and Test Automation Specialist with experience in React, TypeScript, MUI, and Node.js." />
     <meta property="og:image" content="https://avatars.githubusercontent.com/u/1709260" />
     <meta property="og:url" content="https://cv.teufel-it.de" />
-    <title>Teufel IT - CV</title>
+    <title>CV Tristan Teufel, {t('business-title')}</title>
   </head>
   <body>
     <div class="container">
