@@ -15,6 +15,8 @@ export const translations = {
         protocols: 'Protocols',
         ide: 'IDE',
         projectMethology: 'Project Methology',
+        generatedat: 'Generated at:',
+        version: 'Version:',
     },
     de: {
         'business-title': 'Senior Software Entwickler',
@@ -30,5 +32,7 @@ export const translations = {
         protocols: 'Protokolle',
         ide: 'IDE',
         projectMethology: 'Projekt Methodik',
+        generatedat: 'Generiert am:',
+        version: 'Version:',
     },
 } as const;

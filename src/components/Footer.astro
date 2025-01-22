@@ -1,9 +1,33 @@
 ---
-import { importMdx } from "../mdx/utils";
-import "./../mdx/mdx.css";
-const Mdx = importMdx({ filename: "footer", pathname: Astro.url.pathname });
+import { version } from "./getVersion";
+import { useTranslations } from "../i18n/utils";
+
+const buildTime = new Date().toLocaleString();
+const t = useTranslations(Astro.url.pathname)
 ---
 
-<div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-  <Mdx />
+<style>
+  .footer {
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #555;
+    text-align: center;
+  }
+  .version {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .source-link {
+    color: #317EFB;
+    text-decoration: none;
+  }
+  .source-link:hover {
+    text-decoration: underline;
+  }
+</style>
+
+<div class="footer">
+  <span class="version">{t('generatedat')} {buildTime}, {t('version')} {version}</span>
+  <a class="source-link" href="https://github.com/firsttris/astro-cv" target="_blank">Source Code</a>
 </div>

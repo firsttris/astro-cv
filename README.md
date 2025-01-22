@@ -1,4 +1,4 @@
-# Astro with Curriculum Vitae
+# Curriculum Vitae with Astro
 
 Curriculum Vitae with [Astro](https://astro.build/)
 
