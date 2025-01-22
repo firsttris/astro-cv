@@ -1,5 +1,4 @@
 ---
-import { version } from "./getVersion";
 import { useTranslations } from "../i18n/utils";
 
 const buildTime = new Date().toLocaleString('de-DE', {
@@ -35,8 +34,6 @@ const t = useTranslations(Astro.url.pathname)
 
 <div class="footer">
   <span class="generatedat">{t('generatedat')} {buildTime}</span>
-  <span class="or">|</span>
-  <span class="version">{t('version')} {version}</span>
   <span class="or">|</span>
   <a class="source-link" href="https://github.com/firsttris/astro-cv" target="_blank">Source Code</a>
 </div>
