@@ -67,6 +67,7 @@ export default defineConfig({
         'sqldeveloper',
         'traefikproxy',
         'groovy',
+        "githubactions"
       ],
       logos: [
         'react-query-icon',
@@ -103,7 +104,8 @@ export default defineConfig({
         'scrumalliance'
       ],
       'skill-icons': [
-        'redux'
+        'redux',
+        'emotion-light'
       ],
       cib: ['gerrit'],
       iconoir: ['agile'],

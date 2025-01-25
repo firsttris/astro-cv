@@ -13,6 +13,25 @@ import {
   webserver,
 } from "./technologies";
 
+export const skillsForDHL = [
+  languages.typescript,
+  libraries.react,
+  libraries.reactQuery,
+  libraries.angular,
+  testing.jest,
+  testing.playwright,
+  styling.emotion,
+  protocols.rest,
+  protocols.openapi,
+  integration.azure,
+  tools.jira,
+  tools.confluence,
+  integration.github,
+  integration.jenkins,
+  integration.githubActions,
+  webserver.nginx,
+]
+
 export const skillsForRwe = [
   ide.vscode,
   ide.visualStudio,

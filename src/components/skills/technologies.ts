@@ -212,6 +212,11 @@ export const styling = {
     icon: "devicon:bootstrap-wordmark",
     website: "https://getbootstrap.com/",
   },
+  emotion: {
+    name: "Emotion",
+    icon: "skill-icons:emotion-light",
+    website: "https://emotion.sh/docs/introduction",
+  }
 };
 
 export const testing = {
@@ -275,6 +280,11 @@ export const integration = {
     name: "Github",
     icon: "vscode-icons:folder-type-github",
     website: "https://github.com/",
+  },
+  githubActions: {
+    name: "Github-Actions",
+    icon: "devicon:githubactions",
+    website: "https://github.com/features/actions"
   },
   linux: {
     name: "Linux",
