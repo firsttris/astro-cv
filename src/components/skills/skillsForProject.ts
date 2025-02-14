@@ -15,6 +15,7 @@ import {
 
 export const skillsForDHL = [
   languages.typescript,
+  languages.java,
   libraries.react,
   libraries.reactQuery,
   libraries.angular,
@@ -26,6 +27,7 @@ export const skillsForDHL = [
   integration.azure,
   tools.jira,
   tools.confluence,
+  ide.intellij,
   integration.github,
   integration.jenkins,
   integration.githubActions,
