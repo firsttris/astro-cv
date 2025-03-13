@@ -1,14 +1,15 @@
 import {
-  bundlers,
+  buildTools,
   databases,
   ide,
   integration,
   languages,
   libraries,
   projectMethology,
-  protocols,
+  api,
   styling,
   testing,
+  tools,
 } from './technologies';
 
 export const mySkills = [
@@ -36,6 +37,7 @@ export const mySkills = [
       libraries.vue,
       libraries.nextjs,
       libraries.nx,
+      libraries.spring,
     ],
   },
   {
@@ -43,18 +45,19 @@ export const mySkills = [
     skills: [
       styling.css,
       styling.scss,
-      styling.mui,
-      styling.styled,
       styling.tailwind,
+      styling.styled
     ],
   },
   {
     title: "testing",
     skills: [
-      testing.testingLibrary,
       testing.jest,
       testing.cypress,
       testing.playwright,
+      testing.selenium,
+      testing.junit,
+      testing.readyApi
     ],
   },
   {
@@ -73,22 +76,27 @@ export const mySkills = [
     ],
   },
   {
-    title: "bundlers",
-    skills: [bundlers.vite, bundlers.webpack],
+    title: "build-tools",
+    skills: [
+      ...Object.values(buildTools),
+    ],
   },
   {
-    title: "protocols",
+    title: "apis",
     skills: [
-      protocols.rest,
-      protocols.jsonrpc,
-      protocols.websocket,
-      protocols.openapi,
-      protocols.graphql,
+      ...Object.values(api),
     ],
   },
   {
     title: "ide",
     skills: [ide.intellij, ide.vscode],
+  },
+  {
+    title: 'tools',
+    skills: [
+      tools.jira,
+      tools.confluence,
+    ],
   },
   {
     title: "projectMethology",

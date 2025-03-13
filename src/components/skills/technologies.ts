@@ -57,6 +57,11 @@ export const libraries = {
     icon: "vscode-icons:file-type-reactts",
     website: "https://reactjs.org/",
   },
+  spring: {
+    name: "Spring-Boot",
+    icon: "devicon:spring",
+    website: "https://spring.io/projects/spring-boot",
+  },
   solid: {
     name: "Solid.js",
     icon: "vscode-icons:file-type-reactjs",
@@ -173,7 +178,16 @@ export const libraries = {
     icon: "logos:cordova",
     website: "https://cordova.apache.org/",
   },
-  babel: { name: "Babel", icon: "logos:babel", website: "https://babeljs.io/" },
+  flask: {
+    name: "Flask",
+    icon: "logos:flask",
+    website: "https://flask.palletsprojects.com/",
+  },
+  fastApi: {
+    name: "FastAPI",
+    icon: "logos:fastapi",
+    website: "https://fastapi.tiangolo.com/",
+  }
 };
 
 export const styling = {
@@ -216,6 +230,11 @@ export const styling = {
     name: "Emotion",
     icon: "skill-icons:emotion-light",
     website: "https://emotion.sh/docs/introduction",
+  },
+  primeNg: {
+    name: "PrimeNG",
+    icon: "devicon:primeng",
+    website: "https://www.primefaces.org/primeng/",
   }
 };
 
@@ -249,6 +268,16 @@ export const testing = {
     name: "JUnit",
     icon: "devicon:junit",
     website: "https://junit.org/junit5/",
+  },
+  selenium: {
+    name: "Selenium",
+    icon: "devicon:selenium",
+    website: "https://www.selenium.dev/",
+  },
+  readyApi: {
+    name: "ReadyAPI",
+    icon: "vscode-icons:folder-type-api-opened",
+    website: "https://smartbear.com/product/ready-api/",
   },
 };
 
@@ -331,11 +360,7 @@ export const integration = {
     icon: "logos:kubernetes",
     website: "https://kubernetes.io/",
   },
-  maven: {
-    name: "Maven",
-    icon: "vscode-icons:file-type-maven",
-    website: "https://maven.apache.org/",
-  },
+
   svn: {
     name: "Subversion",
     icon: "logos:subversion",
@@ -343,7 +368,7 @@ export const integration = {
   },
 };
 
-export const bundlers = {
+export const buildTools = {
   webpack: {
     name: "Webpack",
     icon: "vscode-icons:file-type-webpack",
@@ -354,9 +379,45 @@ export const bundlers = {
     icon: "vscode-icons:file-type-vite",
     website: "https://vitejs.dev/",
   },
+  maven: {
+    name: "Maven",
+    icon: "vscode-icons:file-type-maven",
+    website: "https://maven.apache.org/",
+  },
+  nx: {
+    name: "Nx",
+    icon: "vscode-icons:file-type-light-nx",
+    website: "https://nx.dev/",
+  },
+  rollup: {
+    name: "Rollup",
+    icon: "logos:rollup",
+    website: "https://rollupjs.org/",
+  },
+  esbuild: {
+    name: "esbuild",
+    icon: "simple-icons:esbuild",
+    website: "https://esbuild.github.io/",
+  },
+  parcel: {
+    name: "Parcel",
+    icon: "logos:parcel-icon",
+    website: "https://parceljs.org/",
+  },
+  turbopack: {
+    name: "Turbopack",
+    icon: "simple-icons:turborepo",
+    website: "https://turbo.build/pack",
+  },
+  gradle: {
+    name: "Gradle",
+    icon: "vscode-icons:file-type-gradle",
+    website: "https://gradle.org/",
+  },
+  babel: { name: "Babel", icon: "logos:babel", website: "https://babeljs.io/" },
 };
 
-export const protocols = {
+export const api = {
   rest: {
     name: "REST",
     icon: "vscode-icons:file-type-rest",
@@ -381,6 +442,21 @@ export const protocols = {
     name: "GraphQL",
     icon: "vscode-icons:file-type-graphql",
     website: "https://graphql.org/",
+  },
+  soap: {
+    name: "SOAP",
+    icon: "vscode-icons:file-type-xml",
+    website: "https://www.w3.org/TR/soap/",
+  },
+  grpc: {
+    name: "gRPC",
+    icon: "logos:grpc",
+    website: "https://grpc.io/",
+  },
+  mqtt: {
+    name: "MQTT",
+    icon: "simple-icons:mqtt",
+    website: "https://mqtt.org/",
   },
 };
 
@@ -470,8 +546,7 @@ export const tools = {
     name: "Oracle SOA Suite",
     icon: "simple-icons:oracle",
     website: "https://www.oracle.com/middleware/technologies/soasuite.html",
-  },
-  kodi: { name: "Kodi", icon: "mdi:kodi", website: "https://kodi.tv/" },
+  }
 };
 
 export const webserver = {

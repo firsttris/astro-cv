@@ -17,6 +17,9 @@ export const translations = {
         projectMethology: 'Project Methology',
         generatedat: 'Generated at:',
         version: 'Version:',
+        tools: 'Tools',
+        "build-tools": "Build Tools",
+        apis: "APIs",
     },
     de: {
         'business-title': 'Senior Software Entwickler',
@@ -34,5 +37,8 @@ export const translations = {
         projectMethology: 'Projekt Methodik',
         generatedat: 'Generiert am:',
         version: 'Version:',
+        tools: 'Werkzeuge',
+        "build-tools": "Build-Werkzeuge",
+        apis: "APIs",
     },
 } as const;

@@ -53,7 +53,11 @@ export default defineConfig({
         'folder-type-api-opened',
         'file-type-graphql',
         'folder-type-vscode',
-        'file-type-nginx'
+        'file-type-nginx',
+        'file-type-light-nx',
+        'file-type-gradle',
+        'file-type-xml',
+
       ],
       devicon: [
         'java-wordmark',
@@ -67,7 +71,10 @@ export default defineConfig({
         'sqldeveloper',
         'traefikproxy',
         'groovy',
-        "githubactions"
+        "githubactions",
+        "spring",
+        "selenium",
+        'primeng'
       ],
       logos: [
         'react-query-icon',
@@ -91,7 +98,12 @@ export default defineConfig({
         'wordpress-icon',
         'eclipse-icon',
         'xray-for-jira',
-        'react'
+        'react',
+        'rollup',
+        'parcel-icon',
+        'grpc',
+        'flask',
+        'fastapi'
       ],
       'material-symbols': [
         'stacked-line-chart',
@@ -101,7 +113,10 @@ export default defineConfig({
       ],
       'simple-icons': [
         'oracle',
-        'scrumalliance'
+        'scrumalliance',
+        'esbuild',
+        'turborepo',
+        'mqtt'
       ],
       'skill-icons': [
         'redux',
