@@ -243,6 +243,7 @@ export const skillsForEc4u = [
   languages.go,
   libraries.jquery,
   languages.php,
+  languages.python,
   libraries.oracleAdf,
   testing.selenium,
   tools.soapUI,
