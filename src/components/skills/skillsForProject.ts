@@ -216,6 +216,7 @@ export const skillsForCybermanufaktur = [
   languages.javascript,
   languages.go,
   libraries.angular,
+  languages.python,
   ide.intellij,
   libraries.jquery,
   languages.php,
