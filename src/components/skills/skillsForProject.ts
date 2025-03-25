@@ -11,6 +11,7 @@ import {
   testing,
   tools,
   webserver,
+  cicd,
 } from "./technologies";
 
 export const skillsForDHL = [
@@ -37,6 +38,23 @@ export const skillsForDHL = [
   integration.jenkins,
   integration.githubActions,
   webserver.nginx,
+  cicd.jenkins,
+  cicd.githubActions
+]
+
+export const skillsForJLA = [
+  languages.typescript,
+  languages.python,
+  libraries.react,
+  libraries.fastApi,
+  api.rest,
+  libraries.reactQuery,
+  databases.postGresSql,
+  integration.azure,
+  authentication.msal,
+  ide.vscode,
+  api.openapi,
+  integration.docker,
 ]
 
 export const skillsForRwe = [

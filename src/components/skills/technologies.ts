@@ -287,6 +287,11 @@ export const databases = {
     icon: "vscode-icons:file-type-mongo",
     website: "https://www.mongodb.com/",
   },
+  postGresSql: {
+    name: "PostgreSQL",
+    icon: "devicon:postgresql-wordmark",
+    website: "https://www.postgresql.org/",
+  },
   sql: {
     name: "SQL",
     icon: "vscode-icons:file-type-sql",
@@ -556,3 +561,16 @@ export const webserver = {
     website: "https://www.nginx.com/",
   },
 };
+
+export const cicd = {
+  githubActions: {
+    name: "Github-Actions",
+    icon: "devicon:githubactions",
+    website: "https://docs.github.com/en/actions",
+  },
+  jenkins: {
+    name: "Jenkins",
+    icon: "devicon:jenkins",
+    website: "https://www.jenkins.io/",
+  }
+}

@@ -74,7 +74,10 @@ export default defineConfig({
         "githubactions",
         "spring",
         "selenium",
-        'primeng'
+        'primeng',
+        'postgresql-wordmark',
+        'githubactions',
+        "jenkins"
       ],
       logos: [
         'react-query-icon',
