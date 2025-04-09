@@ -1,0 +1,83 @@
+---
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+
+interface Props {
+  frontImage: ImageMetadata;
+  backImage: ImageMetadata;
+  altFront: string;
+  altBack: string;
+  width: number;
+}
+
+const { frontImage, backImage, altFront, altBack, width } = Astro.props;
+---
+
+<div class="image-swap-container">
+  <Image
+    class="front-image"
+    src={frontImage}
+    alt={altFront}
+    width={width}
+    style={{
+      minWidth: width,
+      borderRadius: "5px",
+    }}
+  />
+  <Image
+    class="back-image"
+    src={backImage}
+    alt={altBack}
+    width={width}
+    style={{
+      minWidth: width,
+      borderRadius: "5px",
+    }}
+  />
+</div>
+
+<style>
+  .image-swap-container {
+    position: relative;
+    display: inline-block;
+  }
+
+  .image-swap-container img {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    border: 1px solid;
+    transition: all 500ms;
+  }
+
+  .front-image {
+    opacity: 1;
+  }
+
+  .back-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+  }
+
+  .image-swap-container:hover .front-image {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+
+  .image-swap-container:hover .back-image {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+
+  /* Ensure the back image is always shown in print */
+  @media print {
+    .front-image {
+      display: none;
+    }
+    .back-image {
+      position: static;
+      opacity: 1;
+      transform: none;
+    }
+  }
+</style>

@@ -1,10 +1,11 @@
 ---
 import styled from "@emotion/styled";
 import { useTranslations } from "../i18n/utils";
-import { Image } from "astro:assets";
 import Profile from "./../images/profil.png";
+import Ghibli from "./../images/ghibli.png";
 import { Icon } from "astro-icon/components";
 import { Typography } from "./Typography";
+import ImageSwap from "./ImageSwap.astro";
 
 const t = useTranslations(Astro.url.pathname);
 
@@ -64,20 +65,14 @@ const Link = styled.a({
 
 <ContainerBox>
   <div style={{ display: "flex", justifyContent: "center" }}>
-    <ImageBox>
-      <Image
-        
-        src={Profile}
-        alt="me"
-        loading={"eager"}
-
-        width={240}
-        style={{
-          minWidth: 240,
-          borderRadius: "5px",
-        }}
-      />
-    </ImageBox>
+    <ImageSwap
+    frontImage={Ghibli}
+    backImage={Profile}
+    altFront="Ghibli Style"
+    altBack="Real Image"
+    width={240}
+    height={100}
+  />
   </div>
   <ContentBox>
     <div
