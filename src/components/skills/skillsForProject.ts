@@ -17,6 +17,7 @@ import {
 export const skillsForDHL = [
   languages.typescript,
   languages.java,
+  languages.nodejs,
   databases.sql,
   libraries.react,
   libraries.reactQuery,
@@ -36,7 +37,6 @@ export const skillsForDHL = [
   ide.intellij,
   integration.github,
   integration.jenkins,
-  integration.githubActions,
   webserver.nginx,
   cicd.jenkins,
   cicd.githubActions
@@ -45,6 +45,7 @@ export const skillsForDHL = [
 export const skillsForJLA = [
   languages.typescript,
   languages.python,
+  languages.nodejs,
   libraries.react,
   libraries.fastApi,
   api.rest,
@@ -55,6 +56,7 @@ export const skillsForJLA = [
   ide.vscode,
   api.openapi,
   integration.docker,
+  cicd.githubActions
 ]
 
 export const skillsForRwe = [
@@ -62,6 +64,7 @@ export const skillsForRwe = [
   ide.visualStudio,
   languages.typescript,
   languages.csharp,
+  languages.nodejs,
   libraries.angular,
   styling.angularMaterial,
   styling.scss,
@@ -82,6 +85,7 @@ export const skillsForCtream = [
   languages.typescript,
   libraries.react,
   libraries.nextjs,
+  languages.nodejs,
   styling.mui,
   api.websocket,
   languages.python,
@@ -95,6 +99,7 @@ export const skillsForCtream = [
 export const skillsForAtis = [
   languages.typescript,
   libraries.react,
+  languages.nodejs,
   testing.cypress,
   styling.mui,
   libraries.reactQuery,
@@ -111,6 +116,7 @@ export const skillsForHeidelbergCement = [
   languages.typescript,
   libraries.react,
   libraries.redux,
+  languages.nodejs,
   testing.cypress,
   testing.jest,
   testing.testingLibrary,
@@ -129,6 +135,7 @@ export const skillsForKlarsolar = [
   languages.typescript,
   languages.go,
   libraries.angular,
+  languages.nodejs,
   styling.angularMaterial,
   styling.tailwind,
   api.graphql,
@@ -140,6 +147,7 @@ export const skillsForKlarsolar = [
 export const skillsForSeeburger = [
   languages.java,
   libraries.spring,
+  languages.nodejs,
   api.openapi,
   ide.intellij,
   ide.vscode,
@@ -158,6 +166,7 @@ export const skillsForSeeburger = [
 export const skillsForTeamviewer = [
   libraries.knockoutJs,
   languages.typescript,
+  languages.nodejs,
   buildTools.webpack,
   languages.csharp,
   ide.visualStudio,
@@ -171,6 +180,7 @@ export const skillsForProctorAndGamble = [
   ide.vscode,
   languages.typescript,
   languages.php,
+  languages.nodejs,
   libraries.laravel,
   libraries.vue,
   buildTools.webpack,
@@ -234,6 +244,7 @@ export const skillsForCybermanufaktur = [
   languages.javascript,
   languages.go,
   libraries.angular,
+  languages.nodejs,
   languages.python,
   ide.intellij,
   libraries.jquery,

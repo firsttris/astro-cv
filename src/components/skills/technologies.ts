@@ -315,11 +315,6 @@ export const integration = {
     icon: "vscode-icons:folder-type-github",
     website: "https://github.com/",
   },
-  githubActions: {
-    name: "Github-Actions",
-    icon: "devicon:githubactions",
-    website: "https://github.com/features/actions"
-  },
   linux: {
     name: "Linux",
     icon: "vscode-icons:folder-type-linux",
