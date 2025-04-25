@@ -17,7 +17,6 @@ import {
   container,
   versionControl,
 } from "./technologies";
-import { build } from "astro";
 
 export const skillsForDHL = [
   languages.typescript,
@@ -38,6 +37,7 @@ export const skillsForDHL = [
   api.openapi,
   cloud.azure,
   container.docker,
+  container.openShift,
   tools.jira,
   tools.confluence,
   ide.intellij,
@@ -90,6 +90,8 @@ export const skillsForRwe = [
   tools.confluence,
   buildTools.webpack,
   buildTools.vite,
+  container.docker,
+  container.terraform,
 ];
 
 export const skillsForCtream = [
@@ -156,6 +158,8 @@ export const skillsForKlarsolar = [
   api.graphql,
   libraries.apollo,
   ide.vscode,
+  container.kubernetes,
+  container.helm,
   versionControl.github,
   buildTools.webpack,
 ];
@@ -174,6 +178,8 @@ export const skillsForSeeburger = [
   testing.jest,
   styling.mui,
   libraries.agGrid,
+  container.kubernetes,
+  container.helm,
   tools.jira,
   tools.confluence,
   versionControl.gerrit,
@@ -222,6 +228,8 @@ export const skillsForDaimler = [
   api.openapi,
   tools.jira,
   tools.confluence,
+  container.kubernetes,
+  container.helm,
   versionControl.github,
   libraries.reselect,
   libraries.immutablejs,
@@ -238,6 +246,7 @@ export const skillsForGameforge = [
   api.rest,
   container.docker,
   container.kubernetes,
+  container.helm,
   languages.nodejs,
   languages.go,
   versionControl.bitbucket,

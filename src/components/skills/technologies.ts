@@ -464,9 +464,21 @@ export const container = {
   },
   helm: {
     name: "Helm",
-    icon: "logos:helm",
+    icon: "devicon:helm",
     website: "https://helm.sh/",
-    level: Level.Intermediate,
+    level: Level.Beginner,
+  },
+  openShift: {
+    name: "OpenShift",
+    icon: "logos:openshift",
+    website: "https://www.openshift.com/",
+    level: Level.Beginner,
+  },
+  terraform: {
+    name: "Terraform",
+    icon: "logos:terraform",
+    website: "https://www.terraform.io/",
+    level: Level.Beginner,
   },
 }
 
@@ -676,13 +688,13 @@ export const tools = {
     name: "Jira",
     icon: "logos:jira",
     website: "https://www.atlassian.com/software/jira",
-    level: Level.Intermediate,
+    level: Level.Expert,
   },
   confluence: {
     name: "Confluence",
     icon: "logos:confluence",
     website: "https://www.atlassian.com/software/confluence",
-    level: Level.Intermediate,
+    level: Level.Expert,
   },
   wordpress: {
     name: "Wordpress",

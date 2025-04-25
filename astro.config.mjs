@@ -79,7 +79,8 @@ export default defineConfig({
         'githubactions',
         "jenkins",
         'podman',
-        'travis'
+        'travis',
+        'helm'
       ],
       logos: [
         'react-query-icon',
@@ -108,7 +109,9 @@ export default defineConfig({
         'parcel-icon',
         'grpc',
         'flask',
-        'fastapi'
+        'fastapi',
+        'openshift',
+        'terraform',
       ],
       'material-symbols': [
         'stacked-line-chart',
