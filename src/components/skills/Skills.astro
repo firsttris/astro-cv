@@ -3,14 +3,32 @@ import { useTranslations } from "../../i18n/utils";
 import Skill from "./Skill.astro";
 import { mySkills } from "./mySkills";
 import { type LocaType } from "../../i18n/utils";
+import SkillLegend from "./SkillLegend.astro";
+import styled from "@emotion/styled";
+import { Typography } from "../Typography";
 
 const t = useTranslations(Astro.url.pathname);
+
+const SkillsHeader = styled.div({
+  marginBottom: "10px",
+});
+
 ---
 
 <div>
+  <SkillsHeader>
+    <Typography style={{ 
+      margin: 0,
+      fontWeight: 500,
+      fontSize: '20px'
+    }}>{t("skills")}</Typography>
+    
+  </SkillsHeader>
+  
   {
     mySkills.map((skill) => (
       <Skill title={t(skill.title as LocaType)} skills={skill.skills} />
     ))
   }
+  <SkillLegend />
 </div>

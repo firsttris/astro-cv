@@ -1,0 +1,48 @@
+---
+import styled from "@emotion/styled";
+import { Typography } from "../Typography";
+import { useTranslations } from "../../i18n/utils";
+
+const LegendContainer = styled.div({
+  display: "flex",
+  gap: "15px",
+  marginTop: "15px",
+  justifyContent: "flex-start",
+});
+
+const LegendItem = styled.div({
+  display: "flex",
+  alignItems: "center",
+  gap: "5px",
+});
+
+const LevelBadge = styled.div<{level: string}>((props) => ({
+  fontSize: "10px",
+  backgroundColor: "white",
+  color: "black",
+  borderRadius: "50%",
+  width: "14px",
+  height: "14px",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  border: "1px solid grey",
+}));
+
+const t = useTranslations(Astro.url.pathname);
+---
+
+<LegendContainer>
+  <LegendItem>
+    <LevelBadge level="Expert">E</LevelBadge>
+    <Typography className="body1" style={{ fontSize: '12px' }}>{t("expert")}</Typography>
+  </LegendItem>
+  <LegendItem>
+    <LevelBadge level="Intermediate">I</LevelBadge>
+    <Typography className="body1" style={{ fontSize: '12px' }}>{t("intermediate")}</Typography>
+  </LegendItem>
+  <LegendItem>
+    <LevelBadge level="Beginner">B</LevelBadge>
+    <Typography className="body1" style={{ fontSize: '12px' }}>{t("beginner")}</Typography>
+  </LegendItem>
+</LegendContainer>

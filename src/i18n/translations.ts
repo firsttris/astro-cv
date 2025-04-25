@@ -24,6 +24,10 @@ export const translations = {
         uiFrameworks: "UI Frameworks",
         container: 'Container',
         cicd: 'CI/CD',
+        expert: 'Expert',
+        intermediate: 'Intermediate',
+        beginner: 'Beginner',
+        skills: 'Skills',
     },
     de: {
         'business-title': 'Senior Software Entwickler',
@@ -48,5 +52,9 @@ export const translations = {
         uiFrameworks: "UI Frameworks",
         container: 'Container',
         cicd: 'CI/CD',
+        expert: 'Experte',
+        intermediate: 'Fortgeschrittener',
+        beginner: 'Anfänger',
+        skills: 'Fähigkeiten',
     },
 } as const;
