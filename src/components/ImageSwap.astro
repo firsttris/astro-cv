@@ -15,17 +15,6 @@ const { frontImage, backImage, altFront, altBack, width } = Astro.props;
 
 <div class="image-swap-container">
   <Image
-    class="front-image"
-    src={frontImage}
-    alt={altFront}
-    width={width}
-    style={{
-      minWidth: width,
-      borderRadius: "5px",
-    }}
-  />
-  <Image
-    class="back-image"
     src={backImage}
     alt={altBack}
     width={width}

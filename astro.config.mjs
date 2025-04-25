@@ -56,7 +56,7 @@ export default defineConfig({
         'file-type-nginx',
         'file-type-light-nx',
         'file-type-gradle',
-        'file-type-xml',
+        'file-type-xml'
 
       ],
       devicon: [
@@ -77,7 +77,9 @@ export default defineConfig({
         'primeng',
         'postgresql-wordmark',
         'githubactions',
-        "jenkins"
+        "jenkins",
+        'podman',
+        'travis'
       ],
       logos: [
         'react-query-icon',

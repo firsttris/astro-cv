@@ -1,18 +1,26 @@
 import {
   buildTools,
   databases,
-  ide,
-  integration,
   languages,
   libraries,
   projectMethology,
   api,
   styling,
   testing,
-  tools,
+  type Skill,
+  uiFrameworks,
+  cloud,
+  container,
+  versionControl,
+  cicd,
 } from './technologies';
 
-export const mySkills = [
+interface MySkills {
+  title: string;
+  skills: Skill[];
+}
+
+export const mySkills: MySkills[] = [
   {
     title: "languages",
     skills: [
@@ -26,18 +34,17 @@ export const mySkills = [
     ],
   },
   {
-    title: "libraries",
+    title: "uiFrameworks",
     skills: [
-      libraries.react,
-      libraries.solid,
-      libraries.gatsby,
-      libraries.astro,
-      libraries.svelte,
-      libraries.angular,
-      libraries.vue,
-      libraries.nextjs,
+      uiFrameworks.react,
+      uiFrameworks.solid,
+      uiFrameworks.gatsby,
+      uiFrameworks.astro,
+      uiFrameworks.svelte,
+      uiFrameworks.angular,
+      uiFrameworks.vue,
+      uiFrameworks.nextjs,
       libraries.nx,
-      libraries.spring,
     ],
   },
   {
@@ -50,35 +57,11 @@ export const mySkills = [
     ],
   },
   {
-    title: "testing",
-    skills: [
-      testing.jest,
-      testing.cypress,
-      testing.playwright,
-      testing.selenium,
-      testing.junit,
-      testing.readyApi
-    ],
-  },
-  {
     title: "databases",
-    skills: [databases.mongodb, databases.sql],
-  },
-  {
-    title: "integration",
-    skills: [
-      integration.aws,
-      integration.azure,
-      integration.docker,
-      integration.gitlab,
-      integration.github,
-      integration.linux,
-    ],
-  },
-  {
-    title: "build-tools",
-    skills: [
-      ...Object.values(buildTools),
+    skills: 
+    [
+      databases.mongodb, 
+      databases.sql
     ],
   },
   {
@@ -88,14 +71,45 @@ export const mySkills = [
     ],
   },
   {
-    title: "ide",
-    skills: [ide.intellij, ide.vscode],
+    title: "testing",
+    skills: [
+      testing.jest,
+      testing.cypress,
+      testing.playwright,
+      testing.selenium,
+    ],
   },
   {
-    title: 'tools',
+    title: "cloud",
     skills: [
-      tools.jira,
-      tools.confluence,
+      cloud.aws,
+      cloud.azure
+    ],
+  },
+  {
+    title: 'container',
+    skills: [
+      container.docker,
+      container.podman,
+      container.kubernetes,
+    ],
+  },
+  {
+    title: 'cicd',
+    skills: [
+      cicd.githubActions,
+      versionControl.gitlab,
+      cicd.travis,
+      cicd.jenkins,
+    ]
+  },
+  {
+    title: "build-tools",
+    skills: [
+      buildTools.webpack,
+      buildTools.vite,
+      buildTools.nx,
+      buildTools.babel
     ],
   },
   {

@@ -2,16 +2,36 @@
 import { Icon } from "astro-icon/components";
 import styled from "@emotion/styled";
 import { Typography } from "../Typography";
-
-export interface Skill {
-  name: string;
-  icon: string;
-  website: string;
-}
+import { type Skill } from "./technologies";
 
 interface Props {
   skills: Skill[];
 }
+
+interface ChipProps {
+  level?: "Beginner" | "Intermediate" | "Expert";
+}
+
+
+// Farbfunktion basierend auf Level
+const getColorByLevel = (level: "Beginner" | "Intermediate" | "Expert") => {
+  switch(level) {
+    case "Beginner": return "linear-gradient(135deg, #e0e0e0 0%, #c2c2c2 100%)";
+    case "Intermediate": return "linear-gradient(135deg, #b4d8ff 0%, #74adff 100%)";
+    case "Expert": return "linear-gradient(135deg, #ffd280 0%, #ffaa00 100%)";
+    default: return "white";
+  }
+};
+
+// Druckfreundliche Rahmenart für jedes Level
+const getBorderForPrint = (level: "Beginner" | "Intermediate" | "Expert") => {
+  switch(level) {
+    case "Beginner": return "1px solid #c2c2c2"; // Grau wie im Farbverlauf
+    case "Intermediate": return "1.5px solid #74adff"; // Blau wie im Farbverlauf
+    case "Expert": return "2px solid #ffaa00"; // Gold/Orange wie im Farbverlauf
+    default: return "1px solid #999";
+  }
+};
 
 const FlexWrap = styled.div({
   display: "flex",
@@ -23,23 +43,46 @@ const Link = styled.a({
   color: "black",
 });
 
-const Chip = styled.div({
+const Chip = styled.div<ChipProps>(props => ({
   cursor: "pointer",
   margin: "2px 3px",
   height: "20px",
-  backgroundColor: "white",
-  border: "1px solid black",
+  background: "white",
+  border: props.level ? getBorderForPrint(props.level) : "1px solid black",
   borderRadius: "6px",
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
   gap: "5px",
   padding: "0 8px",
+  position: "relative",
   "&:hover": {
-    backgroundColor: "rgba(0, 0, 0, 0.08)",
+    filter: "brightness(1.05)",
     color: "inherit",
-  },
+  }
+}));
+
+const LevelBadge = styled.div({
+  fontSize: "10px",
+  backgroundColor: "white",
+  color: "black",
+  borderRadius: "50%",
+  width: "14px",
+  height: "14px",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  border: "1px solid grey",
 });
+
+const getSkillLevel = (level: "Beginner" | "Intermediate" | "Expert") => {
+  switch(level) {
+    case "Beginner": return "B";
+    case "Intermediate": return "I";
+    case "Expert": return "E";
+    default: return "";
+  }
+};
 
 const { skills } = Astro.props;
 ---
@@ -48,9 +91,10 @@ const { skills } = Astro.props;
   {
     skills.map((skill, index) => (
       <Link key={index} href={skill.website} target="_blank" rel="noopener">
-        <Chip onClick={() => console.log(skill.website)}>
+        <Chip level={skill.level}>
           <Icon name={skill.icon} style={{ fontSize: "16px" }} />
-          <Typography className="body1">{skill.name}</Typography>
+          <Typography className="body1" style={{ fontSize: '12px'}}>{skill.name}</Typography>
+          <LevelBadge title={skill.level}>{getSkillLevel(skill.level)}</LevelBadge>
         </Chip>
       </Link>
     ))

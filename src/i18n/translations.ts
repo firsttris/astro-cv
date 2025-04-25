@@ -20,6 +20,10 @@ export const translations = {
         tools: 'Tools',
         "build-tools": "Build Tools",
         apis: "APIs",
+        cloud: "Cloud",
+        uiFrameworks: "UI Frameworks",
+        container: 'Container',
+        cicd: 'CI/CD',
     },
     de: {
         'business-title': 'Senior Software Entwickler',
@@ -38,7 +42,11 @@ export const translations = {
         generatedat: 'Generiert am:',
         version: 'Version:',
         tools: 'Werkzeuge',
-        "build-tools": "Build-Werkzeuge",
+        "build-tools": "Build Werkzeuge",
         apis: "APIs",
+        cloud: "Cloud",
+        uiFrameworks: "UI Frameworks",
+        container: 'Container',
+        cicd: 'CI/CD',
     },
 } as const;
