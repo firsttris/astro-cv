@@ -113,6 +113,12 @@ export const mySkills: MySkills[] = [
     ],
   },
   {
+    title: "versionControl",
+    skills: [
+      ...Object.values(versionControl)
+    ],
+  },
+  {
     title: "projectMethology",
     skills: [
       projectMethology.scrum,

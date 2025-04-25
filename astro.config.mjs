@@ -56,7 +56,8 @@ export default defineConfig({
         'file-type-nginx',
         'file-type-light-nx',
         'file-type-gradle',
-        'file-type-xml'
+        'file-type-xml',
+        'file-type-node'
 
       ],
       devicon: [

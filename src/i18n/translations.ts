@@ -2,7 +2,7 @@ export const defaultLang = (() => typeof window !== "undefined" && navigator.lan
 
 export const translations = {
     en: {
-        'business-title': 'Senior Software Developer',
+        'business-title': 'Software Architect (Freelancer)',
         'academic-title': 'Business Informatics (B.Sc.)',
         cv: 'Curriculum Vitae',
         languages: 'Languages',
@@ -33,7 +33,7 @@ export const translations = {
         skills: 'Skills',
     },
     de: {
-        'business-title': 'Senior Software Entwickler',
+        'business-title': 'Softwarearchitekt (Freelancer)',
         'academic-title': 'Wirtschaftsinformatik (B.Sc.)',
         cv: 'Lebenslauf',
         languages: 'Sprachen',
