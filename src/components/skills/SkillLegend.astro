@@ -3,6 +3,16 @@ import styled from "@emotion/styled";
 import { Typography } from "../Typography";
 import { getLangFromUrl, useTranslations } from "../../i18n/utils";
 
+// Same color scheme as in ChipsWithIcon.astro
+const getBorderForLevel = (level: string) => {
+  switch(level) {
+    case "Expert": return "2px solid #ffaa00"; // Gold/Orange
+    case "Intermediate": return "1.5px solid #74adff"; // Blue
+    case "Beginner": return "1px solid #c2c2c2"; // Gray
+    default: return "1px solid grey";
+  }
+};
+
 const LegendContainer = styled.div({
   display: "flex",
   gap: "15px",
@@ -26,7 +36,7 @@ const LevelBadge = styled.div<{level: string}>((props) => ({
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  border: "1px solid grey",
+  border: getBorderForLevel(props.level),
 }));
 
 const t = useTranslations(Astro.url.pathname);
