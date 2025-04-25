@@ -3,6 +3,7 @@ import { Icon } from "astro-icon/components";
 import styled from "@emotion/styled";
 import { Typography } from "../Typography";
 import { type Skill } from "./technologies";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
 
 interface Props {
   skills: Skill[];
@@ -11,17 +12,6 @@ interface Props {
 interface ChipProps {
   level?: "Beginner" | "Intermediate" | "Expert";
 }
-
-
-// Farbfunktion basierend auf Level
-const getColorByLevel = (level: "Beginner" | "Intermediate" | "Expert") => {
-  switch(level) {
-    case "Beginner": return "linear-gradient(135deg, #e0e0e0 0%, #c2c2c2 100%)";
-    case "Intermediate": return "linear-gradient(135deg, #b4d8ff 0%, #74adff 100%)";
-    case "Expert": return "linear-gradient(135deg, #ffd280 0%, #ffaa00 100%)";
-    default: return "white";
-  }
-};
 
 // Druckfreundliche Rahmenart für jedes Level
 const getBorderForPrint = (level: "Beginner" | "Intermediate" | "Expert") => {
@@ -75,14 +65,19 @@ const LevelBadge = styled.div({
   border: "1px solid grey",
 });
 
+const currentLanguage = getLangFromUrl(Astro.url.pathname);
+const isGerman = currentLanguage === "de";
+
 const getSkillLevel = (level: "Beginner" | "Intermediate" | "Expert") => {
   switch(level) {
-    case "Beginner": return "B";
-    case "Intermediate": return "I";
+    case "Beginner": return isGerman ? "A" : "B";
+    case "Intermediate": return isGerman ? "F" : "I";
     case "Expert": return "E";
     default: return "";
   }
 };
+
+const t = useTranslations(Astro.url.pathname);
 
 const { skills } = Astro.props;
 ---
@@ -94,7 +89,7 @@ const { skills } = Astro.props;
         <Chip level={skill.level}>
           <Icon name={skill.icon} style={{ fontSize: "16px" }} />
           <Typography className="body1" style={{ fontSize: '12px'}}>{skill.name}</Typography>
-          <LevelBadge title={skill.level}>{getSkillLevel(skill.level)}</LevelBadge>
+          <LevelBadge title={t(skill.level)}>{getSkillLevel(skill.level)}</LevelBadge>
         </Chip>
       </Link>
     ))

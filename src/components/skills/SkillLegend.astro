@@ -1,7 +1,7 @@
 ---
 import styled from "@emotion/styled";
 import { Typography } from "../Typography";
-import { useTranslations } from "../../i18n/utils";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
 
 const LegendContainer = styled.div({
   display: "flex",
@@ -30,6 +30,8 @@ const LevelBadge = styled.div<{level: string}>((props) => ({
 }));
 
 const t = useTranslations(Astro.url.pathname);
+const currentLanguage = getLangFromUrl(Astro.url.pathname);
+const isGerman = currentLanguage === "de";
 ---
 
 <LegendContainer>
@@ -38,11 +40,11 @@ const t = useTranslations(Astro.url.pathname);
     <Typography className="body1" style={{ fontSize: '12px' }}>{t("expert")}</Typography>
   </LegendItem>
   <LegendItem>
-    <LevelBadge level="Intermediate">I</LevelBadge>
+    <LevelBadge level="Intermediate">{isGerman ? 'F' : 'I'}</LevelBadge>
     <Typography className="body1" style={{ fontSize: '12px' }}>{t("intermediate")}</Typography>
   </LegendItem>
   <LegendItem>
-    <LevelBadge level="Beginner">B</LevelBadge>
+    <LevelBadge level="Beginner">{isGerman ? 'A' : 'B'}</LevelBadge>
     <Typography className="body1" style={{ fontSize: '12px' }}>{t("beginner")}</Typography>
   </LegendItem>
 </LegendContainer>

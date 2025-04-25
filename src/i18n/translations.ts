@@ -25,8 +25,11 @@ export const translations = {
         container: 'Container',
         cicd: 'CI/CD',
         expert: 'Expert',
+        Expert: 'Expert',
         intermediate: 'Intermediate',
+        Intermediate: 'Intermediate',
         beginner: 'Beginner',
+        Beginner: 'Beginner',
         skills: 'Skills',
     },
     de: {
@@ -53,8 +56,11 @@ export const translations = {
         container: 'Container',
         cicd: 'CI/CD',
         expert: 'Experte',
+        Expert: 'Experte',
         intermediate: 'Fortgeschrittener',
+        Intermediate: 'Fortgeschrittener',
         beginner: 'Anfänger',
+        Beginner: 'Anfänger',
         skills: 'Fähigkeiten',
     },
 } as const;
