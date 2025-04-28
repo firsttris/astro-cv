@@ -78,6 +78,7 @@ export const skillsForRwe = [
   languages.typescript,
   languages.csharp,
   libraries.dotnet,
+  libraries.aspnet,
   languages.nodejs,
   uiFrameworks.angular,
   styling.angularMaterial,

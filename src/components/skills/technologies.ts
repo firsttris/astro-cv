@@ -132,6 +132,12 @@ export const libraries = {
     website: "https://dotnet.microsoft.com/",
     level: Level.Intermediate,
   },
+  aspnet: {
+    name: "ASP.NET",
+    icon: "devicon:dot-net",
+    website: "https://dotnet.microsoft.com/apps/aspnet",
+    level: Level.Beginner,
+  },
   spring: {
     name: "Spring-Boot",
     icon: "devicon:spring",

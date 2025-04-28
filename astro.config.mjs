@@ -82,7 +82,7 @@ export default defineConfig({
         'podman',
         'travis',
         'helm',
-        'dot-net',
+        'dot-net'
       ],
       logos: [
         'react-query-icon',
