@@ -81,7 +81,8 @@ export default defineConfig({
         "jenkins",
         'podman',
         'travis',
-        'helm'
+        'helm',
+        'dot-net',
       ],
       logos: [
         'react-query-icon',
@@ -118,7 +119,9 @@ export default defineConfig({
         'stacked-line-chart',
         'grid-4x4',
         'view-kanban-outline',
-        'waterfall-chart'
+        'waterfall-chart',
+        'accessibility-new',
+        'accessibility'
       ],
       'simple-icons': [
         'oracle',

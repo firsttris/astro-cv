@@ -126,6 +126,12 @@ export const uiFrameworks = {
 }
 
 export const libraries = {
+  dotnet: {
+    name: ".NET",
+    icon: "devicon:dot-net",
+    website: "https://dotnet.microsoft.com/",
+    level: Level.Intermediate,
+  },
   spring: {
     name: "Spring-Boot",
     icon: "devicon:spring",
@@ -301,7 +307,28 @@ export const styling = {
     name: "PrimeNG",
     icon: "devicon:primeng",
     website: "https://www.primefaces.org/primeng/",
-    level: Level.Expert,
+    level: Level.Intermediate,
+  }
+};
+
+export const accessibility = {
+  wcag: {
+    name: "WCAG",
+    icon: "material-symbols:accessibility-new", 
+    website: "https://www.w3.org/WAI/standards-guidelines/wcag/",
+    level: Level.Intermediate,
+  },
+  aria: {
+    name: "ARIA",
+    icon: "material-symbols:accessibility", 
+    website: "https://www.w3.org/WAI/standards-guidelines/aria/",
+    level: Level.Intermediate,
+  },
+  accessibilityTesting: {
+    name: "A11y Testing",
+    icon: "vscode-icons:file-type-test",
+    website: "https://www.w3.org/WAI/test-evaluate/",
+    level: Level.Intermediate,
   }
 };
 

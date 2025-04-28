@@ -16,6 +16,7 @@ import {
   cloud,
   container,
   versionControl,
+  accessibility,
 } from "./technologies";
 
 export const skillsForDHL = [
@@ -46,7 +47,10 @@ export const skillsForDHL = [
   cicd.jenkins,
   cicd.githubActions,
   buildTools.webpack,
-  buildTools.vite
+  buildTools.vite,
+  accessibility.wcag,
+  accessibility.aria,
+  accessibility.accessibilityTesting,
 ]
 
 export const skillsForJLA = [
@@ -73,6 +77,7 @@ export const skillsForRwe = [
   ide.visualStudio,
   languages.typescript,
   languages.csharp,
+  libraries.dotnet,
   languages.nodejs,
   uiFrameworks.angular,
   styling.angularMaterial,
@@ -130,6 +135,7 @@ export const skillsForAtis = [
 export const skillsForHeidelbergCement = [
   languages.typescript,
   languages.csharp,
+  libraries.dotnet,
   languages.nodejs,
   uiFrameworks.react,
   libraries.redux,
@@ -192,6 +198,7 @@ export const skillsForTeamviewer = [
   languages.nodejs,
   buildTools.webpack,
   languages.csharp,
+  libraries.dotnet,
   ide.visualStudio,
   ide.vscode,
   versionControl.bitbucket,
