@@ -363,6 +363,12 @@ export const testing = {
     website: "https://playwright.dev/",
     level: Level.Expert,
   },
+  vitest: {
+    name: "Vitest",
+    icon: "vscode-icons:file-type-vite",
+    website: "https://vitest.dev/",
+    level: Level.Expert,
+  },
   xRay: {
     name: "X-Ray",
     icon: "logos:xray-for-jira",
@@ -407,6 +413,12 @@ export const databases = {
     icon: "vscode-icons:file-type-sql",
     website: "https://www.sql.com/",
     level: Level.Expert,
+  },
+  mssql: {
+    name: "Microsoft SQL Server",
+    icon: "vscode-icons:file-type-sql",
+    website: "https://www.microsoft.com/sql-server/",
+    level: Level.Intermediate,
   },
   lowdb: {
     name: "LowDB",

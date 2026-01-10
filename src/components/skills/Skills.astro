@@ -11,19 +11,21 @@ import AvoidPageBreakInside from "../AvoidPageBreakInside.astro";
 const t = useTranslations(Astro.url.pathname);
 
 const SkillsHeader = styled.div({
-  marginBottom: "10px",
+  marginBottom: "15px",
+});
+
+const SkillsTitle = styled(Typography)({
+  margin: 0,
+  fontWeight: 500,
+  fontSize: '24px',
+  lineHeight: '32px',
 });
 
 ---
 
 <AvoidPageBreakInside>
   <SkillsHeader>
-    <Typography style={{ 
-      margin: 0,
-      fontWeight: 500,
-      fontSize: '20px'
-    }}>{t("skills")}</Typography>
-    
+    <SkillsTitle>{t("skills")}</SkillsTitle>
   </SkillsHeader>
   
   {

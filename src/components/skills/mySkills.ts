@@ -34,7 +34,7 @@ export const mySkills: MySkills[] = [
     ],
   },
   {
-    title: "uiFrameworks",
+    title: "libraries",
     skills: [
       uiFrameworks.react,
       uiFrameworks.solid,
@@ -74,6 +74,7 @@ export const mySkills: MySkills[] = [
     title: "testing",
     skills: [
       testing.jest,
+      testing.vitest,
       testing.cypress,
       testing.playwright,
       testing.selenium,

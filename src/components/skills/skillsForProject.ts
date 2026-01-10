@@ -19,6 +19,31 @@ import {
   accessibility,
 } from "./technologies";
 
+export const skillsForBundesagentur = [
+  languages.typescript,
+  languages.csharp,
+  languages.nodejs,
+  libraries.dotnet,
+  libraries.aspnet,
+  uiFrameworks.angular,
+  databases.sql,
+  databases.mssql,
+  testing.playwright,
+  testing.vitest,
+  buildTools.vite,
+  buildTools.webpack,
+  api.rest,
+  cloud.azure,
+  authentication.msal,
+  ide.vscode,
+  ide.visualStudio,
+  tools.jira,
+  tools.confluence,
+  versionControl.github,
+  cicd.jenkins,
+  cicd.githubActions,
+]
+
 export const skillsForDHL = [
   languages.typescript,
   languages.java,
