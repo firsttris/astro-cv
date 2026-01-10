@@ -97,6 +97,22 @@ export const skillsForJLA = [
   buildTools.vite
 ]
 
+export const skillsForPflegeabc = [
+  languages.typescript,
+  languages.nodejs,
+  uiFrameworks.react,
+  uiFrameworks.nextjs,
+  styling.tailwind,
+  libraries.prisma,
+  libraries.storyblok,
+  libraries.reactPdf,
+  databases.sql,
+  testing.playwright,
+  api.rest,
+  tools.jira,
+  versionControl.github,
+]
+
 export const skillsForRwe = [
   ide.vscode,
   ide.visualStudio,

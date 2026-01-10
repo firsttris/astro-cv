@@ -257,6 +257,24 @@ export const libraries = {
     icon: "logos:fastapi",
     website: "https://fastapi.tiangolo.com/",
     level: Level.Intermediate,
+  },
+  prisma: {
+    name: "Prisma",
+    icon: "vscode-icons:file-type-light-prisma",
+    website: "https://www.prisma.io/",
+    level: Level.Expert,
+  },
+  storyblok: {
+    name: "Storyblok",
+    icon: "logos:storyblok-icon",
+    website: "https://www.storyblok.com/",
+    level: Level.Intermediate,
+  },
+  reactPdf: {
+    name: "React-PDF",
+    icon: "vscode-icons:file-type-pdf2",
+    website: "https://react-pdf.org/",
+    level: Level.Intermediate,
   }
 };
 

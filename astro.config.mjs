@@ -57,8 +57,9 @@ export default defineConfig({
         'file-type-light-nx',
         'file-type-gradle',
         'file-type-xml',
-        'file-type-node'
-
+        'file-type-node',
+        'file-type-light-prisma',
+        'file-type-pdf2'
       ],
       devicon: [
         'java-wordmark',
@@ -114,6 +115,7 @@ export default defineConfig({
         'fastapi',
         'openshift',
         'terraform',
+        'storyblok-icon'
       ],
       'material-symbols': [
         'stacked-line-chart',
