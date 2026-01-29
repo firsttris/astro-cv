@@ -1,46 +1,109 @@
-# Curriculum Vitae with Astro
+<div align="center">
 
-Curriculum Vitae with [Astro](https://astro.build/)
+# Astro CV
 
-## Motivation
+### A modern, customizable Curriculum Vitae built with Astro
 
-- Recruiters often request a CV in Word format to convert it to their layout, sometimes even altering the content. To prevent this, I decided to create an HTML CV that cannot be changed.
-- A CV coded in JavaScript allows you to showcase your skills directly through the CV itself.
-- It ensures consistent styling and format, making it easier to update the data.
-- I wanted to create a multi-language CV.
+[![Astro](https://img.shields.io/badge/Astro-5.x-BC52EE?style=for-the-badge&logo=astro&logoColor=white)](https://astro.build/)
+[![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-Ready-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Emotion](https://img.shields.io/badge/Emotion-DB7093?style=for-the-badge&logo=emotion&logoColor=white)](https://emotion.sh/)
+[![MDX](https://img.shields.io/badge/MDX-1B1F24?style=for-the-badge&logo=mdx&logoColor=white)](https://mdxjs.com/)
 
-## 🚀 Project Structure
+[Features](#-features) · [Getting Started](#-getting-started) · [Commands](#-commands) · [Project Structure](#-project-structure)
 
-Inside of your Astro project, you'll see the following folders and files:
+</div>
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+---
+
+## Why this project?
+
+> Recruiters often request a CV in Word format to convert it to their layout, sometimes even altering the content. **No more!**
+
+- **Tamper-proof** — An HTML CV that cannot be easily modified by third parties
+- **Skills showcase** — Demonstrate your JavaScript skills directly through the CV itself
+- **Consistent styling** — Ensure uniform format across all devices and prints
+- **Easy updates** — Change your data once, see it reflected everywhere
+- **Multi-language support** — Present your CV in multiple languages
+
+---
+
+## ✨ Features
+
+| Feature | Description |
+|---------|-------------|
+| **Modern Stack** | Built with Astro 5, React 19, and Emotion for styling |
+| **Icon Library** | Extensive icon support via Iconify (DevIcons, Material Symbols, Simple Icons, and more) |
+| **Print-Ready** | Optimized for both web viewing and PDF/print output |
+| **Responsive** | Looks great on desktop, tablet, and mobile |
+| **Fast** | Static site generation for blazing-fast load times |
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 18+
+- npm or yarn
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/astro-cv.git
+
+# Navigate to the project
+cd astro-cv
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+Then open [http://localhost:4321](http://localhost:4321) in your browser.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
+---
 
 ## 🧞 Commands
 
-All commands are run from the root of the project, from a terminal:
+| Command | Action |
+|---------|--------|
+| `npm install` | Install dependencies |
+| `npm run dev` | Start dev server at `localhost:4321` |
+| `npm run build` | Build for production to `./dist/` |
+| `npm run preview` | Preview production build locally |
+| `npm run astro ...` | Run Astro CLI commands |
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+---
 
-## 👀 Want to learn more?
+## 📁 Project Structure
 
-Feel free to check [our documentation](https://docs.astro.build)
+```
+astro-cv/
+├── public/          # Static assets (images, fonts, etc.)
+├── src/
+│   ├── components/  # Reusable Astro/React components
+│   ├── layouts/     # Page layouts
+│   ├── pages/       # Routes (each .astro file = one page)
+│   └── styles/      # Global styles
+├── astro.config.mjs # Astro configuration
+└── package.json
+```
+
+---
+
+## 📚 Learn More
+
+- [Astro Documentation](https://docs.astro.build) — Learn about Astro features and API
+- [Astro Discord](https://astro.build/chat) — Get help from the community
+
+---
+
+<div align="center">
+
+Made with ❤️ and [Astro](https://astro.build)
+
+</div>
