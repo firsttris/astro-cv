@@ -59,7 +59,11 @@ const Column = styled.div({
 
 const Link = styled.a({
   textDecoration: "none",
-  color: "#1976d2",
+  color: "#2563eb",
+  transition: "color 0.15s ease",
+  "&:hover": {
+    color: "#1d4ed8",
+  },
 });
 ---
 
@@ -77,8 +81,8 @@ const Link = styled.a({
     <div
       style={{ textAlign: "center", display: "flex", flexDirection: "column" }}
     >
-      <Typography className="h3"> Tristan Teufel </Typography>
-      <Typography className="h5">
+      <Typography className="display">Tristan Teufel</Typography>
+      <Typography className="subtitle">
         {t("business-title")}
       </Typography>
       <Typography className="caption">
@@ -90,13 +94,13 @@ const Link = styled.a({
         <ContactBox>
           <Icon name="openmoji:envelope" font-size={25} />
           <Link href="mailto:info@teufel-it.de" rel="noopener" target="_blank">
-            <Typography className="body1">info@teufel-it.de</Typography>
+            <Typography className="body">info@teufel-it.de</Typography>
           </Link>
         </ContactBox>
         <ContactBox>
           <Icon name="openmoji:mobile-phone" font-size={25} />
           <Link href="tel:+49 176 457 44166" rel="noopener" target="_blank">
-            <Typography className="body1">+49 176 457 44166</Typography>
+            <Typography className="body">+49 176 457 44166</Typography>
           </Link>
         </ContactBox>
       </Column>
@@ -108,7 +112,7 @@ const Link = styled.a({
             rel="noopener"
             target="_blank"
           >
-            <Typography className="body1">Github</Typography>
+            <Typography className="body">Github</Typography>
           </Link>
         </ContactBox>
         <ContactBox>
@@ -118,7 +122,7 @@ const Link = styled.a({
             rel="noopener"
             target="_blank"
           >
-            <Typography className="body1">Linkedin</Typography>
+            <Typography className="body">Linkedin</Typography>
           </Link>
         </ContactBox>
       </Column>

@@ -13,6 +13,7 @@ import {
   container,
   versionControl,
   cicd,
+  aiTools,
 } from './technologies';
 
 interface MySkills {
@@ -111,6 +112,14 @@ export const mySkills: MySkills[] = [
       buildTools.vite,
       buildTools.nx,
       buildTools.babel
+    ],
+  },
+  {
+    title: "ai-tools",
+    skills: [
+      aiTools.copilot,
+      aiTools.claudeCode,
+      aiTools.geminiCli,
     ],
   },
   {

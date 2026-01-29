@@ -26,43 +26,45 @@ const getBorderForPrint = (level: "Beginner" | "Intermediate" | "Expert") => {
 const FlexWrap = styled.div({
   display: "flex",
   flexWrap: "wrap",
+  gap: "6px",
 });
 
 const Link = styled.a({
   textDecoration: "none",
-  color: "black",
+  color: "#1e293b",
 });
 
 const Chip = styled.div<ChipProps>(props => ({
   cursor: "pointer",
-  margin: "2px 3px",
-  height: "20px",
-  background: "white",
+  height: "26px",
+  background: "#fafafa",
   border: props.level ? getBorderForPrint(props.level) : "1px solid black",
-  borderRadius: "6px",
+  borderRadius: "8px",
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  gap: "5px",
-  padding: "0 8px",
+  gap: "6px",
+  padding: "0 10px",
   position: "relative",
+  transition: "all 0.15s ease",
   "&:hover": {
-    filter: "brightness(1.05)",
-    color: "inherit",
+    background: "#f1f5f9",
+    transform: "translateY(-1px)",
   }
 }));
 
 const LevelBadge = styled.div({
-  fontSize: "10px",
+  fontSize: "9px",
+  fontWeight: 600,
   backgroundColor: "white",
-  color: "black",
+  color: "#475569",
   borderRadius: "50%",
-  width: "14px",
-  height: "14px",
+  width: "16px",
+  height: "16px",
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  border: "1px solid grey",
+  border: "1px solid #cbd5e1",
 });
 
 const currentLanguage = getLangFromUrl(Astro.url.pathname);
@@ -87,8 +89,8 @@ const { skills } = Astro.props;
     skills.map((skill, index) => (
       <Link key={index} href={skill.website} target="_blank" rel="noopener">
         <Chip level={skill.level}>
-          <Icon name={skill.icon} style={{ fontSize: "16px" }} />
-          <Typography className="body1" style={{ fontSize: '12px'}}>{skill.name}</Typography>
+          <Icon name={skill.icon} style={{ fontSize: "18px" }} />
+          <Typography className="chip">{skill.name}</Typography>
           <LevelBadge title={t(skill.level)}>{getSkillLevel(skill.level)}</LevelBadge>
         </Chip>
       </Link>

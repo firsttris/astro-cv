@@ -820,3 +820,24 @@ export const cicd = {
     level: Level.Intermediate,
   }
 }
+
+export const aiTools = {
+  copilot: {
+    name: "GitHub Copilot",
+    icon: "simple-icons:githubcopilot",
+    website: "https://github.com/features/copilot",
+    level: Level.Expert,
+  },
+  claudeCode: {
+    name: "Claude Code",
+    icon: "simple-icons:anthropic",
+    website: "https://claude.ai/",
+    level: Level.Expert,
+  },
+  geminiCli: {
+    name: "Gemini CLI",
+    icon: "simple-icons:googlegemini",
+    website: "https://ai.google.dev/",
+    level: Level.Expert,
+  },
+}

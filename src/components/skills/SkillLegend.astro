@@ -15,24 +15,27 @@ const getBorderForLevel = (level: string) => {
 
 const LegendContainer = styled.div({
   display: "flex",
-  gap: "15px",
-  marginTop: "15px",
-  justifyContent: "flex-start",
+  gap: "20px",
+  marginTop: "20px",
+  paddingTop: "12px",
+  borderTop: "1px solid #e2e8f0",
+  justifyContent: "flex-end",
 });
 
 const LegendItem = styled.div({
   display: "flex",
   alignItems: "center",
-  gap: "5px",
+  gap: "6px",
 });
 
 const LevelBadge = styled.div<{level: string}>((props) => ({
-  fontSize: "10px",
+  fontSize: "9px",
+  fontWeight: 600,
   backgroundColor: "white",
-  color: "black",
+  color: "#475569",
   borderRadius: "50%",
-  width: "14px",
-  height: "14px",
+  width: "16px",
+  height: "16px",
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
@@ -47,14 +50,14 @@ const isGerman = currentLanguage === "de";
 <LegendContainer>
   <LegendItem>
     <LevelBadge level="Expert">E</LevelBadge>
-    <Typography className="body1" style={{ fontSize: '14px' }}>{t("expert")}</Typography>
+    <Typography className="caption">{t("expert")}</Typography>
   </LegendItem>
   <LegendItem>
     <LevelBadge level="Intermediate">{isGerman ? 'F' : 'I'}</LevelBadge>
-    <Typography className="body1" style={{ fontSize: '14px' }}>{t("intermediate")}</Typography>
+    <Typography className="caption">{t("intermediate")}</Typography>
   </LegendItem>
   <LegendItem>
     <LevelBadge level="Beginner">{isGerman ? 'A' : 'B'}</LevelBadge>
-    <Typography className="body1" style={{ fontSize: '14px' }}>{t("beginner")}</Typography>
+    <Typography className="caption">{t("beginner")}</Typography>
   </LegendItem>
 </LegendContainer>

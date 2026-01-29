@@ -130,7 +130,10 @@ export default defineConfig({
         'scrumalliance',
         'esbuild',
         'turborepo',
-        'mqtt'
+        'mqtt',
+        'githubcopilot',
+        'anthropic',
+        'googlegemini'
       ],
       'skill-icons': [
         'redux',
