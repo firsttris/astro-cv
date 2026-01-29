@@ -8,9 +8,19 @@ import Footer from "./Footer.astro";
 ---
 
 <Layout>
-  <ProfileHeader />
-  <Description />
-  <Skills />
-  <Projects />
-  <Footer />
+  <div class="reveal" style="--delay: 0s;">
+    <ProfileHeader />
+  </div>
+  <div class="reveal" style="--delay: 0.15s;">
+    <Description />
+  </div>
+  <div class="reveal" style="--delay: 0.3s;">
+    <Skills />
+  </div>
+  <div class="reveal" style="--delay: 0.45s;">
+    <Projects />
+  </div>
+  <div class="reveal" style="--delay: 0.6s;">
+    <Footer />
+  </div>
 </Layout>
