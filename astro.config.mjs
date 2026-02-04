@@ -115,7 +115,10 @@ export default defineConfig({
         'fastapi',
         'openshift',
         'terraform',
-        'storyblok-icon'
+        'storyblok-icon',
+        'strapi-icon',
+        'figma',
+        "nestjs"
       ],
       'material-symbols': [
         'stacked-line-chart',

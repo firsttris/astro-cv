@@ -66,6 +66,7 @@ export const skillsForDHL = [
   container.openShift,
   tools.jira,
   tools.confluence,
+  tools.figma,
   ide.intellij,
   versionControl.github,
   webserver.nginx,
@@ -84,6 +85,7 @@ export const skillsForJLA = [
   languages.nodejs,
   uiFrameworks.react,
   libraries.fastApi,
+  libraries.strapi,
   styling.emotion,
   api.rest,
   libraries.reactQuery,
@@ -110,6 +112,7 @@ export const skillsForPflegeabc = [
   testing.playwright,
   api.rest,
   tools.jira,
+  tools.figma,
   versionControl.github,
 ]
 
@@ -154,6 +157,7 @@ export const skillsForCtream = [
   ide.vscode,
   styling.styled,
   libraries.reactQuery,
+  tools.figma,
   buildTools.vite,
 ];
 
@@ -171,6 +175,7 @@ export const skillsForAtis = [
   libraries.recharts,
   cicd.jenkins,
   libraries.reactBeautifulDnd,
+  tools.figma,
   buildTools.vite,
 ];
 
@@ -230,6 +235,7 @@ export const skillsForSeeburger = [
   container.helm,
   tools.jira,
   tools.confluence,
+  tools.figma,
   versionControl.gerrit,
   buildTools.webpack,
 ];
@@ -246,6 +252,7 @@ export const skillsForTeamviewer = [
   versionControl.bitbucket,
   tools.jira,
   tools.confluence,
+  tools.figma,
 ];
 
 export const skillsForProctorAndGamble = [
@@ -271,6 +278,7 @@ export const skillsForDaimler = [
   testing.jest,
   buildTools.webpack,
   languages.nodejs,
+  libraries.nestjs,
   databases.sql,
   container.docker,
   api.rest,
@@ -297,6 +305,7 @@ export const skillsForGameforge = [
   container.kubernetes,
   container.helm,
   languages.nodejs,
+  libraries.nestjs,
   languages.go,
   versionControl.bitbucket,
   tools.jira,

@@ -45,6 +45,7 @@ export const mySkills: MySkills[] = [
       uiFrameworks.angular,
       uiFrameworks.vue,
       uiFrameworks.nextjs,
+      libraries.nestjs,
       libraries.nx,
     ],
   },

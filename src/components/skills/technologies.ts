@@ -275,6 +275,18 @@ export const libraries = {
     icon: "vscode-icons:file-type-pdf2",
     website: "https://react-pdf.org/",
     level: Level.Intermediate,
+  },
+  strapi: {
+    name: "Strapi",
+    icon: "logos:strapi-icon",
+    website: "https://strapi.io/",
+    level: Level.Intermediate,
+  },
+  nestjs: {
+    name: "NestJS",
+    icon: "logos:nestjs",
+    website: "https://nestjs.com/",
+    level: Level.Intermediate,
   }
 };
 
@@ -781,6 +793,12 @@ export const tools = {
     name: "Oracle SOA Suite",
     icon: "simple-icons:oracle",
     website: "https://www.oracle.com/middleware/technologies/soasuite.html",
+    level: Level.Intermediate,
+  },
+  figma: {
+    name: "Figma",
+    icon: "logos:figma",
+    website: "https://www.figma.com/",
     level: Level.Intermediate,
   }
 };
