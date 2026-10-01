@@ -80,3 +80,33 @@ a {
 a:hover {
   color: #1d4ed8;
 }
+
+/* Compact typography for print/PDF (~10pt body text) */
+@media print {
+  p,
+  li,
+  li span {
+    font-size: 13px;
+    line-height: 19px;
+  }
+
+  h1 {
+    font-size: 22px;
+    line-height: 28px;
+  }
+
+  h2 {
+    margin-top: 0;
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  h3 {
+    font-size: 13px;
+    line-height: 19px;
+  }
+
+  li {
+    padding-bottom: 1px;
+  }
+}

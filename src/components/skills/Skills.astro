@@ -6,17 +6,19 @@ import { type LocaType } from "../../i18n/utils";
 import SkillLegend from "./SkillLegend.astro";
 import styled from "@emotion/styled";
 import { Typography } from "../Typography";
-import AvoidPageBreakInside from "../AvoidPageBreakInside.astro";
 
 const t = useTranslations(Astro.url.pathname);
 
 const SkillsHeader = styled.div({
   marginBottom: "16px",
+  "@media print": {
+    breakAfter: "avoid",
+  },
 });
 
 ---
 
-<AvoidPageBreakInside>
+<div>
   <SkillsHeader>
     <Typography className="h1">{t("skills")}</Typography>
   </SkillsHeader>
@@ -27,4 +29,4 @@ const SkillsHeader = styled.div({
     ))
   }
   <SkillLegend />
-</AvoidPageBreakInside>
+</div>

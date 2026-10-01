@@ -3,8 +3,7 @@ name: "projects"
 locale: "de"
 ---
 
-import ChipsWithIcon from '../../components/skills/ChipsWithIcon.astro'
-import AvoidPageBreakInside from '../../components/AvoidPageBreakInside.astro'
+import Project from '../../components/Project.astro'
 import Divider from "../../components/Divider.astro";
 import { 
     skillsForBundesagentur,
@@ -27,15 +26,18 @@ import {
     skillsForPflegeabc
     } from '../../components/skills/skillsForProject'
 
-<AvoidPageBreakInside>
 
 # Projekterfahrung
 <Divider />
 
-## Entwicklung des Pflegegradrechners und Online-Portals für Pflegeabc.de
-Pflegeabc GmbH
-### 05/2025 - bis heute in Hamburg/DE | direkter Kontakt | Scrum | Remote
-### Position: Full-Stack-Entwickler
+<Project
+  title="Entwicklung des Pflegegradrechners und Online-Portals für Pflegeabc.de"
+  client="Pflegeabc GmbH"
+  period="05/2025 - bis heute"
+  details="Hamburg/DE | direkter Kontakt | Scrum | Remote"
+  position="Full-Stack-Entwickler"
+  skills={skillsForPflegeabc}
+>
 
 - Umsetzung von Figma-Designs in NextJS mit React und Tailwind.
 - Implementierung einer Lokalisierungs-Library für NextJS mit SSR, die mit dem Pages Router kompatibel ist und die gleiche API wie i18next bietet.
@@ -48,15 +50,16 @@ Pflegeabc GmbH
 - Umsetzung neuer Seiten mit Storyblok CMS und Integration mit NextJS.
 - Implementierung von barrierefreien Komponenten nach BITV 2.0 und WCAG 2.1 Standards mit Fokus auf Tastaturnavigation, ARIA-Labels und Screenreader-Kompatibilität.
 
-<ChipsWithIcon skills={skillsForPflegeabc} />
-</AvoidPageBreakInside>
+</Project>
 
-<AvoidPageBreakInside>
-
-## Weiterentwicklung und Testing der Controlling-Applikation FIS3
-Bundesagentur für Arbeit
-### 06/2025 - bis heute in Nürnberg/DE | freiberuflich über nemensis AG und Atos SE | Scrum | Remote
-### Position: Frontend- und Backend-Entwickler
+<Project
+  title="Weiterentwicklung und Testing der Controlling-Applikation FIS3"
+  client="Bundesagentur für Arbeit"
+  period="06/2025 - bis heute"
+  details="Nürnberg/DE | freiberuflich über nemensis AG und Atos SE | Scrum | Remote"
+  position="Frontend- und Backend-Entwickler"
+  skills={skillsForBundesagentur}
+>
 
 - Aktualisierung der Angular Projekte von Version 15 auf 21.
 - Migration der Angular Projekte auf Standalone-Architektur.
@@ -70,17 +73,19 @@ Bundesagentur für Arbeit
 - Entwicklung und Anpassung von T-SQL (Transact-SQL) Funktionen in Microsoft SQL Server.
 - Ansatz zur migration eines JavaScript-basierten Flex-Layouts zu CSS.
 
-<ChipsWithIcon skills={skillsForBundesagentur} />
-</AvoidPageBreakInside>
+</Project>
 
-<AvoidPageBreakInside>
-## Implementierung und Integration von Apps im Geschäftskundenportal der DHL
-DHL ITs | Deutsche Post DHL Group
-### 05/2024 - 03/2025 in Bonn/DE | freiberuflich über Grey Solutions und Ilume | Scrum | Remote
+<Project
+  title="Implementierung und Integration von Apps im Geschäftskundenportal der DHL"
+  client="DHL ITs | Deutsche Post DHL Group"
+  period="05/2024 - 03/2025"
+  details="Bonn/DE | freiberuflich über Grey Solutions und Ilume | Scrum | Remote"
+  skills={skillsForDHL}
+>
 
-<br/>
-<b>Implementierung der Automatisierungsprüfung für Werbesendungen im Geschäftskundenportal der DHL</b>
-### Position: Leitender Frontend-Entwickler
+#### Implementierung der Automatisierungsprüfung für Werbesendungen im Geschäftskundenportal der DHL
+<p class="position">Position: Leitender Frontend-Entwickler</p>
+
 - Pixel-genaue Umsetzung von Figma-Entwürfen in React-Komponenten.
 - Integration von Backend-Systemen mittels REST-APIs, OpenAPI und Tanstack-Query (React Query).
 - Einrichtung und Konfiguration des Automatisierungsprüfungs-Frontend-Projekts.
@@ -91,21 +96,26 @@ DHL ITs | Deutsche Post DHL Group
 - Weitergabe von Wissen und Schulung von Teammitgliedern in React und TypeScript.
 
 
-<b>Integration des Print-Mailing-Planers in das Geschäftskundenportal der DHL</b>
-### Position: Frontend-Entwickler
+
+#### Integration des Print-Mailing-Planers in das Geschäftskundenportal der DHL
+<p class="position">Position: Frontend-Entwickler</p>
+
 - Unterstützung bei der Integration des Print-Mailing-Planers (eine Angular-17-Anwendung) in das Geschäftskundenportal der DHL.
 - Optimierung von Buildskripten hinsichtlich Single-SPA.
 - Implementierung eines SSO-Logins mit Keycloak.js für den Print-Mailing-Planer im Geschäftskundenportal der DHL.
 - Beteiligung am Aufbau einer Playwright-Test-Suite für den Print-Mailing-Planer.
 
-<ChipsWithIcon skills={skillsForDHL} />
-</AvoidPageBreakInside>
+</Project>
 
-<AvoidPageBreakInside>
-## Entwicklung eines datengetriebenen Recruiting-Tools
-JLA Finance GmbH
-### 04/2024 - 08/2024 in Frankfurt
-### Position: Leitender Entwickler
+<Project
+  title="Entwicklung eines datengetriebenen Recruiting-Tools"
+  client="JLA Finance GmbH"
+  period="04/2024 - 08/2024"
+  details="Frankfurt"
+  position="Leitender Entwickler"
+  skills={skillsForJLA}
+>
+
 - Erstellung einer validierten Eingabekomponente mit React-Hook-Form zur systematischen Erfassung und Verarbeitung von Reportdaten.
 - Aufbau eines Headless CMS mit Strapi zur flexiblen Verwaltung von Inhalten.
 - Integration von Azure Databricks mit Databricks SDK in Python.
@@ -118,14 +128,16 @@ JLA Finance GmbH
 - Erstellung und Konfiguration einer Azure-Web-App für Container für den Betrieb der Anwendung.
 - Automatisierung der Bereitstellung durch CI/CD-Pipelines mit GitHub Actions.
 
-<ChipsWithIcon skills={skillsForJLA} />
-</AvoidPageBreakInside>
+</Project>
 
-<AvoidPageBreakInside>
-## Entwicklung und Testing von Webanwendungen mit Fokus auf Orchestrierung in AWS
-RWE AG
-### 09/2023 - 04/2024 in Essen/DE | freiberuflich über Soorce und Haze | Scrum | Remote & On-Site
-### Position: Testautomatisierungsexperte
+<Project
+  title="Entwicklung und Testing von Webanwendungen mit Fokus auf Orchestrierung in AWS"
+  client="RWE AG"
+  period="09/2023 - 04/2024"
+  details="Essen/DE | freiberuflich über Soorce und Haze | Scrum | Remote & On-Site"
+  position="Testautomatisierungsexperte"
+  skills={skillsForRwe}
+>
 
 - Entwicklung von Cypress-Frontend-Integrationstests.
 - Erstellung von Unit-Tests mit Jest.
@@ -136,14 +148,16 @@ RWE AG
 - Aufsetzen einer Lösung für lokale und geteilte Cypress-Befehle in einem nx-Monorepo.
 - Testgetriebene Entwicklung von neuen Komponenten mit Angular 17.
 
-<ChipsWithIcon skills={skillsForRwe} />
-</AvoidPageBreakInside>
+</Project>
 
-<AvoidPageBreakInside>
-## Umsetzung eines interaktiven Chat-Systems für einen virtuellen Assistenten unter Einsatz eines Large Language Models (LLM)
-CTREAM GmbH
-### 07/2023 - 08/2023 in Mainz/DE | freiberuflich über freelancermap.de | Scrum | Remote
-### Position: Leitender Frontend-Entwickler
+<Project
+  title="Umsetzung eines interaktiven Chat-Systems für einen virtuellen Assistenten unter Einsatz eines Large Language Models (LLM)"
+  client="CTREAM GmbH"
+  period="07/2023 - 08/2023"
+  details="Mainz/DE | freiberuflich über freelancermap.de | Scrum | Remote"
+  position="Leitender Frontend-Entwickler"
+  skills={skillsForCtream}
+>
 
 - Einrichtung der Infrastruktur eines Next.js-Projekts.
 - Überführung von Figma-Mockups in wiederverwendbare React-Komponenten mit MUI.
@@ -153,14 +167,16 @@ CTREAM GmbH
 - Bereitstellung des Ausgabepakets als WebComponent zur Integration in Websites.
 - Integration von WebSockets mit einem Python-Backend für Echtzeitkommunikation.
 
-<ChipsWithIcon skills={skillsForCtream} />
-</AvoidPageBreakInside>
+</Project>
 
-<AvoidPageBreakInside>
-## Erstellung von Benutzeroberflächen im Bereich der Telekommunikationsüberwachung
-ATIS® Systems GmbH
-### 10/2022 - 06/2023 in Bad Homburg/DE | freiberuflich über Solcom GmbH | Kanban | Remote & On-Site
-### Position: Leitender Frontend-Entwickler
+<Project
+  title="Erstellung von Benutzeroberflächen im Bereich der Telekommunikationsüberwachung"
+  client="ATIS® Systems GmbH"
+  period="10/2022 - 06/2023"
+  details="Bad Homburg/DE | freiberuflich über Solcom GmbH | Kanban | Remote & On-Site"
+  position="Leitender Frontend-Entwickler"
+  skills={skillsForAtis}
+>
 
 - Aufsetzen eines React/TypeScript-Projekts unter Verwendung von Nx-Tools.
 - Entwicklung von UI-Komponenten basierend auf Figma-Designs mit React und Material-UI.
@@ -170,14 +186,16 @@ ATIS® Systems GmbH
 - Anpassung von Material-UI (MUI)-Komponenten nach Kundenwünschen.
 - Integration einer Jenkins-Pipeline mit GitLab und Rocket Chat.
 
-<ChipsWithIcon skills={skillsForAtis} />
-</AvoidPageBreakInside>
+</Project>
 
-<AvoidPageBreakInside>
-## Entwicklung der HConnect Produktsuite von Heidelberg Materials AG
-Heidelberg Cement AG - heute Heidelberg Materials AG
-### 01/2021 - 09/2022 in Heidelberg/DE | freiberuflich über Etengo AG | Scrum | Remote & On-Site
-### Position: Frontend-Entwickler in der Authentifizierung & Benutzerverwaltung
+<Project
+  title="Entwicklung der HConnect Produktsuite von Heidelberg Materials AG"
+  client="Heidelberg Cement AG - heute Heidelberg Materials AG"
+  period="01/2021 - 09/2022"
+  details="Heidelberg/DE | freiberuflich über Etengo AG | Scrum | Remote & On-Site"
+  position="Frontend-Entwickler in der Authentifizierung & Benutzerverwaltung"
+  skills={skillsForHeidelbergCement}
+>
 
 - Erstellung von Cypress-Tests und erfolgreiche Integration in GitLab-Pipelines.
 - Automatisierte Erstellung von Code-Coverage-Berichten und Testergebnissen für Cypress, integriert in Jira X-Ray.
@@ -189,14 +207,16 @@ Heidelberg Cement AG - heute Heidelberg Materials AG
 - Durchführung einer Machbarkeitsstudie (Proof of Concept, POC) zur Migration von Yarn1 zu Yarn2 mit Zero Install und PnP.
 - Entwicklung von Node.js-Buildskripten mit Azure CLI und AzCopy zur Automatisierung von Bereitstellungsprozessen.
 
-<ChipsWithIcon skills={skillsForHeidelbergCement} />
-</AvoidPageBreakInside>
+</Project>
 
-<AvoidPageBreakInside>
-## Erstellung des Klarsolars Solarpanel-Konfigurators
-Klarsolar GmbH 
-### 10/2020 - 12/2020 in Stuttgart/DE | freiberuflich über Pixelschupser GmbH | Scrum | Remote
-### Position: Leitender Frontend-Entwickler
+<Project
+  title="Erstellung des Klarsolars Solarpanel-Konfigurators"
+  client="Klarsolar GmbH"
+  period="10/2020 - 12/2020"
+  details="Stuttgart/DE | freiberuflich über Pixelschupser GmbH | Scrum | Remote"
+  position="Leitender Frontend-Entwickler"
+  skills={skillsForKlarsolar}
+>
 
 - Aufsetzen eines neuen Projekts unter Verwendung von Nx-Tools.
 - Entwicklung von individuell angepassten Komponenten für den Konfigurator in Angular 10.
@@ -204,14 +224,16 @@ Klarsolar GmbH
 - Erfolgreiche Datenmigration des alten Konfigurators.
 - Integration einer GraphQL-API mit dem Apollo-Client.
 
-<ChipsWithIcon skills={skillsForKlarsolar} />
-</AvoidPageBreakInside>
+</Project>
 
-<AvoidPageBreakInside>
-## Modernisierung von Benutzeroberfläche für SupplyOn AG in der Automobilbranche
-Seeburger AG
-### 01/2020 - 09/2020 in Bretten/DE | freiberuflich über it-experts | Kanban | On-Site
-### Position: Backend & Frontend-Entwickler
+<Project
+  title="Modernisierung von Benutzeroberfläche für SupplyOn AG in der Automobilbranche"
+  client="Seeburger AG"
+  period="01/2020 - 09/2020"
+  details="Bretten/DE | freiberuflich über it-experts | Kanban | On-Site"
+  position="Backend & Frontend-Entwickler"
+  skills={skillsForSeeburger}
+>
 
 - Umsetzung von Figma-Designs in modulare React-Komponenten mit Material-UI.
 - Entwicklung neuer React-Komponenten in Verbindung mit Material-UI.
@@ -222,14 +244,16 @@ Seeburger AG
 - Entwicklung von Webservices mit JAX-RS und Hinzufügen von OpenAPI-Annotationen.
 - Erstellung eines individuellen Filters für AG Grid.
 
-<ChipsWithIcon skills={skillsForSeeburger} />
-</AvoidPageBreakInside>
+</Project>
 
-<AvoidPageBreakInside>
-## Weiterentwicklung von Chat-Komponenten für den Chat von TeamViewer
-Teamviewer GmbH
-### 10/2019 - 12/2019 in Göppingen/DE | freiberuflich über gulp.de | Scrum | Remote & On-Site
-### Position: Frontend-Entwickler
+<Project
+  title="Weiterentwicklung von Chat-Komponenten für den Chat von TeamViewer"
+  client="Teamviewer GmbH"
+  period="10/2019 - 12/2019"
+  details="Göppingen/DE | freiberuflich über gulp.de | Scrum | Remote & On-Site"
+  position="Frontend-Entwickler"
+  skills={skillsForTeamviewer}
+>
 
 - Erfolgreiche Überarbeitung und Aktualisierung der Toolchain des Projekts.
 - Einführung einer komponentenbasierten Architektur.
@@ -237,28 +261,32 @@ Teamviewer GmbH
 - Entwicklung von speziellen Chat-Komponenten.
 - Umsetzung eines technologischen Ansatzes für das Lazy Loading eines Emoji-Pickers.
 
-<ChipsWithIcon skills={skillsForTeamviewer} />
-</AvoidPageBreakInside>
+</Project>
 
-<AvoidPageBreakInside>
-## Konzeption und Entwicklung eines Konfigurators für Drogeriemärkte in Zusammenarbeit mit Procter & Gamble
-Procter & Gamble (P&G)
-### 07/2019 - 09/2019 in Karlsruhe/DE | freiberuflich über typzwo GmbH | Kanban | Remote
-### Position: Leitender Frontend-Entwickler
+<Project
+  title="Konzeption und Entwicklung eines Konfigurators für Drogeriemärkte in Zusammenarbeit mit Procter & Gamble"
+  client="Procter & Gamble (P&G)"
+  period="07/2019 - 09/2019"
+  details="Karlsruhe/DE | freiberuflich über typzwo GmbH | Kanban | Remote"
+  position="Leitender Frontend-Entwickler"
+  skills={skillsForProctorAndGamble}
+>
 
 - Einführung von JSX und Render-Funktionen in Vue.js für flexiblere Komponentenentwicklung.
 - Aufteilung von Komponenten gemäß den Atomic Design-Prinzipien zur besseren Strukturierung.
 - Durchführung von Datenbankschemaerweiterungen in MySQL.
 - Entwicklung von individuell angepassten Komponenten für den Konfigurator.
 
-<ChipsWithIcon skills={skillsForProctorAndGamble} />
-</AvoidPageBreakInside>
+</Project>
 
-<AvoidPageBreakInside>
-## Dashboards für Daimler AG: Visualisierung von Metriken und Kennzahlen in der Produktion
-ETECTURE GmbH
-### 10/2017 - 06/2019 in Karlsruhe/DE | freiberuflich über xing.de | Kanban | Remote & On-Site
-### Position: Leitender Backend & Frontend-Entwickler
+<Project
+  title="Dashboards für Daimler AG: Visualisierung von Metriken und Kennzahlen in der Produktion"
+  client="ETECTURE GmbH"
+  period="10/2017 - 06/2019"
+  details="Karlsruhe/DE | freiberuflich über xing.de | Kanban | Remote & On-Site"
+  position="Leitender Backend & Frontend-Entwickler"
+  skills={skillsForDaimler}
+>
 
 - Erstellung eines neuen Build-Systems mit Webpack.
 - Entwicklung eines neuen Starter-Kits für React.
@@ -269,14 +297,16 @@ ETECTURE GmbH
 - Erstellung von Docker-Compose-Dateien für Build-Skripte.
 - Einrichtung von Docker-Clustern mit Reverse Proxy (Traefik).
 
-<ChipsWithIcon skills={skillsForDaimler} />
-</AvoidPageBreakInside>
+</Project>
 
-<AvoidPageBreakInside>
-## Mitwirkung an der Entwicklung eines neuen Game Launchers für Gameforge AG
-Gameforge AG
-### 05/2017 - 09/2017 in Karlsruhe/DE | freiberuflich über Gulp.de | Scrum | On-Site
-### Position: Backend & Frontend-Entwickler
+<Project
+  title="Mitwirkung an der Entwicklung eines neuen Game Launchers für Gameforge AG"
+  client="Gameforge AG"
+  period="05/2017 - 09/2017"
+  details="Karlsruhe/DE | freiberuflich über Gulp.de | Scrum | On-Site"
+  position="Backend & Frontend-Entwickler"
+  skills={skillsForGameforge}
+>
 
 - Entwicklung von Middleware und Microservices.
 - Erstellung von Docker-Skripten.
@@ -284,14 +314,16 @@ Gameforge AG
 - Durchführung eines Proof of Concept (PoC) für die Migration einer Web-Applikation von Angular 1.x auf React.
 - Erweiterung eines Webpack-Jobs zur dynamischen Konfigurationseinfügung zur Laufzeit im Frontend.
 
-<ChipsWithIcon skills={skillsForGameforge} />
-</AvoidPageBreakInside>
+</Project>
 
-<AvoidPageBreakInside>
-## Backend-Entwicklung eines innovativen Terminplanungssystems für mittelständische Unternehmen
-Timify - heute Termin App GmbH
-### 01/2017 - 04/2017 in Munich/DE | freiberuflich über Etengo AG | Scrum | Remote & On-Site
-### Position: Backend-Entwickler
+<Project
+  title="Backend-Entwicklung eines innovativen Terminplanungssystems für mittelständische Unternehmen"
+  client="Timify - heute Termin App GmbH"
+  period="01/2017 - 04/2017"
+  details="Munich/DE | freiberuflich über Etengo AG | Scrum | Remote & On-Site"
+  position="Backend-Entwickler"
+  skills={skillsForTimify}
+>
 
 - Erfolgreiche Refaktorisierung von Microservices.
 - Erstellung von Unit-Tests mit Lab.
@@ -299,28 +331,32 @@ Timify - heute Termin App GmbH
 - Erstellung einer neuen Vorlage für Lout zur API-Dokumentation in Hapi.js.
 - Entwicklung einer neuen MongoDB-Schicht mit Promise-Unterstützung.
 
-<ChipsWithIcon skills={skillsForTimify} />
-</AvoidPageBreakInside>
+</Project>
 
-<AvoidPageBreakInside>
-## Komposition von Angular-Komponenten und Bereitstellung in einer Designsystem-Bibliothek
-Cyber Manufaktur GmbH
-### 03/2016 - 12/2016 in Karlsruhe/DE | freiberuflich über Cyperforum e.V. | Scrum | Remote & On-Site
-### Position: Frontend-Entwickler
+<Project
+  title="Komposition von Angular-Komponenten und Bereitstellung in einer Designsystem-Bibliothek"
+  client="Cyber Manufaktur GmbH"
+  period="03/2016 - 12/2016"
+  details="Karlsruhe/DE | freiberuflich über Cyperforum e.V. | Scrum | Remote & On-Site"
+  position="Frontend-Entwickler"
+  skills={skillsForCybermanufaktur}
+>
 
 - Aufsetzen eines Webpack-1-Build-Jobs für ein Angular-1.x-Projekt.
 - Integration von jsPlumb in Angular 1.x.
 - Entwicklung von Angular-1.x-Komponenten speziell für Kunden der Cyber Manufaktur GmbH.
 - Durchführung von PHP- und WordPress-Entwicklung.
 
-<ChipsWithIcon skills={skillsForCybermanufaktur} />
-</AvoidPageBreakInside>
+</Project>
 
-<AvoidPageBreakInside>
-## Java 8 Entwicklung in einer Java-Enterprise-Applikation für das Forderungsmanagement bei arvato
-arvato Financial Solutions - Bertelsmann SE & Co. KGaA
-### 01/2015 - 12/2015 in Baden-Baden/DE | Festanstellung | Wasserfall | On-Site
-### Position: Backend-Entwickler
+<Project
+  title="Java 8 Entwicklung in einer Java-Enterprise-Applikation für das Forderungsmanagement bei arvato"
+  client="arvato Financial Solutions - Bertelsmann SE & Co. KGaA"
+  period="01/2015 - 12/2015"
+  details="Baden-Baden/DE | Festanstellung | Wasserfall | On-Site"
+  position="Backend-Entwickler"
+  skills={skillsForArvato}
+>
 
 - Entwicklung und Abdeckung verschiedener Projektphasen vom Anforderungsmanagement bis hin zur Go-Live-Phase.
 - Erfolgreiches Requirements Engineering zur Festlegung klarer und präziser Projektziele und Anforderungen.
@@ -330,14 +366,16 @@ arvato Financial Solutions - Bertelsmann SE & Co. KGaA
 - Entwicklung von Groovy-Skripten für erweiterte Datentransformationen.
 - Dokumentation des Projekts in Confluence.
 
-<ChipsWithIcon skills={skillsForArvato} />
-</AvoidPageBreakInside>
+</Project>
 
-<AvoidPageBreakInside>
-## Softwareentwicklung und Integration von Unternehmensanwendungen bei ec4u expert consulting AG
-ec4u expert consulting AG - heute DIGITALL
-### 09/2012 - 12/2014 in Karlsruhe/DE | Festanstellung | Scrum | On-Site
-### Position: Backend & Frontend-Entwickler
+<Project
+  title="Softwareentwicklung und Integration von Unternehmensanwendungen bei ec4u expert consulting AG"
+  client="ec4u expert consulting AG - heute DIGITALL"
+  period="09/2012 - 12/2014"
+  details="Karlsruhe/DE | Festanstellung | Scrum | On-Site"
+  position="Backend & Frontend-Entwickler"
+  skills={skillsForEc4u}
+>
 
 - Entwicklung einer Cross-Plattform hybriden mobilen Anwendung für das Recruiting mit jQuery Mobile und PhoneGap.
 - Entwicklung von Oracle Siebel OpenUI-Anwendungen mit jQuery und JavaScript.
@@ -353,5 +391,4 @@ ec4u expert consulting AG - heute DIGITALL
 - Entwicklung einer mobilen Webanwendung zur Abbildung von Genehmigungsanträgen von Oracle Siebel CRM.
 - Evaluierung der Google Payment-APIs (Google Checkout und Google Wallet) durch Entwicklung einer mobilen Webanwendung.
 
-<ChipsWithIcon skills={skillsForEc4u} />
-</AvoidPageBreakInside>
+</Project>

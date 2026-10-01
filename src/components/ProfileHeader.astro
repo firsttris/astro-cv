@@ -6,8 +6,12 @@ import Ghibli from "./../images/ghibli.png";
 import { Icon } from "astro-icon/components";
 import { Typography } from "./Typography";
 import ImageSwap from "./ImageSwap.astro";
+import QRCode from "qrcode";
+import { getLangFromUrl } from "../i18n/utils";
 
 const t = useTranslations(Astro.url.pathname);
+const onlineUrl = `https://cv.teufel-it.de/${getLangFromUrl(Astro.url.pathname)}/`;
+const qrSvg = await QRCode.toString(onlineUrl, { type: "svg", margin: 0, color: { dark: "#1e293b", light: "#0000" } });
 
 const ContainerBox = styled.div({
   marginTop: "20px",
@@ -127,5 +131,64 @@ const Link = styled.a({
         </ContactBox>
       </Column>
     </Grid>
+    <div class="screen-only download">
+      <a class="download-button" href={t("pdf-file")} download>
+        <Icon name="material-symbols:download-rounded" font-size={18} />
+        {t("download-pdf")}
+      </a>
+    </div>
   </ContentBox>
+  <div class="print-only qr">
+    <div class="qr-code" set:html={qrSvg} />
+    <span>{t("online-version")}</span>
+    <span>{onlineUrl.replace("https://", "")}</span>
+  </div>
 </ContainerBox>
+
+<style>
+  .download {
+    display: flex;
+    justify-content: center;
+  }
+
+  .download-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+    font-size: 14px;
+    font-weight: 500;
+    color: #1e293b;
+    background: #f8fafc;
+  }
+
+  .download-button:hover {
+    background: #f1f5f9;
+    color: #1e293b;
+  }
+
+  .qr {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    min-width: 110px;
+    font-size: 9px;
+    line-height: 12px;
+    color: #64748b;
+  }
+
+  @media print {
+    .qr {
+      display: flex;
+    }
+  }
+
+  .qr-code {
+    width: 76px;
+    height: 76px;
+    margin-bottom: 4px;
+  }
+</style>

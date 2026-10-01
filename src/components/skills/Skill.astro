@@ -12,6 +12,9 @@ interface Props {
 const Container = styled.div({
   display: "flex",
   marginBottom: "12px",
+  "@media print": {
+    breakInside: "avoid",
+  },
 });
 
 const TitleBox = styled.div({

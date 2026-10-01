@@ -1,0 +1,83 @@
+---
+import ChipsWithIcon from "./skills/ChipsWithIcon.astro";
+import { type Skill } from "./skills/technologies";
+
+interface Props {
+  title: string;
+  client: string;
+  period: string;
+  details: string;
+  position?: string;
+  skills: Skill[];
+}
+
+const { title, client, period, details, position, skills } = Astro.props;
+
+// Projects that ended more than this many years ago are condensed in print
+// (title, client, period and technologies only) to keep the PDF short.
+const PRINT_DETAIL_YEARS = 7;
+
+const endYear = Number(period.match(/(\d{4})\s*$/)?.[1] ?? new Date().getFullYear());
+const compactInPrint = endYear < new Date().getFullYear() - PRINT_DETAIL_YEARS;
+---
+
+<article class:list={["project", { "print-compact": compactInPrint }]}>
+  <header class="project-header">
+    <h2>{title}</h2>
+    <p class="client">{client}</p>
+    <h3>{period} in {details}</h3>
+    {position && <p class="position">Position: {position}</p>}
+  </header>
+  <div class="project-body">
+    <slot />
+  </div>
+  <ChipsWithIcon skills={skills} printAsText />
+</article>
+
+<style>
+  .project-header :global(h2) {
+    margin-top: 0;
+  }
+
+  .project :global(.position) {
+    font-weight: 500;
+  }
+
+  .project-body :global(h4) {
+    margin-top: 12px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-color);
+  }
+
+  .project {
+    margin-top: 24px;
+  }
+
+  @media print {
+    .project {
+      margin-top: 14px;
+    }
+
+    /* Keep the project header together with the first lines of its content */
+    .project-header {
+      break-inside: avoid;
+      break-after: avoid;
+    }
+
+    .project :global(li),
+    .project-body :global(h4),
+    .project-body :global(.position) {
+      break-inside: avoid;
+    }
+
+    .project-body :global(h4),
+    .project-body :global(.position) {
+      break-after: avoid;
+    }
+
+    .print-compact .project-body {
+      display: none;
+    }
+  }
+</style>

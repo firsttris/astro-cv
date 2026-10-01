@@ -8,6 +8,24 @@ import "./../mdx/mdx.css";
 import { useTranslations } from "../i18n/utils";
 
 const t = useTranslations(Astro.url.pathname);
+
+// Print page setup incl. running footer (rendered by Chromium-based browsers and the generated PDF)
+const pageCss = `
+  @page {
+    size: A4;
+    margin: 14mm 14mm 16mm;
+    @bottom-left {
+      content: "Tristan Teufel · ${t("business-title")}";
+      font: 9px "Roboto", sans-serif;
+      color: #64748b;
+    }
+    @bottom-right {
+      content: "${t("page")} " counter(page) " ${t("of")} " counter(pages);
+      font: 9px "Roboto", sans-serif;
+      color: #64748b;
+    }
+  }
+`;
 ---
 
 <html lang="en">
@@ -26,6 +44,7 @@ const t = useTranslations(Astro.url.pathname);
     <meta property="og:image" content="https://avatars.githubusercontent.com/u/1709260" />
     <meta property="og:url" content="https://cv.teufel-it.de" />
     <title>CV Tristan Teufel, {t('business-title')}</title>
+    <style is:inline set:html={pageCss} />
   </head>
   <body>
     <div class="container">
@@ -39,8 +58,23 @@ const t = useTranslations(Astro.url.pathname);
   }
 
   @media print {
-    @page {
-      size: portrait;
+    .container {
+      max-width: none;
+      padding: 0;
+    }
+
+    .screen-only {
+      display: none !important;
+    }
+  }
+
+  .print-only {
+    display: none;
+  }
+
+  @media print {
+    .print-only {
+      display: revert;
     }
   }
 

@@ -126,7 +126,8 @@ export default defineConfig({
         'view-kanban-outline',
         'waterfall-chart',
         'accessibility-new',
-        'accessibility'
+        'accessibility',
+        'download-rounded'
       ],
       'simple-icons': [
         'oracle',

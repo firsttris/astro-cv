@@ -32,6 +32,11 @@ export const translations = {
         Beginner: 'Beginner',
         skills: 'Skills',
         versionControl: 'Version Control',
+        page: 'Page',
+        of: 'of',
+        'download-pdf': 'Download PDF',
+        'pdf-file': '/Tristan-Teufel-CV.pdf',
+        'online-version': 'Online version',
     },
     de: {
         'business-title': 'Softwarearchitekt (Freelancer)',
@@ -64,5 +69,10 @@ export const translations = {
         Beginner: 'Anfänger',
         skills: 'Skills',
         versionControl: 'Version Control',
+        page: 'Seite',
+        of: 'von',
+        'download-pdf': 'PDF herunterladen',
+        'pdf-file': '/Tristan-Teufel-Lebenslauf.pdf',
+        'online-version': 'Online-Version',
     },
 } as const;

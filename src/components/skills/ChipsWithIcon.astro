@@ -7,6 +7,8 @@ import { getLangFromUrl, useTranslations } from "../../i18n/utils";
 
 interface Props {
   skills: Skill[];
+  /** Render a compact comma-separated text line instead of chips when printing */
+  printAsText?: boolean;
 }
 
 interface ChipProps {
@@ -81,9 +83,10 @@ const getSkillLevel = (level: "Beginner" | "Intermediate" | "Expert") => {
 
 const t = useTranslations(Astro.url.pathname);
 
-const { skills } = Astro.props;
+const { skills, printAsText = false } = Astro.props;
 ---
 
+<div class:list={{ "screen-only": printAsText }}>
 <FlexWrap>
   {
     skills.map((skill, index) => (
@@ -97,3 +100,26 @@ const { skills } = Astro.props;
     ))
   }
 </FlexWrap>
+</div>
+{printAsText && <p class="skills-text">{skills.map((skill) => skill.name).join(" · ")}</p>}
+
+<style>
+  .skills-text {
+    display: none;
+  }
+
+  @media print {
+    .screen-only {
+      display: none;
+    }
+
+    .skills-text {
+      display: block;
+      margin-top: 4px;
+      font-size: 12px;
+      line-height: 18px;
+      color: var(--muted-color);
+      break-inside: avoid;
+    }
+  }
+</style>
