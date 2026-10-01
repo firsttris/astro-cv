@@ -110,4 +110,10 @@ strong {
   li {
     padding-bottom: 1px;
   }
+
+  /* Keep section headings with the content that follows */
+  h1,
+  h1 + hr {
+    break-after: avoid;
+  }
 }

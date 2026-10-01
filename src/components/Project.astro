@@ -163,21 +163,9 @@ const isCurrent = !/\d{4}\s*$/.test(period);
       font-size: 12px;
     }
 
-    /* Keep the project header together with the first lines of its content */
-    .project-header {
+    /* Never split a project across two pages */
+    .project {
       break-inside: avoid;
-      break-after: avoid;
-    }
-
-    .project :global(li),
-    .project-body :global(h4),
-    .project-body :global(.position) {
-      break-inside: avoid;
-    }
-
-    .project-body :global(h4),
-    .project-body :global(.position) {
-      break-after: avoid;
     }
 
     .print-compact .project-body {

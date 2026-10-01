@@ -18,7 +18,7 @@ const SkillsHeader = styled.div({
 
 ---
 
-<div>
+<div class="skills-section">
   <SkillsHeader>
     <Typography className="h1">{t("skills")}</Typography>
   </SkillsHeader>
@@ -30,3 +30,12 @@ const SkillsHeader = styled.div({
   }
   <SkillLegend />
 </div>
+
+<style>
+  /* Keep the whole skills overview on one page */
+  @media print {
+    .skills-section {
+      break-inside: avoid;
+    }
+  }
+</style>
