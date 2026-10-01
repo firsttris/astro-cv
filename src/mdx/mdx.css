@@ -82,6 +82,20 @@ strong {
   font-weight: 600;
 }
 
+/* Links in running text are underlined, since the accent color matches the text color */
+#profile a,
+.project-body a {
+  text-decoration: underline;
+  text-decoration-color: var(--link-underline);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+#profile a:hover,
+.project-body a:hover {
+  text-decoration-color: currentColor;
+}
+
 /* Compact typography for print/PDF (~10pt body text) */
 @media print {
   p,

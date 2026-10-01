@@ -17,12 +17,12 @@ const pageCss = `
     @bottom-left {
       content: "Tristan Teufel · ${t("business-title")}";
       font: 9px "Inter Variable", sans-serif;
-      color: #64748b;
+      color: #71717a;
     }
     @bottom-right {
       content: "${t("page")} " counter(page) " ${t("of")} " counter(pages);
       font: 9px "Inter Variable", sans-serif;
-      color: #64748b;
+      color: #71717a;
     }
   }
 `;
@@ -66,13 +66,14 @@ const pageCss = `
 <style is:global>
   :root {
     --page-bg: #ffffff;
-    --text-color: #0f172a;
-    --muted-color: #64748b;
-    --border: #e2e8f0;
-    --surface: #f8fafc;
-    --accent: #0e7490;
-    --accent-strong: #155e75;
-    --accent-soft: #ecfeff;
+    --text-color: #18181b;
+    --muted-color: #71717a;
+    --border: #e4e4e7;
+    --surface: #fafafa;
+    --accent: #18181b;
+    --accent-strong: #000000;
+    --accent-soft: #f4f4f5;
+    --link-underline: #a1a1aa;
     --link-color: var(--accent);
     --link-hover: var(--accent-strong);
     --icon-bg: transparent;
@@ -85,16 +86,17 @@ const pageCss = `
   /* Dark theme: follows the OS unless the visitor picked a theme explicitly */
   @media screen and (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
-      --page-bg: #0b1120;
-      --text-color: #e2e8f0;
-      --muted-color: #94a3b8;
-      --border: #1e293b;
-      --surface: #111a2e;
-      --accent: #22d3ee;
-      --accent-strong: #67e8f9;
-      --accent-soft: rgba(34, 211, 238, 0.1);
-      --icon-bg: #e2e8f0;
-      --icon-fg: #0f172a;
+      --page-bg: #111111;
+      --text-color: #e7e5e4;
+      --muted-color: #a1a1aa;
+      --border: #2a2a2a;
+      --surface: #1a1a1a;
+      --accent: #fafafa;
+      --accent-strong: #ffffff;
+      --accent-soft: rgba(255, 255, 255, 0.08);
+      --link-underline: #52525b;
+      --icon-bg: #e7e5e4;
+      --icon-fg: #18181b;
       --success: #22c55e;
       --success-soft: rgba(34, 197, 94, 0.1);
       --success-text: #86efac;
@@ -104,16 +106,17 @@ const pageCss = `
 
   @media screen {
     :root[data-theme="dark"] {
-      --page-bg: #0b1120;
-      --text-color: #e2e8f0;
-      --muted-color: #94a3b8;
-      --border: #1e293b;
-      --surface: #111a2e;
-      --accent: #22d3ee;
-      --accent-strong: #67e8f9;
-      --accent-soft: rgba(34, 211, 238, 0.1);
-      --icon-bg: #e2e8f0;
-      --icon-fg: #0f172a;
+      --page-bg: #111111;
+      --text-color: #e7e5e4;
+      --muted-color: #a1a1aa;
+      --border: #2a2a2a;
+      --surface: #1a1a1a;
+      --accent: #fafafa;
+      --accent-strong: #ffffff;
+      --accent-soft: rgba(255, 255, 255, 0.08);
+      --link-underline: #52525b;
+      --icon-bg: #e7e5e4;
+      --icon-fg: #18181b;
       --success: #22c55e;
       --success-soft: rgba(34, 197, 94, 0.1);
       --success-text: #86efac;
