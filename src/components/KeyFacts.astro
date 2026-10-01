@@ -6,7 +6,7 @@ const t = useTranslations(Astro.url.pathname);
 
 const years = new Date().getFullYear() - CAREER_START_YEAR;
 const facts = [
-  `${years}+ ${t("years-experience")}`,
+  `${years} ${t("years-experience")}`,
   t("fact-installs"),
   t("fact-work-mode"),
 ];
@@ -41,9 +41,9 @@ const facts = [
   }
 
   .facts li.available {
-    border-color: #16a34a;
-    background: #f0fdf4;
-    color: #166534;
+    border-color: var(--success);
+    background: var(--success-soft);
+    color: var(--success-text);
   }
 
   .facts li.available::before {
@@ -52,6 +52,6 @@ const facts = [
     height: 6px;
     margin-right: 6px;
     border-radius: 50%;
-    background: #16a34a;
+    background: var(--success);
   }
 </style>

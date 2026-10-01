@@ -79,6 +79,11 @@ const t = useTranslations(Astro.url.pathname);
   .chip-icon {
     font-size: 18px;
     flex-shrink: 0;
+    /* light backdrop in dark mode so dark logos stay visible */
+    padding: 1px;
+    border-radius: 4px;
+    background: var(--icon-bg);
+    color: var(--icon-fg);
   }
 
   .skills-text {

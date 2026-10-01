@@ -10,63 +10,59 @@ interface Props {
   width: number;
 }
 
+// Shows the front image and reveals the back image on hover/focus (screen only).
 const { frontImage, backImage, altFront, altBack, width } = Astro.props;
 ---
 
-<div class="image-swap-container">
-  <Image
-    src={backImage}
-    alt={altBack}
-    width={width}
-    style={{
-      minWidth: width,
-      borderRadius: "5px",
-    }}
-  />
+<div class="image-swap" style={{ width: `${width}px`, height: `${width}px` }} tabindex="0">
+  <Image class="front" src={frontImage} alt={altFront} width={width * 2} height={width * 2} loading="eager" />
+  <Image class="back screen-only" src={backImage} alt={altBack} width={width * 2} height={width * 2} />
 </div>
 
 <style>
-  .image-swap-container {
+  .image-swap {
     position: relative;
-    display: inline-block;
+    flex-shrink: 0;
+    overflow: hidden;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    box-shadow: 0 12px 24px -12px rgba(15, 23, 42, 0.35);
+    outline: none;
   }
 
-  .image-swap-container img {
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-    border: 1px solid;
-    transition: all 500ms;
-  }
-
-  .front-image {
-    opacity: 1;
-  }
-
-  .back-image {
+  .image-swap img {
     position: absolute;
-    top: 0;
-    left: 0;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition:
+      opacity 500ms ease,
+      transform 500ms ease;
+  }
+
+  .back {
     opacity: 0;
   }
 
-  .image-swap-container:hover .front-image {
+  .image-swap:hover .front,
+  .image-swap:focus-visible .front {
     opacity: 0;
     transform: scale(1.05);
   }
 
-  .image-swap-container:hover .back-image {
+  .image-swap:hover .back,
+  .image-swap:focus-visible .back {
     opacity: 1;
     transform: scale(1.05);
   }
 
-  /* Ensure the back image is always shown in print */
   @media print {
-    .front-image {
-      display: none;
-    }
-    .back-image {
-      position: static;
-      opacity: 1;
-      transform: none;
+    .image-swap {
+      width: 150px !important;
+      height: 150px !important;
+      box-shadow: none;
+      border-radius: 14px;
     }
   }
 </style>

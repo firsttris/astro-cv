@@ -1,14 +1,5 @@
 /* Konsistentes Typography-System - passend zu Typography.tsx */
-/* Farben */
-:root {
-  --text-color: #1e293b;
-  --muted-color: #64748b;
-  --link-color: #2563eb;
-  --border: #e2e8f0;
-  --surface: #f8fafc;
-  --accent: #0e7490;
-  --accent-soft: #ecfeff;
-}
+/* Colors are defined as tokens in layout.astro */
 
 p {
   margin: 0;
@@ -20,9 +11,10 @@ p {
 h1 {
   margin: 0;
   margin-bottom: 8px;
-  font-weight: 500;
+  font-weight: 700;
   font-size: 24px;
   line-height: 32px;
+  letter-spacing: -0.02em;
   color: var(--text-color);
 }
 
@@ -30,9 +22,10 @@ h2 {
   margin: 0;
   margin-top: 20px;
   margin-bottom: 4px;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 18px;
-  line-height: 28px;
+  line-height: 26px;
+  letter-spacing: -0.01em;
   color: var(--text-color);
 }
 
@@ -40,7 +33,7 @@ h3 {
   margin: 0;
   font-size: 14px;
   line-height: 22px;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--text-color);
 }
 
@@ -82,7 +75,11 @@ a {
 }
 
 a:hover {
-  color: #1d4ed8;
+  color: var(--link-hover);
+}
+
+strong {
+  font-weight: 600;
 }
 
 /* Compact typography for print/PDF (~10pt body text) */
