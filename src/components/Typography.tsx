@@ -2,14 +2,14 @@ import styled from '@emotion/styled';
 
 // Konsistentes Typography-System für das gesamte CV
 // Farben
-const textColor = '#1e293b';      // Slate-800
-const mutedColor = '#64748b';     // Slate-500
+const textColor = 'var(--text-color)';
+const mutedColor = 'var(--muted-color)';
 
 export const Typography = styled.p({
   margin: 0,
   padding: 0,
   fontWeight: 400,
-  fontFamily: '"Roboto","Helvetica","Arial",sans-serif',
+  fontFamily: 'inherit',
   color: textColor,
 
   // Display - für den Namen (Tristan Teufel)
@@ -25,7 +25,8 @@ export const Typography = styled.p({
   '&.h1': {
     fontSize: '24px',
     lineHeight: '32px',
-    fontWeight: 500,
+    fontWeight: 700,
+    letterSpacing: '-0.02em',
   },
 
   // H2 - für Untertitel, Projekttitel

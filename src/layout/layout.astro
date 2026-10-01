@@ -1,47 +1,139 @@
 ---
-import "@fontsource/roboto/300.css";
-import "@fontsource/roboto/400.css";
-import "@fontsource/roboto/500.css";
-import "@fontsource/roboto/700.css";
+import "@fontsource-variable/inter";
 import "./../mdx/mdx.css";
 
-import { useTranslations } from "../i18n/utils";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
 const t = useTranslations(Astro.url.pathname);
+const lang = getLangFromUrl(Astro.url.pathname);
+const SITE = "https://cv.teufel-it.de";
+const canonicalUrl = new URL(Astro.url.pathname, SITE).href;
+
+// Print page setup incl. running footer (rendered by Chromium-based browsers and the generated PDF)
+const pageCss = `
+  @page {
+    size: A4;
+    margin: 14mm 14mm 16mm;
+    @bottom-left {
+      content: "Tristan Teufel · ${t("business-title")}";
+      font: 9px "Inter Variable", sans-serif;
+      color: #64748b;
+    }
+    @bottom-right {
+      content: "${t("page")} " counter(page) " ${t("of")} " counter(pages);
+      font: 9px "Inter Variable", sans-serif;
+      color: #64748b;
+    }
+  }
+`;
 ---
 
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
     <meta name="generator" content={Astro.generator} />
-    <meta name="description" content="Clean Code and Test Automation Specialist with experience in React, TypeScript, MUI, and Node.js." />
+    <meta name="description" content={t("meta-description")} />
     <meta name="keywords" content="Softwareentwickler, Software developer, CV, Resume, Freelance, Clean Code, Test Automation, React, TypeScript, MUI, Node.js" />
-		<meta property="og:title" content=`CV Tristan Teufel, ${t('business-title')}` />
-    <meta property="og:description" content="Clean Code and Test Automation Specialist with experience in React, TypeScript, MUI, and Node.js." />
+    <meta property="og:title" content={`CV Tristan Teufel, ${t("business-title")}`} />
+    <meta property="og:description" content={t("meta-description")} />
     <meta property="og:image" content="https://avatars.githubusercontent.com/u/1709260" />
-    <meta property="og:url" content="https://cv.teufel-it.de" />
-    <title>CV Tristan Teufel, {t('business-title')}</title>
+    <meta property="og:url" content={canonicalUrl} />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="alternate" hreflang="de" href={`${SITE}/de/`} />
+    <link rel="alternate" hreflang="en" href={`${SITE}/en/`} />
+    <link rel="alternate" hreflang="x-default" href={`${SITE}/`} />
+    <title>CV Tristan Teufel, {t("business-title")}</title>
+    <script is:inline>
+      // Apply the stored theme before first paint to avoid a flash
+      try {
+        const theme = localStorage.getItem("theme");
+        if (theme === "light" || theme === "dark") document.documentElement.dataset.theme = theme;
+      } catch {}
+    </script>
+    <style is:inline set:html={pageCss} />
+    <slot name="head" />
   </head>
   <body>
+    <slot name="top" />
     <div class="container">
       <slot />
     </div>
   </body>
 </html>
 <style is:global>
-  body {
-    font-family: "Roboto", sans-serif;
+  :root {
+    --page-bg: #ffffff;
+    --text-color: #0f172a;
+    --muted-color: #64748b;
+    --border: #e2e8f0;
+    --surface: #f8fafc;
+    --accent: #0e7490;
+    --accent-strong: #155e75;
+    --accent-soft: #ecfeff;
+    --link-color: var(--accent);
+    --link-hover: var(--accent-strong);
+    --icon-bg: transparent;
+    --icon-fg: currentColor;
+    --success: #16a34a;
+    --success-soft: #f0fdf4;
+    --success-text: #166534;
   }
 
-  @media print {
-    @page {
-      size: portrait;
+  /* Dark theme: follows the OS unless the visitor picked a theme explicitly */
+  @media screen and (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --page-bg: #0b1120;
+      --text-color: #e2e8f0;
+      --muted-color: #94a3b8;
+      --border: #1e293b;
+      --surface: #111a2e;
+      --accent: #22d3ee;
+      --accent-strong: #67e8f9;
+      --accent-soft: rgba(34, 211, 238, 0.1);
+      --icon-bg: #e2e8f0;
+      --icon-fg: #0f172a;
+      --success: #22c55e;
+      --success-soft: rgba(34, 197, 94, 0.1);
+      --success-text: #86efac;
+      color-scheme: dark;
     }
+  }
+
+  @media screen {
+    :root[data-theme="dark"] {
+      --page-bg: #0b1120;
+      --text-color: #e2e8f0;
+      --muted-color: #94a3b8;
+      --border: #1e293b;
+      --surface: #111a2e;
+      --accent: #22d3ee;
+      --accent-strong: #67e8f9;
+      --accent-soft: rgba(34, 211, 238, 0.1);
+      --icon-bg: #e2e8f0;
+      --icon-fg: #0f172a;
+      --success: #22c55e;
+      --success-soft: rgba(34, 197, 94, 0.1);
+      --success-text: #86efac;
+      color-scheme: dark;
+    }
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 72px;
+  }
+
+  body {
+    margin: 0;
+    background: var(--page-bg);
+    color: var(--text-color);
+    font-family: "Inter Variable", "Helvetica", "Arial", sans-serif;
+    font-feature-settings: "cv11", "ss01";
+    -webkit-font-smoothing: antialiased;
+    transition: background-color 0.2s ease;
   }
 
   .container {
@@ -49,9 +141,28 @@ const t = useTranslations(Astro.url.pathname);
     display: flex;
     flex-direction: column;
     margin: 0 auto;
-    padding-left: 16px;
-    padding-right: 16px;
-    gap: 20px;
+    padding: 0 16px 40px;
+    gap: 28px;
+  }
+
+  .print-only {
+    display: none;
+  }
+
+  @media print {
+    .container {
+      max-width: none;
+      padding: 0;
+      gap: 20px;
+    }
+
+    .screen-only {
+      display: none !important;
+    }
+
+    .print-only {
+      display: revert;
+    }
   }
 
   /* Reveal animations */
@@ -80,6 +191,10 @@ const t = useTranslations(Astro.url.pathname);
   }
 
   @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
     .reveal {
       opacity: 1;
       animation: none;

@@ -1,99 +1,117 @@
 ---
 import { Icon } from "astro-icon/components";
-import styled from "@emotion/styled";
-import { Typography } from "../Typography";
-import { type Skill } from "./technologies";
-import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+import { Level, type Skill } from "./technologies";
+import { coreSkills } from "./mySkills";
+import { useTranslations } from "../../i18n/utils";
+import LevelDots from "./LevelDots.astro";
 
 interface Props {
   skills: Skill[];
+  /** Show the skill level and highlight core skills (skills overview) */
+  showLevel?: boolean;
+  /** Render a compact comma-separated text line instead of chips when printing */
+  printAsText?: boolean;
 }
 
-interface ChipProps {
-  level?: "Beginner" | "Intermediate" | "Expert";
-}
-
-// Druckfreundliche Rahmenart für jedes Level
-const getBorderForPrint = (level: "Beginner" | "Intermediate" | "Expert") => {
-  switch(level) {
-    case "Beginner": return "1px solid #c2c2c2"; // Grau wie im Farbverlauf
-    case "Intermediate": return "1.5px solid #74adff"; // Blau wie im Farbverlauf
-    case "Expert": return "2px solid #ffaa00"; // Gold/Orange wie im Farbverlauf
-    default: return "1px solid #999";
-  }
-};
-
-const FlexWrap = styled.div({
-  display: "flex",
-  flexWrap: "wrap",
-  gap: "6px",
-});
-
-const Link = styled.a({
-  textDecoration: "none",
-  color: "#1e293b",
-});
-
-const Chip = styled.div<ChipProps>(props => ({
-  cursor: "pointer",
-  height: "26px",
-  background: "#fafafa",
-  border: props.level ? getBorderForPrint(props.level) : "1px solid black",
-  borderRadius: "8px",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  gap: "6px",
-  padding: "0 10px",
-  position: "relative",
-  transition: "all 0.15s ease",
-  "&:hover": {
-    background: "#f1f5f9",
-    transform: "translateY(-1px)",
-  }
-}));
-
-const LevelBadge = styled.div({
-  fontSize: "9px",
-  fontWeight: 600,
-  backgroundColor: "white",
-  color: "#475569",
-  borderRadius: "50%",
-  width: "16px",
-  height: "16px",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  border: "1px solid #cbd5e1",
-});
-
-const currentLanguage = getLangFromUrl(Astro.url.pathname);
-const isGerman = currentLanguage === "de";
-
-const getSkillLevel = (level: "Beginner" | "Intermediate" | "Expert") => {
-  switch(level) {
-    case "Beginner": return isGerman ? "A" : "B";
-    case "Intermediate": return isGerman ? "F" : "I";
-    case "Expert": return "E";
-    default: return "";
-  }
-};
+const { skills, showLevel = false, printAsText = false } = Astro.props;
 
 const t = useTranslations(Astro.url.pathname);
-
-const { skills } = Astro.props;
 ---
 
-<FlexWrap>
+<div class:list={["chips", { "screen-only": printAsText }]}>
   {
-    skills.map((skill, index) => (
-      <Link key={index} href={skill.website} target="_blank" rel="noopener">
-        <Chip level={skill.level}>
-          <Icon name={skill.icon} style={{ fontSize: "18px" }} />
-          <Typography className="chip">{skill.name}</Typography>
-          <LevelBadge title={t(skill.level)}>{getSkillLevel(skill.level)}</LevelBadge>
-        </Chip>
-      </Link>
-    ))
+    skills.map((skill) => {
+      const isCore = showLevel && coreSkills.includes(skill);
+      return (
+        <a
+          class:list={["chip", { core: isCore }]}
+          href={skill.website}
+          target="_blank"
+          rel="noopener"
+          title={showLevel ? `${skill.name}: ${t(skill.level)}` : skill.name}
+        >
+          <Icon class="chip-icon" name={skill.icon} />
+          <span class="chip-name">{skill.name}</span>
+          {showLevel && <LevelDots level={skill.level as Level} />}
+        </a>
+      );
+    })
   }
-</FlexWrap>
+</div>
+{printAsText && <p class="skills-text">{skills.map((skill) => skill.name).join(" · ")}</p>}
+
+<style>
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    height: 26px;
+    padding: 0 10px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--surface);
+    color: var(--text-color);
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 20px;
+    transition:
+      border-color 0.15s ease,
+      transform 0.15s ease;
+  }
+
+  .chip:hover {
+    color: var(--text-color);
+    border-color: var(--accent);
+    transform: translateY(-1px);
+  }
+
+  .chip.core {
+    border-color: var(--accent);
+    background: var(--accent-soft);
+  }
+
+  .chip-icon {
+    font-size: 18px;
+    flex-shrink: 0;
+    /* light backdrop in dark mode so dark logos stay visible */
+    padding: 1px;
+    border-radius: 4px;
+    background: var(--icon-bg);
+    color: var(--icon-fg);
+  }
+
+  .skills-text {
+    display: none;
+  }
+
+  @media print {
+    .chip {
+      height: 22px;
+      padding: 0 8px;
+      font-size: 11px;
+    }
+
+    .chip-icon {
+      font-size: 14px;
+    }
+
+    .screen-only {
+      display: none;
+    }
+
+    .skills-text {
+      display: block;
+      margin-top: 4px;
+      font-size: 11px;
+      line-height: 16px;
+      color: var(--muted-color);
+      break-inside: avoid;
+    }
+  }
+</style>

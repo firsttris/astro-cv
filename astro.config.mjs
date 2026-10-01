@@ -126,7 +126,12 @@ export default defineConfig({
         'view-kanban-outline',
         'waterfall-chart',
         'accessibility-new',
-        'accessibility'
+        'accessibility',
+        'download-rounded',
+        'mail-outline-rounded',
+        'call-outline',
+        'dark-mode-outline-rounded',
+        'light-mode-outline-rounded'
       ],
       'simple-icons': [
         'oracle',
@@ -144,12 +149,7 @@ export default defineConfig({
       ],
       cib: ['gerrit'],
       iconoir: ['agile'],
-      mdi: ['kodi'],
-      openmoji: [
-        'envelope',
-        'mobile-phone',
-        'github',
-        'linkedin']
+      mdi: ['kodi', 'github', 'linkedin']
     }
   })]
 });

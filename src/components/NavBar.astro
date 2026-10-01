@@ -1,0 +1,228 @@
+---
+import { Icon } from "astro-icon/components";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const t = useTranslations(Astro.url.pathname);
+const lang = getLangFromUrl(Astro.url.pathname);
+
+const sections = [
+  { id: "profile", label: t("nav-profile") },
+  { id: "skills", label: t("skills") },
+  { id: "projects", label: t("nav-projects") },
+];
+---
+
+<nav class="navbar screen-only" aria-label={t("nav-label")}>
+  <div class="inner">
+    <a class="brand" href="#top" aria-label="Tristan Teufel">
+      <span class="monogram">TT</span>
+      <span class="brand-name">Tristan Teufel</span>
+    </a>
+    <ul class="sections">
+      {sections.map((section) => <li><a href={`#${section.id}`}>{section.label}</a></li>)}
+    </ul>
+    <div class="actions">
+      <div class="lang-switch" role="group" aria-label={t("nav-language")}>
+        <a href="/de/" lang="de" aria-current={lang === "de" ? "page" : undefined}>DE</a>
+        <a href="/en/" lang="en" aria-current={lang === "en" ? "page" : undefined}>EN</a>
+      </div>
+      <button class="icon-button theme-toggle" type="button" aria-label={t("nav-theme")} title={t("nav-theme")}>
+        <Icon class="icon-dark" name="material-symbols:dark-mode-outline-rounded" />
+        <Icon class="icon-light" name="material-symbols:light-mode-outline-rounded" />
+      </button>
+      <a class="icon-button" href={t("pdf-file")} download aria-label={t("download-pdf")} title={t("download-pdf")}>
+        <Icon name="material-symbols:download-rounded" />
+      </a>
+    </div>
+  </div>
+</nav>
+
+<script>
+  const root = document.documentElement;
+  const isDark = () =>
+    root.dataset.theme ? root.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+
+  document.querySelector(".theme-toggle")?.addEventListener("click", () => {
+    const theme = isDark() ? "light" : "dark";
+    root.dataset.theme = theme;
+    try {
+      localStorage.setItem("theme", theme);
+    } catch {}
+  });
+
+  // Show the name in the bar once the header has scrolled out of view
+  const navbar = document.querySelector(".navbar");
+  const header = document.querySelector(".profile");
+  if (navbar && header) {
+    new IntersectionObserver(([entry]) => navbar.classList.toggle("scrolled", !entry.isIntersecting), {
+      rootMargin: "-60px 0px 0px 0px",
+    }).observe(header);
+  }
+</script>
+
+<style>
+  .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-bottom: 1px solid transparent;
+    background: color-mix(in srgb, var(--page-bg) 80%, transparent);
+    backdrop-filter: saturate(180%) blur(12px);
+    -webkit-backdrop-filter: saturate(180%) blur(12px);
+    transition: border-color 0.2s ease;
+  }
+
+  .navbar.scrolled {
+    border-bottom-color: var(--border);
+  }
+
+  .inner {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    max-width: 852px;
+    height: 56px;
+    margin: 0 auto;
+    padding: 0 16px;
+    box-sizing: border-box;
+  }
+
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-color);
+    font-weight: 700;
+    font-size: 15px;
+  }
+
+  .brand:hover {
+    color: var(--text-color);
+  }
+
+  .monogram {
+    display: grid;
+    place-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    background: var(--accent);
+    color: var(--page-bg);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+  }
+
+  .brand-name {
+    opacity: 0;
+    transform: translateY(4px);
+    transition:
+      opacity 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .scrolled .brand-name {
+    opacity: 1;
+    transform: none;
+  }
+
+  .sections {
+    display: flex;
+    gap: 20px;
+    margin: 0 0 0 auto;
+    padding: 0;
+    list-style: none;
+  }
+
+  .sections li {
+    padding: 0;
+  }
+
+  .sections a {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--muted-color);
+  }
+
+  .sections a:hover {
+    color: var(--text-color);
+  }
+
+  .actions {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .lang-switch {
+    display: flex;
+    padding: 2px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+  }
+
+  .lang-switch a {
+    padding: 3px 8px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--muted-color);
+  }
+
+  .lang-switch a[aria-current="page"] {
+    background: var(--surface);
+    color: var(--text-color);
+  }
+
+  .icon-button {
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: transparent;
+    color: var(--text-color);
+    font-size: 18px;
+    cursor: pointer;
+  }
+
+  .icon-button:hover {
+    background: var(--surface);
+    color: var(--accent);
+  }
+
+  /* Show the icon for the theme you would switch to */
+  .icon-light {
+    display: none;
+  }
+
+  :global(:root[data-theme="dark"]) .icon-light {
+    display: block;
+  }
+
+  :global(:root[data-theme="dark"]) .icon-dark {
+    display: none;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :global(:root:not([data-theme="light"])) .icon-light {
+      display: block;
+    }
+
+    :global(:root:not([data-theme="light"])) .icon-dark {
+      display: none;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .sections {
+      display: none;
+    }
+
+    .actions {
+      margin-left: auto;
+    }
+  }
+</style>

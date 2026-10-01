@@ -139,3 +139,20 @@ export const mySkills: MySkills[] = [
     ],
   },
 ];
+
+/**
+ * Core skills are highlighted in the skills overview.
+ * Keep this list short (about 10) so the highlight stays meaningful.
+ */
+export const coreSkills: Skill[] = [
+  languages.typescript,
+  languages.nodejs,
+  uiFrameworks.react,
+  uiFrameworks.angular,
+  libraries.nx,
+  testing.playwright,
+  testing.vitest,
+  testing.jest,
+  testing.cypress,
+  aiTools.claudeCode,
+];

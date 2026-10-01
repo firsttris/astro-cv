@@ -1,0 +1,38 @@
+---
+import { Level } from "./technologies";
+
+interface Props {
+  level: Level;
+}
+
+const FILLED: Record<Level, number> = {
+  [Level.Beginner]: 1,
+  [Level.Intermediate]: 2,
+  [Level.Expert]: 3,
+};
+
+const filled = FILLED[Astro.props.level];
+---
+
+<span class="dots" aria-hidden="true">
+  {[1, 2, 3].map((dot) => <span class:list={["dot", { filled: dot <= filled }]} />)}
+</span>
+
+<style>
+  .dots {
+    display: inline-flex;
+    gap: 2px;
+    margin-left: 2px;
+  }
+
+  .dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--border);
+  }
+
+  .dot.filled {
+    background: var(--accent);
+  }
+</style>

@@ -25,7 +25,7 @@ export const languages: Record<string, Skill>  = {
     level: Level.Expert
   },
   nodejs: {
-    name: "NodeJs",
+    name: "Node.js",
     icon: "vscode-icons:file-type-node2",
     website: "https://nodejs.org/",
     level: Level.Expert
@@ -118,7 +118,7 @@ export const uiFrameworks = {
     level: Level.Intermediate,
   },
   nextjs: {
-    name: "NextJs",
+    name: "Next.js",
     icon: "vscode-icons:file-type-light-next",
     website: "https://nextjs.org/",
     level: Level.Intermediate,
@@ -139,19 +139,19 @@ export const libraries = {
     level: Level.Beginner,
   },
   spring: {
-    name: "Spring-Boot",
+    name: "Spring Boot",
     icon: "devicon:spring",
     website: "https://spring.io/projects/spring-boot",
     level: Level.Intermediate,
   },
   nx: {
-    name: "NX",
+    name: "Nx",
     icon: "vscode-icons:file-type-light-nx",
     website: "https://nx.dev/",
     level: Level.Expert
   },
   reactQuery: {
-    name: "React-Query",
+    name: "TanStack Query",
     icon: "logos:react-query-icon",
     website: "https://react-query.tanstack.com/",
     level: Level.Expert
@@ -175,7 +175,7 @@ export const libraries = {
     level: Level.Intermediate,
   },
   reactBeautifulDnd: {
-    name: "React-Beautiful-Dnd",
+    name: "react-beautiful-dnd",
     icon: "logos:atlassian",
     website: "https://github.com/atlassian/react-beautiful-dnd",
     level: Level.Intermediate,
@@ -187,13 +187,13 @@ export const libraries = {
     level: Level.Expert
   },
   agGrid: {
-    name: "Ag-Grid",
+    name: "AG Grid",
     icon: "material-symbols:grid-4x4",
     website: "https://www.ag-grid.com/",
     level: Level.Expert
   },
   knockoutJs: {
-    name: "KnockoutJs",
+    name: "Knockout.js",
     icon: "logos:knockout",
     website: "https://knockoutjs.com/",
     level: Level.Intermediate,
@@ -223,7 +223,7 @@ export const libraries = {
     level: Level.Expert,
   },
   hapi: {
-    name: "HapiJs",
+    name: "hapi",
     icon: "logos:hapi",
     website: "https://hapi.dev/",
     level: Level.Expert,
@@ -304,19 +304,19 @@ export const styling = {
     level: Level.Expert,
   },
   mui: {
-    name: "Material-UI (MUI)",
+    name: "Material UI (MUI)",
     icon: "devicon:materialui",
     website: "https://mui.com/",
     level: Level.Expert,
   },
   angularMaterial: {
-    name: "Angular-Material",
+    name: "Angular Material",
     icon: "devicon:angularmaterial",
     website: "https://material.angular.io/",
     level: Level.Expert,
   },
   styled: {
-    name: "Styled-Components",
+    name: "styled-components",
     icon: "vscode-icons:file-type-styled",
     website: "https://styled-components.com/",
     level: Level.Expert,
@@ -370,7 +370,7 @@ export const accessibility = {
 
 export const testing = {
   testingLibrary: {
-    name: "Testing-Library",
+    name: "Testing Library",
     icon: "vscode-icons:file-type-test",
     website: "https://testing-library.com/",
     level: Level.Expert,
@@ -460,13 +460,13 @@ export const databases = {
 
 export const versionControl = {
   gitlab: {
-    name: "Gitlab",
+    name: "GitLab",
     icon: "vscode-icons:file-type-gitlab",
     website: "https://about.gitlab.com/",
     level: Level.Expert,
   },
   github: {
-    name: "Github",
+    name: "GitHub",
     icon: "vscode-icons:folder-type-github",
     website: "https://github.com/",
     level: Level.Expert,
@@ -656,7 +656,7 @@ export const api = {
     level: Level.Expert,
   },
   openapi: {
-    name: "Open-API",
+    name: "OpenAPI",
     icon: "vscode-icons:folder-type-api-opened",
     website: "https://www.openapis.org/",
     level: Level.Expert,
@@ -701,7 +701,7 @@ export const ide = {
     level: Level.Intermediate,
   },
   intellij: {
-    name: "Jetbrains IntelliJ",
+    name: "JetBrains IntelliJ",
     icon: "devicon:intellij",
     website: "https://www.jetbrains.com/idea/",
     level: Level.Intermediate,
@@ -772,7 +772,7 @@ export const tools = {
     level: Level.Expert,
   },
   wordpress: {
-    name: "Wordpress",
+    name: "WordPress",
     icon: "logos:wordpress-icon",
     website: "https://wordpress.com/",
     level: Level.Intermediate,
@@ -820,7 +820,7 @@ export const webserver = {
 
 export const cicd = {
   githubActions: {
-    name: "Github-Actions",
+    name: "GitHub Actions",
     icon: "devicon:githubactions",
     website: "https://docs.github.com/en/actions",
     level: Level.Expert,

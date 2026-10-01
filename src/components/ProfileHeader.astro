@@ -1,131 +1,195 @@
 ---
-import styled from "@emotion/styled";
-import { useTranslations } from "../i18n/utils";
+import { Icon } from "astro-icon/components";
+import QRCode from "qrcode";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
 import Profile from "./../images/profil.png";
 import Ghibli from "./../images/ghibli.png";
-import { Icon } from "astro-icon/components";
-import { Typography } from "./Typography";
 import ImageSwap from "./ImageSwap.astro";
+import KeyFacts from "./KeyFacts.astro";
 
 const t = useTranslations(Astro.url.pathname);
+const onlineUrl = `https://cv.teufel-it.de/${getLangFromUrl(Astro.url.pathname)}/`;
+const qrSvg = await QRCode.toString(onlineUrl, { type: "svg", margin: 0, color: { dark: "#0f172a", light: "#0000" } });
 
-const ContainerBox = styled.div({
-  marginTop: "20px",
-  display: "flex",
-  "@media (max-width: 960px)": {
-    flexDirection: "column",
-  },
-  "@media print": {
-    flexDirection: "row",
-  },
-});
-
-const ImageBox = styled.div({
-  borderRadius: "5px",
-  display: "inline-flex",
-  boxShadow:
-    "rgba(0, 0, 0, 0.2) 0px 2px 4px -1px, rgba(0, 0, 0, 0.14) 0px 4px 5px 0px, rgba(0, 0, 0, 0.12) 0px 1px 10px 0px",
-});
-
-const ContactBox = styled.div({
-  display: "flex",
-  alignItems: "center",
-  gap: "5px",
-});
-
-const ContentBox = styled.div({
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "center",
-  gap: "20px",
-  margin: "10px",
-  width: "100%",
-  "@media (max-width: 960px)": {
-    marginTop: "20px",
-  },
-});
-
-const Grid = styled.div({
-  display: "flex",
-  gap: "15px",
-  margin: "0 auto",
-});
-
-const Column = styled.div({
-  display: "flex",
-  flexDirection: "column",
-  gap: "5px",
-});
-
-const Link = styled.a({
-  textDecoration: "none",
-  color: "#2563eb",
-  transition: "color 0.15s ease",
-  "&:hover": {
-    color: "#1d4ed8",
-  },
-});
+const contacts = [
+  { icon: "material-symbols:mail-outline-rounded", label: "info@teufel-it.de", href: "mailto:info@teufel-it.de" },
+  { icon: "material-symbols:call-outline", label: "+49 176 457 44166", href: "tel:+4917645744166" },
+  { icon: "mdi:github", label: "GitHub", href: "https://github.com/firsttris" },
+  { icon: "mdi:linkedin", label: "LinkedIn", href: "https://de.linkedin.com/in/tristanteufel" },
+];
 ---
 
-<ContainerBox>
-  <div style={{ display: "flex", justifyContent: "center" }}>
-    <ImageSwap
-    frontImage={Ghibli}
-    backImage={Profile}
-    altFront="Ghibli Style"
-    altBack="Real Image"
-    width={240}
-  />
+<header class="profile">
+  <ImageSwap frontImage={Profile} backImage={Ghibli} altFront="Tristan Teufel" altBack="Tristan Teufel (Ghibli Style)" width={200} />
+  <div class="intro">
+    <h1 class="name">Tristan Teufel</h1>
+    <p class="title">{t("business-title")}</p>
+    <p class="degree">{t("academic-title")}</p>
+    <KeyFacts />
+    <ul class="contacts">
+      {
+        contacts.map((contact) => (
+          <li>
+            <a href={contact.href} target="_blank" rel="noopener">
+              <Icon name={contact.icon} />
+              {contact.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+    <a class="download-button screen-only" href={t("pdf-file")} download>
+      <Icon name="material-symbols:download-rounded" />
+      {t("download-pdf")}
+    </a>
   </div>
-  <ContentBox>
-    <div
-      style={{ textAlign: "center", display: "flex", flexDirection: "column" }}
-    >
-      <Typography className="display">Tristan Teufel</Typography>
-      <Typography className="subtitle">
-        {t("business-title")}
-      </Typography>
-      <Typography className="caption">
-        {t("academic-title")}
-      </Typography>
-    </div>
-    <Grid>
-      <Column>
-        <ContactBox>
-          <Icon name="openmoji:envelope" font-size={25} />
-          <Link href="mailto:info@teufel-it.de" rel="noopener" target="_blank">
-            <Typography className="body">info@teufel-it.de</Typography>
-          </Link>
-        </ContactBox>
-        <ContactBox>
-          <Icon name="openmoji:mobile-phone" font-size={25} />
-          <Link href="tel:+49 176 457 44166" rel="noopener" target="_blank">
-            <Typography className="body">+49 176 457 44166</Typography>
-          </Link>
-        </ContactBox>
-      </Column>
-      <Column>
-        <ContactBox>
-          <Icon name="openmoji:github" font-size={25} />
-          <Link
-            href="http://github.com/firsttris"
-            rel="noopener"
-            target="_blank"
-          >
-            <Typography className="body">Github</Typography>
-          </Link>
-        </ContactBox>
-        <ContactBox>
-          <Icon name="openmoji:linkedin" font-size={25} />
-          <Link
-            href="http://de.linkedin.com/in/tristanteufel"
-            rel="noopener"
-            target="_blank"
-          >
-            <Typography className="body">Linkedin</Typography>
-          </Link>
-        </ContactBox>
-      </Column>
-    </Grid>
-  </ContentBox>
-</ContainerBox>
+  <div class="print-only qr">
+    <div class="qr-code" set:html={qrSvg} />
+    <span>{t("online-version")}</span>
+    <span>{onlineUrl.replace("https://", "")}</span>
+  </div>
+</header>
+
+<style>
+  .profile {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    margin-top: 32px;
+  }
+
+  .intro {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    min-width: 0;
+  }
+
+  .name {
+    margin: 0;
+    font-size: 44px;
+    line-height: 1.05;
+    font-weight: 800;
+    letter-spacing: -0.035em;
+  }
+
+  .title {
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: 600;
+    color: var(--accent);
+  }
+
+  .degree {
+    margin-bottom: 8px;
+    font-size: 13px;
+    color: var(--muted-color);
+  }
+
+  .contacts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 18px;
+    margin: 8px 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .contacts li {
+    padding: 0;
+  }
+
+  .contacts a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    color: var(--text-color);
+  }
+
+  .contacts a:hover {
+    color: var(--accent);
+  }
+
+  .contacts a :global(svg) {
+    font-size: 18px;
+    color: var(--muted-color);
+  }
+
+  .download-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 10px;
+    padding: 7px 14px;
+    border-radius: 8px;
+    background: var(--accent);
+    color: var(--page-bg);
+    font-size: 14px;
+    font-weight: 600;
+    transition: background-color 0.15s ease;
+  }
+
+  .download-button:hover {
+    background: var(--accent-strong);
+    color: var(--page-bg);
+  }
+
+  .download-button :global(svg) {
+    font-size: 18px;
+  }
+
+  .qr {
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    margin-left: auto;
+    font-size: 9px;
+    line-height: 12px;
+    color: #64748b;
+    white-space: nowrap;
+  }
+
+  .qr-code {
+    width: 72px;
+    height: 72px;
+    margin-bottom: 4px;
+  }
+
+  @media (max-width: 640px) {
+    .profile {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .name {
+      font-size: 36px;
+    }
+  }
+
+  @media print {
+    .profile {
+      gap: 28px;
+      margin-top: 0;
+    }
+
+    .name {
+      font-size: 34px;
+    }
+
+    .contacts {
+      gap: 4px 14px;
+    }
+
+    .contacts a {
+      font-size: 12px;
+    }
+
+    .qr {
+      display: flex;
+    }
+  }
+</style>

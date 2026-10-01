@@ -1,0 +1,175 @@
+---
+import ChipsWithIcon from "./skills/ChipsWithIcon.astro";
+import { type Skill } from "./skills/technologies";
+
+interface Props {
+  title: string;
+  client: string;
+  period: string;
+  details: string;
+  position?: string;
+  skills: Skill[];
+}
+
+const { title, client, period, details, position, skills } = Astro.props;
+
+// Projects that ended more than this many years ago are condensed in print
+// (title, client, period and technologies only) to keep the PDF short.
+const PRINT_DETAIL_YEARS = 7;
+
+const endYear = Number(period.match(/(\d{4})\s*$/)?.[1] ?? new Date().getFullYear());
+const compactInPrint = endYear < new Date().getFullYear() - PRINT_DETAIL_YEARS;
+
+// "05/2025 - bis heute" -> ["05/2025", "heute"]
+const [start, end] = period.split(/\s+-\s+/).map((part) => part.replace(/^bis\s+/, ""));
+const isCurrent = !/\d{4}\s*$/.test(period);
+---
+
+<article class:list={["project", { "print-compact": compactInPrint, current: isCurrent }]}>
+  <div class="period">
+    <span>{start}</span>
+    {end && <span>– {end}</span>}
+  </div>
+  <div class="content">
+    <header class="project-header">
+      <h2>{title}</h2>
+      <p class="client">{client}</p>
+      <p class="details">{details}</p>
+      {position && <p class="position">{position}</p>}
+    </header>
+    <div class="project-body">
+      <slot />
+    </div>
+    <ChipsWithIcon skills={skills} printAsText />
+  </div>
+</article>
+
+<style>
+  .project {
+    --period-width: 92px;
+    --line-x: calc(var(--period-width) + 12px);
+    position: relative;
+    display: grid;
+    grid-template-columns: var(--period-width) 1fr;
+    column-gap: 28px;
+    padding-bottom: 28px;
+  }
+
+  /* Timeline line */
+  .project::before {
+    content: "";
+    position: absolute;
+    top: 8px;
+    bottom: 0;
+    left: var(--line-x);
+    width: 2px;
+    background: var(--border);
+  }
+
+  .project:last-of-type::before {
+    bottom: auto;
+    height: 24px;
+  }
+
+  /* Timeline dot */
+  .project::after {
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: calc(var(--line-x) - 4px);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--page-bg, #fff);
+    border: 2px solid var(--accent);
+    box-sizing: border-box;
+  }
+
+  .project.current::after {
+    background: var(--accent);
+  }
+
+  .period {
+    display: flex;
+    flex-direction: column;
+    padding-top: 2px;
+    font-size: 13px;
+    line-height: 20px;
+    font-weight: 600;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+    text-align: right;
+  }
+
+  .content {
+    min-width: 0;
+  }
+
+  .project-header :global(h2) {
+    margin-top: 0;
+  }
+
+  .client {
+    font-weight: 500;
+  }
+
+  .details {
+    color: var(--muted-color);
+    font-size: 13px;
+  }
+
+  .project :global(.position) {
+    font-weight: 600;
+  }
+
+  .project-body :global(h4) {
+    margin-top: 12px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-color);
+  }
+
+  .project-body :global(ul) {
+    margin-bottom: 8px;
+  }
+
+  @media (max-width: 600px) {
+    .project {
+      grid-template-columns: 1fr;
+      padding-left: 22px;
+      --line-x: 4px;
+    }
+
+    .period {
+      flex-direction: row;
+      gap: 4px;
+      text-align: left;
+    }
+  }
+
+  @media print {
+    .project {
+      --period-width: 66px;
+      column-gap: 26px;
+      padding-bottom: 14px;
+    }
+
+    .period {
+      font-size: 11px;
+      line-height: 17px;
+    }
+
+    .details {
+      font-size: 12px;
+    }
+
+    /* Never split a project across two pages */
+    .project {
+      break-inside: avoid;
+    }
+
+    .print-compact .project-body {
+      display: none;
+    }
+  }
+</style>

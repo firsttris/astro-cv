@@ -19,7 +19,7 @@ const t = useTranslations(Astro.url.pathname)
     margin-top: 20px;
     font-size: 12px;
     line-height: 18px;
-    color: #64748b;
+    color: var(--muted-color);
     text-align: center;
     display: flex;
     flex-direction: row;
@@ -28,11 +28,11 @@ const t = useTranslations(Astro.url.pathname)
   }
   .source-link {
     text-decoration: none;
-    color: #2563eb;
+    color: var(--link-color);
     transition: color 0.15s ease;
   }
   .source-link:hover {
-    color: #1d4ed8;
+    color: var(--link-hover);
   }
 </style>
 

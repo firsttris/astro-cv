@@ -5,23 +5,23 @@
   "scripts": {
     "start": "astro dev",
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro build && node scripts/generate-pdf.mjs",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "build:site": "astro build"
   },
   "dependencies": {
     "@astrojs/mdx": "^8.0.2",
     "@astrojs/react": "^7.0.0",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
-    "@fontsource/roboto": "^5.3.0",
+    "@fontsource-variable/inter": "^5.3.0",
     "@iconify-json/cib": "^1.2.3",
     "@iconify-json/devicon": "^1.2.68",
     "@iconify-json/iconoir": "^1.2.11",
     "@iconify-json/logos": "^1.2.15",
     "@iconify-json/material-symbols": "^1.2.93",
     "@iconify-json/mdi": "^1.2.3",
-    "@iconify-json/openmoji": "^1.2.29",
     "@iconify-json/simple-icons": "^1.2.98",
     "@iconify-json/skill-icons": "^1.2.4",
     "@iconify-json/vscode-icons": "^1.2.83",
@@ -29,7 +29,12 @@
     "@types/react-dom": "^19.3.0",
     "astro": "^7.3.5",
     "astro-icon": "^1.2.0",
+    "qrcode": "^1.5.4",
     "react": "^19.3.0",
     "react-dom": "^19.3.0"
+  },
+  "devDependencies": {
+    "@types/qrcode": "^1.5.6",
+    "playwright": "^1.63.0"
   }
 }

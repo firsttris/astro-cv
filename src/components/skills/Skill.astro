@@ -12,6 +12,9 @@ interface Props {
 const Container = styled.div({
   display: "flex",
   marginBottom: "12px",
+  "@media print": {
+    breakInside: "avoid",
+  },
 });
 
 const TitleBox = styled.div({
@@ -34,6 +37,6 @@ const { title, skills } = Astro.props;
     <Typography className="label">{title}</Typography>
   </TitleBox>
   <SkillsBox>
-    <ChipsWithIcon skills={skills} />
+    <ChipsWithIcon skills={skills} showLevel />
   </SkillsBox>
 </Container>
