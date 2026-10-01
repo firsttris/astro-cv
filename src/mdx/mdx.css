@@ -4,6 +4,10 @@
   --text-color: #1e293b;
   --muted-color: #64748b;
   --link-color: #2563eb;
+  --border: #e2e8f0;
+  --surface: #f8fafc;
+  --accent: #0e7490;
+  --accent-soft: #ecfeff;
 }
 
 p {

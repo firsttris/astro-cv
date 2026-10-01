@@ -5,9 +5,12 @@ import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import "./../mdx/mdx.css";
 
-import { useTranslations } from "../i18n/utils";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
 const t = useTranslations(Astro.url.pathname);
+const lang = getLangFromUrl(Astro.url.pathname);
+const SITE = "https://cv.teufel-it.de";
+const canonicalUrl = new URL(Astro.url.pathname, SITE).href;
 
 // Print page setup incl. running footer (rendered by Chromium-based browsers and the generated PDF)
 const pageCss = `
@@ -28,7 +31,7 @@ const pageCss = `
 `;
 ---
 
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -37,14 +40,19 @@ const pageCss = `
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
     />
     <meta name="generator" content={Astro.generator} />
-    <meta name="description" content="Clean Code and Test Automation Specialist with experience in React, TypeScript, MUI, and Node.js." />
+    <meta name="description" content={t("meta-description")} />
     <meta name="keywords" content="Softwareentwickler, Software developer, CV, Resume, Freelance, Clean Code, Test Automation, React, TypeScript, MUI, Node.js" />
 		<meta property="og:title" content=`CV Tristan Teufel, ${t('business-title')}` />
-    <meta property="og:description" content="Clean Code and Test Automation Specialist with experience in React, TypeScript, MUI, and Node.js." />
+    <meta property="og:description" content={t("meta-description")} />
     <meta property="og:image" content="https://avatars.githubusercontent.com/u/1709260" />
-    <meta property="og:url" content="https://cv.teufel-it.de" />
+    <meta property="og:url" content={canonicalUrl} />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="alternate" hreflang="de" href={`${SITE}/de/`} />
+    <link rel="alternate" hreflang="en" href={`${SITE}/en/`} />
+    <link rel="alternate" hreflang="x-default" href={`${SITE}/`} />
     <title>CV Tristan Teufel, {t('business-title')}</title>
     <style is:inline set:html={pageCss} />
+    <slot name="head" />
   </head>
   <body>
     <div class="container">

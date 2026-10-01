@@ -1,67 +1,50 @@
 ---
-import styled from "@emotion/styled";
-import { Typography } from "../Typography";
-import { getLangFromUrl, useTranslations } from "../../i18n/utils";
-
-// Same color scheme as in ChipsWithIcon.astro
-const getBorderForLevel = (level: string) => {
-  switch(level) {
-    case "Expert": return "2px solid #ffaa00"; // Gold/Orange
-    case "Intermediate": return "1.5px solid #74adff"; // Blue
-    case "Beginner": return "1px solid #c2c2c2"; // Gray
-    default: return "1px solid grey";
-  }
-};
-
-const LegendContainer = styled.div({
-  display: "flex",
-  gap: "20px",
-  marginTop: "20px",
-  paddingTop: "12px",
-  borderTop: "1px solid #e2e8f0",
-  justifyContent: "flex-end",
-  "@media print": {
-    breakInside: "avoid",
-    breakBefore: "avoid",
-  },
-});
-
-const LegendItem = styled.div({
-  display: "flex",
-  alignItems: "center",
-  gap: "6px",
-});
-
-const LevelBadge = styled.div<{level: string}>((props) => ({
-  fontSize: "9px",
-  fontWeight: 600,
-  backgroundColor: "white",
-  color: "#475569",
-  borderRadius: "50%",
-  width: "16px",
-  height: "16px",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  border: getBorderForLevel(props.level),
-}));
+import { useTranslations } from "../../i18n/utils";
+import { Level } from "./technologies";
+import LevelDots from "./LevelDots.astro";
 
 const t = useTranslations(Astro.url.pathname);
-const currentLanguage = getLangFromUrl(Astro.url.pathname);
-const isGerman = currentLanguage === "de";
 ---
 
-<LegendContainer>
-  <LegendItem>
-    <LevelBadge level="Expert">E</LevelBadge>
-    <Typography className="caption">{t("expert")}</Typography>
-  </LegendItem>
-  <LegendItem>
-    <LevelBadge level="Intermediate">{isGerman ? 'F' : 'I'}</LevelBadge>
-    <Typography className="caption">{t("intermediate")}</Typography>
-  </LegendItem>
-  <LegendItem>
-    <LevelBadge level="Beginner">{isGerman ? 'A' : 'B'}</LevelBadge>
-    <Typography className="caption">{t("beginner")}</Typography>
-  </LegendItem>
-</LegendContainer>
+<div class="legend">
+  <span class="item"><span class="core-sample" />{t("core-skill")}</span>
+  <span class="item"><LevelDots level={Level.Expert} />{t("expert")}</span>
+  <span class="item"><LevelDots level={Level.Intermediate} />{t("intermediate")}</span>
+  <span class="item"><LevelDots level={Level.Beginner} />{t("beginner")}</span>
+</div>
+
+<style>
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 8px 20px;
+    margin-top: 20px;
+    padding-top: 12px;
+    border-top: 1px solid var(--border);
+    font-size: 12px;
+    line-height: 18px;
+    color: var(--muted-color);
+  }
+
+  .item {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .core-sample {
+    width: 18px;
+    height: 12px;
+    border: 1px solid var(--accent);
+    border-radius: 4px;
+    background: var(--accent-soft);
+  }
+
+  @media print {
+    .legend {
+      break-inside: avoid;
+      break-before: avoid;
+    }
+  }
+</style>

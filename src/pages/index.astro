@@ -3,25 +3,15 @@ import Layout from "../layout/layout.astro";
 ---
 
 <Layout>
-  <meta http-equiv="refresh" content="0;url=/de/" />
-  <link rel="canonical" href="https://cv.teufel-it.de/" />
-  <link rel="alternate" hreflang="de" href="https://cv.teufel-it/de/" />
-  <link rel="alternate" hreflang="en" href="https://cv.teufel-it/en/" />
-  <link rel="alternate" hreflang="x-default" href="https://cv.teufel-it.de/" />
+  <script slot="head" is:inline>
+    location.replace(navigator.language.startsWith("de") ? "/de/" : "/en/");
+  </script>
+  <noscript slot="head"><meta http-equiv="refresh" content="0;url=/de/" /></noscript>
 
   <div class="spinner-container">
     <div class="spinner"></div>
   </div>
 
-  <script>
-    // Client-side detection (more accurate)
-    // This runs before the meta refresh happens
-    window.onload = function () {
-      const browserLang = navigator.language;
-      const clientRedirectPath = browserLang.startsWith("de") ? "/de/" : "/en/";
-      window.location.href = clientRedirectPath;
-    };
-  </script>
 </Layout>
 
 <style>

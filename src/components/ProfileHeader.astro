@@ -6,6 +6,7 @@ import Ghibli from "./../images/ghibli.png";
 import { Icon } from "astro-icon/components";
 import { Typography } from "./Typography";
 import ImageSwap from "./ImageSwap.astro";
+import KeyFacts from "./KeyFacts.astro";
 import QRCode from "qrcode";
 import { getLangFromUrl } from "../i18n/utils";
 
@@ -93,6 +94,7 @@ const Link = styled.a({
         {t("academic-title")}
       </Typography>
     </div>
+    <div class="facts-row"><KeyFacts /></div>
     <Grid>
       <Column>
         <ContactBox>
@@ -112,21 +114,21 @@ const Link = styled.a({
         <ContactBox>
           <Icon name="openmoji:github" font-size={25} />
           <Link
-            href="http://github.com/firsttris"
+            href="https://github.com/firsttris"
             rel="noopener"
             target="_blank"
           >
-            <Typography className="body">Github</Typography>
+            <Typography className="body">GitHub</Typography>
           </Link>
         </ContactBox>
         <ContactBox>
           <Icon name="openmoji:linkedin" font-size={25} />
           <Link
-            href="http://de.linkedin.com/in/tristanteufel"
+            href="https://de.linkedin.com/in/tristanteufel"
             rel="noopener"
             target="_blank"
           >
-            <Typography className="body">Linkedin</Typography>
+            <Typography className="body">LinkedIn</Typography>
           </Link>
         </ContactBox>
       </Column>
@@ -146,6 +148,11 @@ const Link = styled.a({
 </ContainerBox>
 
 <style>
+  .facts-row {
+    display: flex;
+    justify-content: center;
+  }
+
   .download {
     display: flex;
     justify-content: center;
