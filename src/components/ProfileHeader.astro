@@ -9,7 +9,7 @@ import KeyFacts from "./KeyFacts.astro";
 
 const t = useTranslations(Astro.url.pathname);
 const onlineUrl = `https://cv.teufel-it.de/${getLangFromUrl(Astro.url.pathname)}/`;
-const qrSvg = await QRCode.toString(onlineUrl, { type: "svg", margin: 0, color: { dark: "#0f172a", light: "#0000" } });
+const qrSvg = await QRCode.toString(onlineUrl, { type: "svg", margin: 0, color: { dark: "#18181b", light: "#0000" } });
 
 const contacts = [
   { icon: "material-symbols:mail-outline-rounded", label: "info@teufel-it.de", href: "mailto:info@teufel-it.de" },
@@ -147,7 +147,7 @@ const contacts = [
     margin-left: auto;
     font-size: 9px;
     line-height: 12px;
-    color: #64748b;
+    color: #71717a;
     white-space: nowrap;
   }
 
