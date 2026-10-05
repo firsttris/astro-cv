@@ -1,15 +1,13 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 
-import react from '@astrojs/react';
-
 import mdx from '@astrojs/mdx';
 
 import icon from 'astro-icon';
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [react(), mdx(), icon({
+  integrations: [mdx(), icon({
     include: {
       'vscode-icons': [
         'file-type-typescript-official',
@@ -46,7 +44,6 @@ export default defineConfig({
         'file-type-docker2',
         'file-type-azure',
         'file-type-jenkins',
-        'file-type-maven',
         'file-type-webpack',
         'file-type-vite',
         'file-type-rest',
@@ -59,7 +56,8 @@ export default defineConfig({
         'file-type-xml',
         'file-type-node',
         'file-type-light-prisma',
-        'file-type-pdf2'
+        'file-type-pdf2',
+        'file-type-babel2'
       ],
       devicon: [
         'java-wordmark',
@@ -72,18 +70,12 @@ export default defineConfig({
         'socketio',
         'sqldeveloper',
         'traefikproxy',
-        'groovy',
         "githubactions",
         "spring",
         "selenium",
         'primeng',
-        'postgresql-wordmark',
         'githubactions',
-        "jenkins",
-        'podman',
-        'travis',
-        'helm',
-        'dot-net'
+        'helm'
       ],
       logos: [
         'react-query-icon',
@@ -96,10 +88,10 @@ export default defineConfig({
         'jquery',
         'laravel',
         'cordova',
-        'babel',
         'visual-studio',
-        'knockout',
         'kubernetes',
+        'dotnet',
+        'postgresql',
         'subversion',
         'bitbucket',
         'jira',
@@ -111,7 +103,6 @@ export default defineConfig({
         'rollup',
         'parcel-icon',
         'grpc',
-        'flask',
         'fastapi',
         'openshift',
         'terraform',
@@ -141,13 +132,19 @@ export default defineConfig({
         'mqtt',
         'githubcopilot',
         'anthropic',
-        'googlegemini'
+        'googlegemini',
+        'apachegroovy',
+        'apachemaven',
+        'flask',
+        'jenkins',
+        'podman',
+        'travisci'
       ],
       'skill-icons': [
-        'redux',
-        'emotion-light'
+        'redux'
       ],
       cib: ['gerrit'],
+      'file-icons': ['knockout'],
       iconoir: ['agile'],
       mdi: ['kodi', 'github', 'linkedin']
     }

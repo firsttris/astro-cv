@@ -1,42 +1,60 @@
 ---
-import styled from "@emotion/styled";
 import ChipsWithIcon from "./ChipsWithIcon.astro";
 import { type Skill } from "./technologies";
-import { Typography } from "../Typography";
 
 interface Props {
   title: string;
   skills: Skill[];
 }
 
-const Container = styled.div({
-  display: "flex",
-  marginBottom: "12px",
-  "@media print": {
-    breakInside: "avoid",
-  },
-});
-
-const TitleBox = styled.div({
-  minWidth: "110px",
-  paddingTop: "5px",
-  "@media (max-width: 425px)": {
-    display: "none",
-  },
-});
-
-const SkillsBox = styled.div({
-  flex: 1,
-});
-
 const { title, skills } = Astro.props;
 ---
 
-<Container>
-  <TitleBox>
-    <Typography className="label">{title}</Typography>
-  </TitleBox>
-  <SkillsBox>
+<div class="skill">
+  <div class="title-box">
+    <p class="label">{title}</p>
+  </div>
+  <div class="skills-box">
     <ChipsWithIcon skills={skills} showLevel />
-  </SkillsBox>
-</Container>
+  </div>
+</div>
+
+<style>
+  .skill {
+    display: flex;
+    margin-bottom: 12px;
+  }
+
+  .title-box {
+    min-width: 110px;
+    padding-top: 5px;
+  }
+
+  .skills-box {
+    flex: 1;
+  }
+
+  .label {
+    margin: 0;
+    padding: 0;
+    font-family: inherit;
+    font-size: 11px;
+    line-height: 16px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: var(--muted-color);
+  }
+
+  @media (max-width: 425px) {
+    .title-box {
+      display: none;
+    }
+  }
+
+  @media print {
+    .skill {
+      break-inside: avoid;
+    }
+  }
+</style>
