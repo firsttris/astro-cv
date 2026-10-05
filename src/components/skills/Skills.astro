@@ -4,24 +4,14 @@ import Skill from "./Skill.astro";
 import { mySkills } from "./mySkills";
 import { type LocaType } from "../../i18n/utils";
 import SkillLegend from "./SkillLegend.astro";
-import styled from "@emotion/styled";
-import { Typography } from "../Typography";
 
 const t = useTranslations(Astro.url.pathname);
-
-const SkillsHeader = styled.div({
-  marginBottom: "16px",
-  "@media print": {
-    breakAfter: "avoid",
-  },
-});
-
 ---
 
 <div class="skills-section">
-  <SkillsHeader>
-    <Typography className="h1">{t("skills")}</Typography>
-  </SkillsHeader>
+  <div class="skills-header">
+    <p class="title">{t("skills")}</p>
+  </div>
   
   {
     mySkills.map((skill) => (
@@ -32,8 +22,27 @@ const SkillsHeader = styled.div({
 </div>
 
 <style>
-  /* Keep the whole skills overview on one page */
+  .skills-header {
+    margin-bottom: 16px;
+  }
+
+  .title {
+    margin: 0;
+    padding: 0;
+    font-family: inherit;
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--text-color);
+  }
+
   @media print {
+    .skills-header {
+      break-after: avoid;
+    }
+
+    /* Keep the whole skills overview on one page */
     .skills-section {
       break-inside: avoid;
     }

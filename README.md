@@ -4,10 +4,8 @@
 
 ### A modern, customizable Curriculum Vitae built with Astro
 
-[![Astro](https://img.shields.io/badge/Astro-5.x-BC52EE?style=for-the-badge&logo=astro&logoColor=white)](https://astro.build/)
-[![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
+[![Astro](https://img.shields.io/badge/Astro-7.x-BC52EE?style=for-the-badge&logo=astro&logoColor=white)](https://astro.build/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-Ready-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![Emotion](https://img.shields.io/badge/Emotion-DB7093?style=for-the-badge&logo=emotion&logoColor=white)](https://emotion.sh/)
 [![MDX](https://img.shields.io/badge/MDX-1B1F24?style=for-the-badge&logo=mdx&logoColor=white)](https://mdxjs.com/)
 
 [Features](#-features) · [Getting Started](#-getting-started) · [Commands](#-commands) · [Project Structure](#-project-structure)
@@ -32,7 +30,7 @@
 
 | Feature | Description |
 |---------|-------------|
-| **Modern Stack** | Built with Astro 5, React 19, and Emotion for styling |
+| **Modern Stack** | Built with Astro 7, MDX and scoped component styles, no client-side framework |
 | **Icon Library** | Extensive icon support via Iconify (DevIcons, Material Symbols, Simple Icons, and more) |
 | **Print-Ready** | Optimized for both web viewing and PDF/print output |
 | **Responsive** | Looks great on desktop, tablet, and mobile |
@@ -85,7 +83,7 @@ Then open [http://localhost:4321](http://localhost:4321) in your browser.
 astro-cv/
 ├── public/          # Static assets (images, fonts, etc.)
 ├── src/
-│   ├── components/  # Reusable Astro/React components
+│   ├── components/  # Reusable Astro components
 │   ├── layouts/     # Page layouts
 │   ├── pages/       # Routes (each .astro file = one page)
 │   └── styles/      # Global styles
