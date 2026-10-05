@@ -1,5 +1,7 @@
 ---
 import "@fontsource-variable/inter";
+// Same file the @font-face for the latin subset points to, so the preload is reused
+import interLatin from "@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url";
 import "./../mdx/mdx.css";
 
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
@@ -33,6 +35,7 @@ const pageCss = `
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preload" href={interLatin} as="font" type="font/woff2" crossorigin />
     <meta name="color-scheme" content="light dark" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={t("meta-description")} />
