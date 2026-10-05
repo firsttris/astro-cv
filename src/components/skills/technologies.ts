@@ -62,7 +62,7 @@ export const languages: Record<string, Skill>  = {
   },
   groovy: {
     name: "Groovy",
-    icon: "devicon:groovy",
+    icon: "simple-icons:apachegroovy",
     website: "https://groovy-lang.org/",
     level: Level.Intermediate,
   },
@@ -128,13 +128,13 @@ export const uiFrameworks = {
 export const libraries = {
   dotnet: {
     name: ".NET",
-    icon: "devicon:dot-net",
+    icon: "logos:dotnet",
     website: "https://dotnet.microsoft.com/",
     level: Level.Intermediate,
   },
   aspnet: {
     name: "ASP.NET",
-    icon: "devicon:dot-net",
+    icon: "logos:dotnet",
     website: "https://dotnet.microsoft.com/apps/aspnet",
     level: Level.Beginner,
   },
@@ -194,7 +194,7 @@ export const libraries = {
   },
   knockoutJs: {
     name: "Knockout.js",
-    icon: "logos:knockout",
+    icon: "file-icons:knockout",
     website: "https://knockoutjs.com/",
     level: Level.Intermediate,
   },
@@ -248,7 +248,7 @@ export const libraries = {
   },
   flask: {
     name: "Flask",
-    icon: "logos:flask",
+    icon: "simple-icons:flask",
     website: "https://flask.palletsprojects.com/",
     level: Level.Intermediate,
   },
@@ -335,7 +335,7 @@ export const styling = {
   },
   emotion: {
     name: "Emotion",
-    icon: "skill-icons:emotion-light",
+    icon: "emotion",
     website: "https://emotion.sh/docs/introduction",
     level: Level.Expert,
   },
@@ -434,7 +434,7 @@ export const databases = {
   },
   postGresSql: {
     name: "PostgreSQL",
-    icon: "devicon:postgresql-wordmark",
+    icon: "logos:postgresql",
     website: "https://www.postgresql.org/",
     level: Level.Expert,
   },
@@ -527,7 +527,7 @@ export const container = {
   },
   podman: {
     name: "Podman",
-    icon: "devicon:podman",
+    icon: "simple-icons:podman",
     website: "https://podman.io/",
     level: Level.Expert,
   },
@@ -588,7 +588,7 @@ export const buildTools = {
   },
   maven: {
     name: "Maven",
-    icon: "vscode-icons:file-type-maven",
+    icon: "simple-icons:apachemaven",
     website: "https://maven.apache.org/",
     level: Level.Intermediate,
   },
@@ -630,7 +630,7 @@ export const buildTools = {
   },
   babel: {
     name: "Babel",
-    icon: "logos:babel",
+    icon: "vscode-icons:file-type-babel2",
     website: "https://babeljs.io/",
     level: Level.Expert,
   },
@@ -827,13 +827,13 @@ export const cicd = {
   },
   jenkins: {
     name: "Jenkins",
-    icon: "devicon:jenkins",
+    icon: "simple-icons:jenkins",
     website: "https://www.jenkins.io/",
     level: Level.Intermediate,
   },
   travis: {
     name: "Travis",
-    icon: "devicon:travis",
+    icon: "simple-icons:travisci",
     website: "https://travis-ci.org/",
     level: Level.Intermediate,
   }
