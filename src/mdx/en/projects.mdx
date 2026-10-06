@@ -6,6 +6,7 @@ locale: "en"
 import Project from '../../components/Project.astro'
 import Divider from "../../components/Divider.astro";
 import { 
+    skillsForSCommunication,
     skillsForBundesagentur,
     skillsForRwe, 
     skillsForCtream, 
@@ -31,9 +32,27 @@ import {
 <Divider />
 
 <Project
+  title="Development of the CMS Platform for the Websites of the Sparkassen"
+  client="S-Communication Services GmbH"
+  period="03/2026 - 12/2026"
+  details="Sparkassen-Finanzgruppe | Remote"
+  position="Full-Stack Developer"
+  skills={skillsForSCommunication}
+>
+
+- Implementation of features, tasks, and bug fixes in the CMS platform powering sparkasse.de and the websites of the individual Sparkassen.
+- Maintenance of around 20 tenant projects inheriting from a shared CMS root, including deciding whether a change belongs in the tenant, the CMS root, or the Strapi fork.
+- Development and bug fixing in a custom Strapi fork containing fixes that would not be accepted upstream.
+- PostgreSQL schema changes and creation of database migrations for Strapi adjustments.
+- Development of the React frontend and its component library.
+- Suggestions for improving the CI/CD pipelines.
+
+</Project>
+
+<Project
   title="Development of the Care Level Calculator and Online Portal for Pflegeabc.de"
   client="Pflegeabc GmbH"
-  period="05/2025 - present"
+  period="05/2025 - 02/2026"
   details="Hamburg/DE | direct contact | Scrum | Remote"
   position="Full-Stack Developer"
   skills={skillsForPflegeabc}
@@ -55,7 +74,7 @@ import {
 <Project
   title="Development and Testing of the FIS3 Controlling Application"
   client="Bundesagentur für Arbeit (Federal Employment Agency)"
-  period="06/2025 - present"
+  period="06/2025 - 02/2026"
   details="Nuremberg/DE | freelance via nemensis AG and Atos SE | Scrum | Remote"
   position="Frontend and Backend Developer"
   skills={skillsForBundesagentur}

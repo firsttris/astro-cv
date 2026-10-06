@@ -6,6 +6,7 @@ locale: "de"
 import Project from '../../components/Project.astro'
 import Divider from "../../components/Divider.astro";
 import { 
+    skillsForSCommunication,
     skillsForBundesagentur,
     skillsForRwe, 
     skillsForCtream, 
@@ -31,9 +32,27 @@ import {
 <Divider />
 
 <Project
+  title="Weiterentwicklung der CMS-Plattform für die Webauftritte der Sparkassen"
+  client="S-Communication Services GmbH"
+  period="03/2026 - 12/2026"
+  details="Sparkassen-Finanzgruppe | Remote"
+  position="Full-Stack-Entwickler"
+  skills={skillsForSCommunication}
+>
+
+- Umsetzung von Features, Tasks und Bugfixes in der CMS-Plattform, auf der sparkasse.de und die Webauftritte der Sparkassen basieren.
+- Betreuung von rund 20 Mandanten-Projekten, die von einem gemeinsamen CMS-Root erben, inklusive Entscheidung, ob eine Änderung im Mandanten, im CMS-Root oder im Strapi-Fork umgesetzt wird.
+- Weiterentwicklung und Fehlerbehebung in einem eigenen Strapi-Fork mit Fixes, die über den Upstream-Prozess nicht übernommen würden.
+- Schemaänderungen in der PostgreSQL-Datenbank und Erstellung von Datenbank-Migrationen bei Anpassungen an Strapi.
+- Weiterentwicklung des React-Frontends und der zugehörigen Komponentenbibliothek.
+- Verbesserungsvorschläge zur Optimierung der CI/CD-Pipelines.
+
+</Project>
+
+<Project
   title="Entwicklung des Pflegegradrechners und Online-Portals für Pflegeabc.de"
   client="Pflegeabc GmbH"
-  period="05/2025 - bis heute"
+  period="05/2025 - 02/2026"
   details="Hamburg/DE | direkter Kontakt | Scrum | Remote"
   position="Full-Stack-Entwickler"
   skills={skillsForPflegeabc}
@@ -55,7 +74,7 @@ import {
 <Project
   title="Weiterentwicklung und Testing der Controlling-Applikation FIS3"
   client="Bundesagentur für Arbeit"
-  period="06/2025 - bis heute"
+  period="06/2025 - 02/2026"
   details="Nürnberg/DE | freiberuflich über nemensis AG und Atos SE | Scrum | Remote"
   position="Frontend- und Backend-Entwickler"
   skills={skillsForBundesagentur}

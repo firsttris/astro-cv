@@ -18,6 +18,16 @@ import {
   accessibility,
 } from "./technologies";
 
+export const skillsForSCommunication = [
+  languages.typescript,
+  languages.nodejs,
+  libraries.strapi,
+  uiFrameworks.react,
+  databases.postGresSql,
+  databases.sql,
+  api.rest,
+]
+
 export const skillsForBundesagentur = [
   languages.typescript,
   languages.csharp,
