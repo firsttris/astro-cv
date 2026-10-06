@@ -758,7 +758,7 @@ export const authentication = {
   },
   keycloak: {
     name: "Keycloak",
-    icon: "logos:keycloak",
+    icon: "simple-icons:keycloak",
     website: "https://www.keycloak.org/",
     level: Level.Expert,
   }

@@ -126,6 +126,7 @@ export default defineConfig({
         'light-mode-outline-rounded'
       ],
       'simple-icons': [
+        'keycloak',
         'oracle',
         'scrumalliance',
         'esbuild',
