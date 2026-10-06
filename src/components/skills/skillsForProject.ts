@@ -26,6 +26,8 @@ export const skillsForSCommunication = [
   databases.postGresSql,
   databases.sql,
   api.rest,
+  accessibility.wcag,
+  accessibility.aria,
 ]
 
 export const skillsForBundesagentur = [
