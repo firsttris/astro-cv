@@ -287,6 +287,12 @@ export const libraries = {
     icon: "logos:nestjs",
     website: "https://nestjs.com/",
     level: Level.Intermediate,
+  },
+  knex: {
+    name: "Knex.js",
+    icon: "logos:knex",
+    website: "https://knexjs.org/",
+    level: Level.Intermediate,
   }
 };
 

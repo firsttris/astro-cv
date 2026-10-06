@@ -78,6 +78,7 @@ export default defineConfig({
         'helm'
       ],
       logos: [
+        'knex',
         'react-query-icon',
         'apollostack',
         'leaflet',
