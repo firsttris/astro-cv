@@ -287,6 +287,12 @@ export const libraries = {
     icon: "logos:nestjs",
     website: "https://nestjs.com/",
     level: Level.Intermediate,
+  },
+  knex: {
+    name: "Knex.js",
+    icon: "logos:knex",
+    website: "https://knexjs.org/",
+    level: Level.Intermediate,
   }
 };
 
@@ -752,7 +758,7 @@ export const authentication = {
   },
   keycloak: {
     name: "Keycloak",
-    icon: "logos:keycloak",
+    icon: "simple-icons:keycloak",
     website: "https://www.keycloak.org/",
     level: Level.Expert,
   }

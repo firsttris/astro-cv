@@ -22,10 +22,15 @@ export const skillsForSCommunication = [
   languages.typescript,
   languages.nodejs,
   libraries.strapi,
+  libraries.nestjs,
+  libraries.knex,
   uiFrameworks.react,
+  styling.mui,
   databases.postGresSql,
   databases.sql,
   api.rest,
+  testing.jest,
+  testing.playwright,
   accessibility.wcag,
   accessibility.aria,
 ]
@@ -46,18 +51,15 @@ export const skillsForBundesagentur = [
   api.rest,
   cloud.azure,
   authentication.msal,
-  ide.vscode,
-  ide.visualStudio,
-  tools.jira,
-  tools.confluence,
   versionControl.github,
   cicd.jenkins,
   cicd.githubActions,
+  accessibility.wcag,
+  accessibility.aria,
 ]
 
 export const skillsForDHL = [
   languages.typescript,
-  languages.java,
   languages.nodejs,
   databases.sql,
   uiFrameworks.react,
@@ -65,22 +67,16 @@ export const skillsForDHL = [
   uiFrameworks.angular,
   styling.primeNg,
   styling.tailwind,
-  libraries.spring,
   testing.jest,
   testing.playwright,
-  testing.selenium,
   styling.emotion,
   api.rest,
   api.openapi,
   cloud.azure,
   container.docker,
   container.openShift,
-  tools.jira,
-  tools.confluence,
   tools.figma,
-  ide.intellij,
   versionControl.github,
-  webserver.nginx,
   cicd.jenkins,
   cicd.githubActions,
   buildTools.webpack,
@@ -88,6 +84,7 @@ export const skillsForDHL = [
   accessibility.wcag,
   accessibility.aria,
   accessibility.accessibilityTesting,
+  authentication.keycloak,
 ]
 
 export const skillsForJLA = [
@@ -103,11 +100,11 @@ export const skillsForJLA = [
   databases.postGresSql,
   cloud.azure,
   authentication.msal,
-  ide.vscode,
   api.openapi,
   container.docker,
   cicd.githubActions,
-  buildTools.vite
+  buildTools.vite,
+  container.dockerCompose,
 ]
 
 export const skillsForPflegeabc = [
@@ -122,14 +119,13 @@ export const skillsForPflegeabc = [
   databases.sql,
   testing.playwright,
   api.rest,
-  tools.jira,
   tools.figma,
   versionControl.github,
+  accessibility.wcag,
+  accessibility.aria,
 ]
 
 export const skillsForRwe = [
-  ide.vscode,
-  ide.visualStudio,
   languages.typescript,
   languages.csharp,
   libraries.dotnet,
@@ -147,13 +143,11 @@ export const skillsForRwe = [
   authentication.msal,
   libraries.nx,
   libraries.apollo,
-  tools.jira,
-  tools.confluence,
   buildTools.webpack,
   buildTools.vite,
   container.docker,
   container.terraform,
-];
+]
 
 export const skillsForCtream = [
   languages.typescript,
@@ -165,12 +159,10 @@ export const skillsForCtream = [
   languages.python,
   libraries.flask,
   cloud.aws,
-  ide.vscode,
   styling.styled,
   libraries.reactQuery,
   tools.figma,
-  buildTools.vite,
-];
+]
 
 export const skillsForAtis = [
   languages.typescript,
@@ -179,7 +171,6 @@ export const skillsForAtis = [
   testing.cypress,
   styling.mui,
   libraries.reactQuery,
-  ide.vscode,
   api.openapi,
   libraries.nx,
   libraries.leaflet,
@@ -187,8 +178,9 @@ export const skillsForAtis = [
   cicd.jenkins,
   libraries.reactBeautifulDnd,
   tools.figma,
-  buildTools.vite,
-];
+  buildTools.webpack,
+  versionControl.gitlab,
+]
 
 export const skillsForHeidelbergCement = [
   languages.typescript,
@@ -202,39 +194,32 @@ export const skillsForHeidelbergCement = [
   testing.testingLibrary,
   styling.mui,
   libraries.reactQuery,
-  ide.vscode,
   cloud.azure,
-  tools.confluence,
-  tools.jira,
   testing.xRay,
   versionControl.gitlab,
   webserver.nginx,
   buildTools.webpack,
-];
+  container.docker,
+]
 
 export const skillsForKlarsolar = [
   languages.typescript,
-  languages.go,
   uiFrameworks.angular,
   languages.nodejs,
   styling.angularMaterial,
   styling.tailwind,
   api.graphql,
   libraries.apollo,
-  ide.vscode,
-  container.kubernetes,
-  container.helm,
   versionControl.github,
   buildTools.webpack,
-];
+  libraries.nx,
+]
 
 export const skillsForSeeburger = [
   languages.java,
   libraries.spring,
   languages.nodejs,
   api.openapi,
-  ide.intellij,
-  ide.vscode,
   languages.typescript,
   uiFrameworks.react,
   libraries.redux,
@@ -242,14 +227,10 @@ export const skillsForSeeburger = [
   testing.jest,
   styling.mui,
   libraries.agGrid,
-  container.kubernetes,
-  container.helm,
-  tools.jira,
-  tools.confluence,
   tools.figma,
   versionControl.gerrit,
   buildTools.webpack,
-];
+]
 
 export const skillsForTeamviewer = [
   libraries.knockoutJs,
@@ -258,16 +239,11 @@ export const skillsForTeamviewer = [
   buildTools.webpack,
   languages.csharp,
   libraries.dotnet,
-  ide.visualStudio,
-  ide.vscode,
   versionControl.bitbucket,
-  tools.jira,
-  tools.confluence,
   tools.figma,
-];
+]
 
 export const skillsForProctorAndGamble = [
-  ide.vscode,
   languages.typescript,
   languages.php,
   languages.nodejs,
@@ -277,12 +253,9 @@ export const skillsForProctorAndGamble = [
   languages.javascript,
   databases.sql,
   versionControl.bitbucket,
-  tools.jira,
-  tools.confluence,
-];
+]
 
 export const skillsForDaimler = [
-  ide.vscode,
   languages.typescript,
   uiFrameworks.react,
   libraries.redux,
@@ -294,8 +267,6 @@ export const skillsForDaimler = [
   container.docker,
   api.rest,
   api.openapi,
-  tools.jira,
-  tools.confluence,
   container.kubernetes,
   container.helm,
   versionControl.github,
@@ -303,7 +274,8 @@ export const skillsForDaimler = [
   libraries.immutablejs,
   webserver.traefik,
   libraries.sequelize,
-];
+  databases.postGresSql,
+]
 
 export const skillsForGameforge = [
   languages.javascript,
@@ -319,11 +291,9 @@ export const skillsForGameforge = [
   libraries.nestjs,
   languages.go,
   versionControl.bitbucket,
-  tools.jira,
-  tools.confluence,
   buildTools.webpack,
   api.openapi,
-];
+]
 
 export const skillsForTimify = [
   languages.javascript,
@@ -331,39 +301,30 @@ export const skillsForTimify = [
   databases.mongodb,
   libraries.hapi,
   versionControl.github,
-  tools.jira,
-  tools.confluence,
   buildTools.webpack,
-];
+]
 
 export const skillsForCybermanufaktur = [
   languages.javascript,
   languages.go,
   uiFrameworks.angular,
   languages.nodejs,
-  languages.python,
-  ide.intellij,
   libraries.jquery,
   languages.php,
   versionControl.bitbucket,
-  tools.jira,
-  tools.confluence,
   tools.wordpress,
   buildTools.webpack,
-];
+]
 
 export const skillsForArvato = [
   languages.java,
-  ide.eclipse,
   buildTools.maven,
   testing.junit,
-  tools.confluence,
-  tools.jira,
   databases.sql,
   tools.sqlDeveloper,
   versionControl.svn,
   languages.groovy,
-];
+]
 
 export const skillsForEc4u = [
   languages.javascript,
@@ -375,16 +336,13 @@ export const skillsForEc4u = [
   libraries.oracleAdf,
   testing.selenium,
   tools.soapUI,
-  ide.intellij,
   databases.sql,
   tools.sqlDeveloper,
   languages.java,
   tools.oracleSoaSuite,
   libraries.cordova,
   api.rest,
-  tools.jira,
-  tools.confluence,
-];
+]
 
 export const skillsForJestRunner = [
   languages.typescript,
