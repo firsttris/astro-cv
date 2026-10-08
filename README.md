@@ -102,6 +102,9 @@ astro-cv/
 
 <div align="center">
 
-Made with ❤️ and [Astro](https://astro.build)
+⭐ Like Astro CV? A [star on GitHub](https://github.com/firsttris/astro-cv) helps others find it.<br>
+🐛 [Report a bug](https://github.com/firsttris/astro-cv/issues/new) · 💡 [Request a feature](https://github.com/firsttris/astro-cv/issues/new)
+
+<sub>License: <a href="LICENSE">MIT</a> · © Tristan Teufel and contributors</sub>
 
 </div>
