@@ -105,6 +105,7 @@ astro-cv/
 ⭐ Like Astro CV? A [star on GitHub](https://github.com/firsttris/astro-cv) helps others find it.<br>
 🐛 [Report a bug](https://github.com/firsttris/astro-cv/issues/new) · 💡 [Request a feature](https://github.com/firsttris/astro-cv/issues/new)
 
-<sub>License: <a href="LICENSE">MIT</a> · © Tristan Teufel and contributors</sub>
+<sub>Code: <a href="LICENSE">MIT</a> · © Tristan Teufel and contributors<br>
+The CV itself (texts, photos, name) is not covered by the MIT license: © Tristan Teufel, all rights reserved.</sub>
 
 </div>
