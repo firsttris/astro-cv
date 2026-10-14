@@ -7,6 +7,7 @@
 [![Astro](https://img.shields.io/badge/Astro-7.x-BC52EE?style=for-the-badge&logo=astro&logoColor=white)](https://astro.build/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-Ready-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![MDX](https://img.shields.io/badge/MDX-1B1F24?style=for-the-badge&logo=mdx&logoColor=white)](https://mdxjs.com/)
+[![Build](https://img.shields.io/github/actions/workflow/status/firsttris/astro-cv/build.yml?style=for-the-badge&label=build&logo=githubactions&logoColor=white)](https://github.com/firsttris/astro-cv/actions/workflows/build.yml)
 
 [Features](#-features) · [Getting Started](#-getting-started) · [Commands](#-commands) · [Project Structure](#-project-structure)
 
