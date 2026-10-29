@@ -2,7 +2,7 @@ export const defaultLang = (() => typeof window !== "undefined" && navigator.lan
 
 export const translations = {
     en: {
-        'business-title': 'Software Architect (Freelancer)',
+        'business-title': 'Software Craftsman & Software Architect',
         'academic-title': 'Business Informatics (B.Sc.)',
         cv: 'Curriculum Vitae',
         languages: 'Languages',
@@ -47,10 +47,10 @@ export const translations = {
         'download-pdf': 'Download PDF',
         'pdf-file': '/Tristan-Teufel-CV.pdf',
         'online-version': 'Online version',
-        'meta-description': 'Software architect (freelancer) specialising in developer experience, test automation and modern web stacks (TypeScript, React, Angular, Node.js).',
+        'meta-description': 'Software craftsman and software architect (freelancer) specialising in developer experience, test automation and modern web stacks (TypeScript, React, Angular, Node.js).',
     },
     de: {
-        'business-title': 'Softwarearchitekt (Freelancer)',
+        'business-title': 'Software Craftsman & Softwarearchitekt',
         'academic-title': 'Wirtschaftsinformatik (B.Sc.)',
         cv: 'Lebenslauf',
         languages: 'Sprachen',
@@ -95,6 +95,6 @@ export const translations = {
         'download-pdf': 'PDF herunterladen',
         'pdf-file': '/Tristan-Teufel-Lebenslauf.pdf',
         'online-version': 'Online-Version',
-        'meta-description': 'Softwarearchitekt (Freelancer) mit Schwerpunkt Developer Experience, Testautomatisierung und modernen Web-Stacks (TypeScript, React, Angular, Node.js).',
+        'meta-description': 'Software Craftsman und Softwarearchitekt (Freelancer) mit Schwerpunkt Developer Experience, Testautomatisierung und modernen Web-Stacks (TypeScript, React, Angular, Node.js).',
     },
 } as const;
