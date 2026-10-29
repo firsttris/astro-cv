@@ -134,6 +134,19 @@ strong {
     margin-top: 6px;
   }
 
+  /* The own products stay on page 1, the expertise opens page 2 before the skills */
+  .own-products {
+    break-inside: avoid;
+  }
+
+  .expertise {
+    break-before: page;
+  }
+
+  .expertise > h3:first-child {
+    margin-top: 0;
+  }
+
   /* Keep section headings with the content that follows */
   h1,
   h1 + hr {
