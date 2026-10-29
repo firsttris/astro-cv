@@ -2,7 +2,7 @@ export const defaultLang = (() => typeof window !== "undefined" && navigator.lan
 
 export const translations = {
     en: {
-        'business-title': 'Software Craftsman & Software Architect',
+        'business-title': 'Software Craftsman & Software Architect (Freelancer)',
         'academic-title': 'Business Informatics (B.Sc.)',
         cv: 'Curriculum Vitae',
         languages: 'Languages',
@@ -23,7 +23,7 @@ export const translations = {
         cloud: "Cloud",
         container: 'Container',
         cicd: 'CI/CD',
-        "ai-tools": "Agents & Assistants",
+        "ai-tools": "Agents",
         expert: 'Expert',
         Expert: 'Expert',
         intermediate: 'Intermediate',
@@ -50,7 +50,7 @@ export const translations = {
         'meta-description': 'Software craftsman and software architect (freelancer) specialising in developer experience, test automation and modern web stacks (TypeScript, React, Angular, Node.js).',
     },
     de: {
-        'business-title': 'Software Craftsman & Softwarearchitekt',
+        'business-title': 'Software Craftsman & Softwarearchitekt (Freelancer)',
         'academic-title': 'Wirtschaftsinformatik (B.Sc.)',
         cv: 'Lebenslauf',
         languages: 'Sprachen',
@@ -71,7 +71,7 @@ export const translations = {
         cloud: "Cloud",
         container: 'Container',
         cicd: 'CI/CD',
-        "ai-tools": "Agenten & Assistenten",
+        "ai-tools": "Agenten",
         expert: 'Experte',
         Expert: 'Experte',
         intermediate: 'Fortgeschritten',
