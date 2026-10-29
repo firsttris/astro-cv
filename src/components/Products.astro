@@ -132,6 +132,11 @@ const products = [
   }
 
   @media print {
+    /* A flatter crop lets the products share page 2 with the skills */
+    .shot img {
+      aspect-ratio: 16 / 5;
+    }
+
     .desc {
       font-size: 12px;
       line-height: 17px;

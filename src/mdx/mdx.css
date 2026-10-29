@@ -134,6 +134,15 @@ strong {
     margin-top: 6px;
   }
 
+  /* Own products open page 2, followed by the skills overview */
+  .own-products {
+    break-before: page;
+  }
+
+  .own-products > h3:first-child {
+    margin-top: 0;
+  }
+
   /* Keep section headings with the content that follows */
   h1,
   h1 + hr {
