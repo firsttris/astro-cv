@@ -1,0 +1,146 @@
+---
+import { Image } from "astro:assets";
+import haben from "../assets/products/haben.png";
+import kontext from "../assets/products/kontext.png";
+import schreibzeug from "../assets/products/schreibzeug.png";
+import { getLangFromUrl } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url.pathname);
+
+const content = {
+  de: {
+    docs: "Dokumentation",
+    haben: {
+      tagline: "Alternative zu lexoffice und sevDesk",
+      desc: "Buchhaltung für Selbstständige und kleine Unternehmen: E-Rechnung (ZUGFeRD, XRechnung), Bankabgleich, EÜR und Umsatzsteuer-Voranmeldung direkt an ELSTER.",
+      alt: "Übersicht in Haben mit offenen Forderungen, Umsatz und Kontostand",
+    },
+    kontext: {
+      tagline: "Alternative zu Google Workspace und Microsoft 365",
+      desc: "Mail, Kalender, Kontakte, Aufgaben, Team-Chat und Telefonie in einer Anwendung, mit gemeinsamen Postfächern und ohne Kosten pro Nutzer.",
+      alt: "Posteingang in Kontext mit gemeinsamen Postfächern",
+    },
+    schreibzeug: {
+      tagline: "Alternative zu Google Docs und Microsoft 365",
+      desc: "Word, Excel, PowerPoint und PDF gemeinsam in Echtzeit bearbeiten, im Browser oder als Desktop-App. Die Dateien bleiben .docx, .xlsx und .pptx.",
+      alt: "Ein Word-Dokument im Editor von Schreibzeug",
+    },
+  },
+  en: {
+    docs: "Documentation",
+    haben: {
+      tagline: "An alternative to lexoffice and sevDesk",
+      desc: "Bookkeeping for German freelancers and small businesses: e-invoicing (ZUGFeRD, XRechnung), bank reconciliation, EÜR and VAT returns sent straight to ELSTER.",
+      alt: "Overview in Haben with open receivables, revenue and account balance",
+    },
+    kontext: {
+      tagline: "An alternative to Google Workspace and Microsoft 365",
+      desc: "Mail, calendar, contacts, tasks, team chat and telephony in one application, with shared mailboxes and no per-seat pricing.",
+      alt: "Inbox in Kontext with shared mailboxes",
+    },
+    schreibzeug: {
+      tagline: "An alternative to Google Docs and Microsoft 365",
+      desc: "Edit Word, Excel, PowerPoint and PDF files together in real time, in the browser or as a desktop app. Files stay .docx, .xlsx and .pptx.",
+      alt: "A Word document in the Schreibzeug editor",
+    },
+  },
+}[lang];
+
+const products = [
+  { id: "haben", name: "Haben", image: haben, ...content.haben },
+  { id: "kontext", name: "Kontext", image: kontext, ...content.kontext },
+  { id: "schreibzeug", name: "Schreibzeug", image: schreibzeug, ...content.schreibzeug },
+];
+---
+
+<div class="products">
+  {
+    products.map((product) => (
+      <article class="product">
+        <a href={`https://firsttris.github.io/${product.id}/`} target="_blank" class="shot">
+          <Image src={product.image} alt={product.alt} widths={[360, 720]} sizes="(min-width: 720px) 240px, 100vw" loading="eager" />
+        </a>
+        <h3>{product.name}</h3>
+        <p class="tagline">{product.tagline}</p>
+        <p class="desc">{product.desc}</p>
+        <p class="links">
+          <a href={`https://firsttris.github.io/${product.id}/`} target="_blank">{content.docs}</a>
+          {" · "}
+          <a href={`https://github.com/firsttris/${product.id}`} target="_blank">GitHub</a>
+        </p>
+      </article>
+    ))
+  }
+</div>
+
+<style>
+  .products {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    margin: 12px 0 4px;
+  }
+
+  .product {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    break-inside: avoid;
+  }
+
+  .shot {
+    display: block;
+    margin-bottom: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    text-decoration: none !important;
+  }
+
+  .shot img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    object-position: top left;
+  }
+
+  .tagline,
+  .links {
+    font-size: 12px;
+    line-height: 18px;
+    color: var(--muted-color);
+  }
+
+  .desc {
+    flex: 1;
+    margin-top: 4px;
+    font-size: 13px;
+    line-height: 20px;
+  }
+
+  .links {
+    margin-top: 6px;
+  }
+
+  @media (max-width: 640px) {
+    .products {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+  }
+
+  @media print {
+    .desc {
+      font-size: 12px;
+      line-height: 17px;
+    }
+
+    .tagline,
+    .links {
+      font-size: 11px;
+      line-height: 16px;
+    }
+  }
+</style>

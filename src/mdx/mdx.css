@@ -82,6 +82,11 @@ strong {
   font-weight: 600;
 }
 
+/* Space above the sub-headings of the career summary */
+#profile h3 {
+  margin-top: 10px;
+}
+
 /* Links in running text are underlined, since the accent color matches the text color */
 #profile a,
 .project-body a {
@@ -123,6 +128,10 @@ strong {
 
   li {
     padding-bottom: 1px;
+  }
+
+  #profile h3 {
+    margin-top: 6px;
   }
 
   /* Keep section headings with the content that follows */
