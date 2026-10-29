@@ -11,7 +11,8 @@
 
 - Texte nicht ohne Rückfrage umschreiben, kürzen oder abschwächen. Änderungen erst als Vorschlag zeigen (vorher/nachher) und nach Freigabe umsetzen.
 - Keine neuen Angaben ergänzen, die nicht freigegeben sind (z. B. Kundennamen in der Zusammenfassung).
-- Senior-Signale und Schlagworte für Recruiter bleiben erhalten: „Senior“, „Lead-Level“, „Lead-Expertise“, „(Freelancer)“, „KI-Tools“ usw.
+- Senior-Signale und Schlagworte für Recruiter bleiben erhalten: „Senior“, „Lead-Level“, „Lead-Expertise“, „(Freelancer)“ usw.
+- Die Wörter „KI“ und „AI“ nicht verwenden, stattdessen „Agenten“ bzw. „Agents“.
 - Reine Fehlerkorrekturen (Rechtschreibung, Grammatik, Firmennamen, Fachbegriffe) sind erlaubt, aber im Pull Request aufzulisten.
 
 ## PDF
