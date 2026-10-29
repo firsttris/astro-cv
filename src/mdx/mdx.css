@@ -134,12 +134,16 @@ strong {
     margin-top: 6px;
   }
 
-  /* Own products open page 2, followed by the skills overview */
+  /* The own products stay on page 1, the expertise opens page 2 before the skills */
   .own-products {
+    break-inside: avoid;
+  }
+
+  .expertise {
     break-before: page;
   }
 
-  .own-products > h3:first-child {
+  .expertise > h3:first-child {
     margin-top: 0;
   }
 
