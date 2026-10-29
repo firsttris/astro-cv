@@ -87,6 +87,11 @@ strong {
   margin-top: 10px;
 }
 
+/* Space between the open-source paragraph and the own products */
+.own-products {
+  margin-top: 10px;
+}
+
 /* Links in running text are underlined, since the accent color matches the text color */
 #profile a,
 .project-body a {
