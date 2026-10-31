@@ -43,7 +43,7 @@
 
 ### Prerequisites
 
-- Node.js 18+
+- Node.js 22.12+ (required by Astro 7)
 - npm or yarn
 
 ### Installation
