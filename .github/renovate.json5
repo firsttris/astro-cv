@@ -1,0 +1,67 @@
+// Renovate (GitHub App, https://github.com/apps/renovate): a pull request for each new release of
+// what the CV builds on, plus the "Dependency Dashboard" issue listing what is open.
+// Only those: Astro with its integrations (MDX, astro-icon), Playwright that renders the PDFs, and
+// the Node of the workflows. The icon sets, fonts and the actions are not tracked here. Check with
+// `npx --package renovate renovate-config-validator .github/renovate.json5`.
+{
+  $schema: "https://docs.renovatebot.com/renovate-schema.json",
+  extends: ["config:recommended"],
+  enabledManagers: ["npm", "custom.regex"],
+  timezone: "Europe/Berlin",
+  labels: ["dependencies"],
+  automerge: false,
+  customManagers: [
+    {
+      // "Astro 7" in the README (a major only) and the "(required by Astro 7)" next to Node
+      customType: "regex",
+      managerFilePatterns: ["/^README\\.md$/"],
+      matchStrings: ["Built with Astro (?<currentValue>\\d+),", "\\(required by Astro (?<currentValue>\\d+)\\)"],
+      depNameTemplate: "astro-readme",
+      packageNameTemplate: "astro",
+      datasourceTemplate: "npm",
+      extractVersionTemplate: "^(?<version>\\d+)\\.\\d+\\.\\d+$",
+      versioningTemplate: "regex:^(?<major>\\d+)$",
+    },
+    {
+      // The Node of the build and deploy workflows
+      customType: "regex",
+      managerFilePatterns: ["/^\\.github/workflows/[^/]+\\.ya?ml$/"],
+      matchStrings: ["\\n\\s+node-version: (?<currentValue>\\d+)"],
+      depNameTemplate: "node",
+      datasourceTemplate: "node-version",
+      versioningTemplate: "node",
+    },
+  ],
+  packageRules: [
+    {
+      // From npm only Astro and Playwright (below)
+      matchManagers: ["npm"],
+      enabled: false,
+    },
+    {
+      // Astro and its integrations in one PR: a new Astro major usually needs new majors of them
+      matchPackageNames: ["astro", "@astrojs/**", "astro-icon"],
+      enabled: true,
+      groupName: "Astro",
+      sourceUrl: "https://github.com/withastro/astro",
+      prBodyNotes: [
+        "Before merging: read the Astro upgrade guide for a new major (https://docs.astro.build/en/upgrade-astro/) and its Node requirement (`node-version` in the workflows, the README). The Check Build run of this PR builds the site and the PDFs; locally `npm run build` and check the PDFs as CLAUDE.md says: 9 pages, page 1 with the summary, open-source development and own products, page 2 with technical expertise and skills.",
+      ],
+    },
+    {
+      // Renders dist/ to the two PDFs (scripts/generate-pdf.mjs)
+      matchPackageNames: ["playwright"],
+      enabled: true,
+      groupName: "Playwright",
+      sourceUrl: "https://github.com/microsoft/playwright",
+      prBodyNotes: [
+        "A new Chromium can break pages differently. Before merging: `npm run build` and check both PDFs as CLAUDE.md says (9 pages, page 1 and page 2 as before).",
+      ],
+    },
+    {
+      matchPackageNames: ["node"],
+      groupName: "Node",
+      sourceUrl: "https://github.com/nodejs/node",
+    },
+  ],
+}
