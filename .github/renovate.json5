@@ -1,15 +1,17 @@
 // Renovate (GitHub App, https://github.com/apps/renovate): a pull request for each new release of
-// what the CV builds on, plus the "Dependency Dashboard" issue listing what is open.
-// Only those: Astro with its integrations (MDX, astro-icon), Playwright that renders the PDFs, and
-// the Node of the workflows. The icon sets, fonts and the actions are not tracked here. Check with
-// `npx --package renovate renovate-config-validator .github/renovate.json5`.
+// what the CV builds on, plus the "Dependency Dashboard" issue listing what is open. Their own pull
+// requests: Astro with its integrations (MDX, astro-icon), Playwright that renders the PDFs, and
+// the Node of the workflows.
+// Everything else (the other packages, the actions, the images) comes with the shared settings of
+// firsttris/workflows (renovate/default.json5): minor and patch updates once a month in one pull
+// request that merges itself when CI is green, majors on request in the dashboard.
+// Check with `npx --package renovate renovate-config-validator .github/renovate.json5`.
 {
   $schema: "https://docs.renovatebot.com/renovate-schema.json",
-  extends: ["config:recommended"],
-  enabledManagers: ["npm", "custom.regex"],
-  timezone: "Europe/Berlin",
-  labels: ["dependencies"],
+  extends: ["github>firsttris/workflows//renovate/default.json5"],
+  // Its pull requests run no CI, so nothing merges itself
   automerge: false,
+  lockFileMaintenance: { automerge: false },
   customManagers: [
     {
       // "Astro 7" in the README (a major only) and the "(required by Astro 7)" next to Node
@@ -34,11 +36,6 @@
   ],
   packageRules: [
     {
-      // From npm only Astro and Playwright (below)
-      matchManagers: ["npm"],
-      enabled: false,
-    },
-    {
       // Astro and its integrations in one PR: a new Astro major usually needs new majors of them
       matchPackageNames: ["astro", "@astrojs/**", "astro-icon"],
       enabled: true,
@@ -47,6 +44,9 @@
       prBodyNotes: [
         "Before merging: read the Astro upgrade guide for a new major (https://docs.astro.build/en/upgrade-astro/) and its Node requirement (`node-version` in the workflows, the README). The Check Build run of this PR builds the site and the PDFs; locally `npm run build` and check the PDFs as CLAUDE.md says: 9 pages, page 1 with the summary, open-source development and own products, page 2 with technical expertise and skills.",
       ],
+      schedule: ["at any time"],
+      automerge: false,
+      dependencyDashboardApproval: false,
     },
     {
       // Renders dist/ to the two PDFs (scripts/generate-pdf.mjs)
@@ -57,11 +57,17 @@
       prBodyNotes: [
         "A new Chromium can break pages differently. Before merging: `npm run build` and check both PDFs as CLAUDE.md says (9 pages, page 1 and page 2 as before).",
       ],
+      schedule: ["at any time"],
+      automerge: false,
+      dependencyDashboardApproval: false,
     },
     {
       matchPackageNames: ["node"],
       groupName: "Node",
       sourceUrl: "https://github.com/nodejs/node",
+      schedule: ["at any time"],
+      automerge: false,
+      dependencyDashboardApproval: false,
     },
   ],
 }
