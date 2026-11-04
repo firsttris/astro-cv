@@ -43,8 +43,7 @@
 
 ### Prerequisites
 
-- Node.js 22.12+ (required by Astro 7)
-- npm or yarn
+- [Bun](https://bun.sh/) (the version in `packageManager` of `package.json`); it installs the packages and runs Astro and the PDF script
 
 ### Installation
 
@@ -56,10 +55,10 @@ git clone https://github.com/yourusername/astro-cv.git
 cd astro-cv
 
 # Install dependencies
-npm install
+bun install
 
 # Start development server
-npm run dev
+bun run dev
 ```
 
 Then open [http://localhost:4321](http://localhost:4321) in your browser.
@@ -70,11 +69,11 @@ Then open [http://localhost:4321](http://localhost:4321) in your browser.
 
 | Command | Action |
 |---------|--------|
-| `npm install` | Install dependencies |
-| `npm run dev` | Start dev server at `localhost:4321` |
-| `npm run build` | Build for production to `./dist/` |
-| `npm run preview` | Preview production build locally |
-| `npm run astro ...` | Run Astro CLI commands |
+| `bun install` | Install dependencies |
+| `bun run dev` | Start dev server at `localhost:4321` |
+| `bun run build` | Build for production to `./dist/`, with the PDFs (needs Chromium: `bun --bun playwright install chromium`) |
+| `bun run preview` | Preview production build locally |
+| `bun run astro ...` | Run Astro CLI commands |
 
 ---
 
