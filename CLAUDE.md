@@ -17,4 +17,4 @@
 
 ## PDF
 
-- Nach jeder Änderung `npm run build` ausführen und das PDF prüfen: 9 Seiten, Seite 1 mit Zusammenfassung, Open-Source-Entwicklung und eigenen Produkten, Seite 2 mit Technischer Expertise und Skills.
+- Nach jeder Änderung `bun run build` ausführen und das PDF prüfen: 9 Seiten, Seite 1 mit Zusammenfassung, Open-Source-Entwicklung und eigenen Produkten, Seite 2 mit Technischer Expertise und Skills.

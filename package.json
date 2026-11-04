@@ -2,13 +2,14 @@
   "name": "astro-cv",
   "type": "module",
   "version": "0.0.3",
+  "packageManager": "bun@1.4.4",
   "scripts": {
-    "start": "astro dev",
-    "dev": "astro dev",
-    "build": "astro build && node scripts/generate-pdf.mjs",
-    "preview": "astro preview",
+    "start": "bun --bun astro dev",
+    "dev": "bun --bun astro dev",
+    "build": "bun --bun astro build && bun scripts/generate-pdf.mjs",
+    "preview": "bun --bun astro preview",
     "astro": "astro",
-    "build:site": "astro build"
+    "build:site": "bun --bun astro build"
   },
   "dependencies": {
     "@astrojs/mdx": "^8.0.2",

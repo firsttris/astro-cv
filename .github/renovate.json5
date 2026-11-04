@@ -1,11 +1,11 @@
 // Renovate (GitHub App, https://github.com/apps/renovate): a pull request for each new release of
 // what the CV builds on, plus the "Dependency Dashboard" issue listing what is open. Their own pull
 // requests: Astro with its integrations (MDX, astro-icon), Playwright that renders the PDFs, and
-// the Node of the workflows.
+// Bun (packageManager in package.json: the Bun of the workflows, which runs Astro and the PDFs).
 // Everything else (the other packages, the actions, the images) comes with the shared settings of
 // firsttris/workflows (renovate/default.json5): minor and patch updates once a month in one pull
 // request that merges itself when CI is green, majors on request in the dashboard.
-// Check with `npx --package renovate renovate-config-validator .github/renovate.json5`.
+// Check with `bunx --package renovate renovate-config-validator .github/renovate.json5`.
 {
   $schema: "https://docs.renovatebot.com/renovate-schema.json",
   extends: ["github>firsttris/workflows//renovate/default.json5"],
@@ -14,24 +14,15 @@
   lockFileMaintenance: { automerge: false },
   customManagers: [
     {
-      // "Astro 7" in the README (a major only) and the "(required by Astro 7)" next to Node
+      // "Astro 7" in the README (a major only)
       customType: "regex",
       managerFilePatterns: ["/^README\\.md$/"],
-      matchStrings: ["Built with Astro (?<currentValue>\\d+),", "\\(required by Astro (?<currentValue>\\d+)\\)"],
+      matchStrings: ["Built with Astro (?<currentValue>\\d+),"],
       depNameTemplate: "astro-readme",
       packageNameTemplate: "astro",
       datasourceTemplate: "npm",
       extractVersionTemplate: "^(?<version>\\d+)\\.\\d+\\.\\d+$",
       versioningTemplate: "regex:^(?<major>\\d+)$",
-    },
-    {
-      // The Node of the build and deploy workflows
-      customType: "regex",
-      managerFilePatterns: ["/^\\.github/workflows/[^/]+\\.ya?ml$/"],
-      matchStrings: ["\\n\\s+node-version: (?<currentValue>\\d+)"],
-      depNameTemplate: "node",
-      datasourceTemplate: "node-version",
-      versioningTemplate: "node",
     },
   ],
   packageRules: [
@@ -42,7 +33,7 @@
       groupName: "Astro",
       sourceUrl: "https://github.com/withastro/astro",
       prBodyNotes: [
-        "Before merging: read the Astro upgrade guide for a new major (https://docs.astro.build/en/upgrade-astro/) and its Node requirement (`node-version` in the workflows, the README). The Check Build run of this PR builds the site and the PDFs; locally `npm run build` and check the PDFs as CLAUDE.md says: 9 pages, page 1 with the summary, open-source development and own products, page 2 with technical expertise and skills.",
+        "Before merging: read the Astro upgrade guide for a new major (https://docs.astro.build/en/upgrade-astro/), its Bun notes included (Bun runs Astro: `bun --bun astro`). The Check Build run of this PR builds the site and the PDFs; locally `bun run build` and check the PDFs as CLAUDE.md says: 9 pages, page 1 with the summary, open-source development and own products, page 2 with technical expertise and skills.",
       ],
       schedule: ["at any time"],
       automerge: false,
@@ -55,16 +46,22 @@
       groupName: "Playwright",
       sourceUrl: "https://github.com/microsoft/playwright",
       prBodyNotes: [
-        "A new Chromium can break pages differently. Before merging: `npm run build` and check both PDFs as CLAUDE.md says (9 pages, page 1 and page 2 as before).",
+        "A new Chromium can break pages differently. Before merging: `bun run build` and check both PDFs as CLAUDE.md says (9 pages, page 1 and page 2 as before).",
       ],
       schedule: ["at any time"],
       automerge: false,
       dependencyDashboardApproval: false,
     },
     {
-      matchPackageNames: ["node"],
-      groupName: "Node",
-      sourceUrl: "https://github.com/nodejs/node",
+      // packageManager in package.json (Renovate reads it as the dependency `bun`): the Bun of both
+      // workflows (setup-bun's bun-version-file), which installs from bun.lock, runs Astro
+      // (`bun --bun astro build`) and the PDF script with Playwright
+      matchPackageNames: ["bun"],
+      groupName: "Bun",
+      sourceUrl: "https://github.com/oven-sh/bun",
+      prBodyNotes: [
+        "`packageManager` in package.json is the Bun of the Check Build and Deploy workflows (`bun-version-file` of setup-bun). Bun installs the packages (`bun.lock`), runs Astro (`bun --bun astro build`) and `scripts/generate-pdf.mjs` with Playwright. The Check Build run of this PR builds the site and the PDFs; locally `bun install && bun run build` and check both PDFs as CLAUDE.md says (9 pages, page 1 and page 2 as before).",
+      ],
       schedule: ["at any time"],
       automerge: false,
       dependencyDashboardApproval: false,

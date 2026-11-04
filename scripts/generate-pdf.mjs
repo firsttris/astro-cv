@@ -39,7 +39,7 @@ const server = createServer(async (req, res) => {
 await new Promise((resolve) => server.listen(0, "127.0.0.1", resolve));
 const baseUrl = `http://127.0.0.1:${server.address().port}`;
 
-// PDF_CHROMIUM_PATH allows using a preinstalled Chromium instead of `npx playwright install chromium`
+// PDF_CHROMIUM_PATH allows using a preinstalled Chromium instead of `bun --bun playwright install chromium`
 const browser = await chromium.launch({ executablePath: process.env.PDF_CHROMIUM_PATH || undefined });
 try {
   for (const { path, file } of PDFS) {
