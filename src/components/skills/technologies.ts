@@ -12,6 +12,18 @@ export interface Skill {
 }
 
 export const languages: Record<string, Skill>  = {
+  rust: {
+    name: "Rust",
+    icon: "vscode-icons:file-type-rust",
+    website: "https://www.rust-lang.org/",
+    level: Level.Intermediate,
+  },
+  bun: {
+    name: "Bun",
+    icon: "vscode-icons:file-type-bun",
+    website: "https://bun.sh/",
+    level: Level.Expert,
+  },
   typescript: {
     name: "TypeScript",
     icon: "vscode-icons:file-type-typescript-official",
@@ -148,6 +160,12 @@ export const libraries = {
     name: "Nx",
     icon: "vscode-icons:file-type-light-nx",
     website: "https://nx.dev/",
+    level: Level.Expert
+  },
+  tanstack: {
+    name: "TanStack",
+    icon: "simple-icons:tanstack",
+    website: "https://tanstack.com/",
     level: Level.Expert
   },
   reactQuery: {
