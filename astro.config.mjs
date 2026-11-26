@@ -15,6 +15,8 @@ export default defineConfig({
         'file-type-node2',
         'file-type-python',
         'file-type-go',
+        'file-type-rust',
+        'file-type-bun',
         'file-type-csharp',
         'file-type-php',
         'file-type-swift',
@@ -126,6 +128,7 @@ export default defineConfig({
         'light-mode-outline-rounded'
       ],
       'simple-icons': [
+        'tanstack',
         'keycloak',
         'oracle',
         'scrumalliance',

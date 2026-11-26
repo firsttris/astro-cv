@@ -1,5 +1,6 @@
 ---
 import { Image } from "astro:assets";
+import belegt from "../assets/products/belegt.png";
 import haben from "../assets/products/haben.png";
 import kontext from "../assets/products/kontext.png";
 import schreibzeug from "../assets/products/schreibzeug.png";
@@ -9,7 +10,7 @@ const lang = getLangFromUrl(Astro.url.pathname);
 
 const content = {
   de: {
-    docs: "Dokumentation",
+    docs: "Webseite",
     haben: {
       tagline: "Alternative zu lexoffice und sevDesk",
       desc: "Buchhaltung für Selbstständige und kleine Unternehmen: E-Rechnung (ZUGFeRD, XRechnung), Bankabgleich, EÜR und Umsatzsteuer-Voranmeldung direkt an ELSTER.",
@@ -25,9 +26,14 @@ const content = {
       desc: "Word, Excel, PowerPoint und PDF gemeinsam in Echtzeit bearbeiten, im Browser oder als Desktop-App. Die Dateien bleiben .docx, .xlsx und .pptx.",
       alt: "Ein Word-Dokument im Editor von Schreibzeug",
     },
+    belegt: {
+      tagline: "Dokumentenarchiv mit GoBD-Modus",
+      desc: "Mails, E-Rechnungen, Scans und beliebige Dokumente an einem Ort, durchsuchbar. Was aufbewahrt werden muss, bleibt bis Fristende unverändert, mit Prüferzugang und Datenträger für die Betriebsprüfung.",
+      alt: "Startseite von Belegt mit Eingang, Archiv, Fristen und Zustand der Hash-Kette",
+    },
   },
   en: {
-    docs: "Documentation",
+    docs: "Website",
     haben: {
       tagline: "An alternative to lexoffice and sevDesk",
       desc: "Bookkeeping for German freelancers and small businesses: e-invoicing (ZUGFeRD, XRechnung), bank reconciliation, EÜR and VAT returns sent straight to ELSTER.",
@@ -43,13 +49,19 @@ const content = {
       desc: "Edit Word, Excel, PowerPoint and PDF files together in real time, in the browser or as a desktop app. Files stay .docx, .xlsx and .pptx.",
       alt: "A Word document in the Schreibzeug editor",
     },
+    belegt: {
+      tagline: "Document archive with a GoBD mode",
+      desc: "Mails, e-invoices, scans and any other documents in one place, searchable. Whatever must be retained stays unchanged until the end of its retention period, with auditor access and the data medium for tax audits.",
+      alt: "Belegt start page with inbox, archive, retention periods and the state of the hash chain",
+    },
   },
 }[lang];
 
 const products = [
-  { id: "haben", name: "Haben", image: haben, ...content.haben },
-  { id: "kontext", name: "Kontext", image: kontext, ...content.kontext },
-  { id: "schreibzeug", name: "Schreibzeug", image: schreibzeug, ...content.schreibzeug },
+  { id: "haben", name: "Haben", image: haben, url: "https://haben.app/", ...content.haben },
+  { id: "kontext", name: "Kontext", image: kontext, url: "https://kontext.email/", ...content.kontext },
+  { id: "schreibzeug", name: "Schreibzeug", image: schreibzeug, url: "https://schreibzeug.app/", ...content.schreibzeug },
+  { id: "belegt", name: "Belegt", image: belegt, url: "https://belegt.store/", ...content.belegt },
 ];
 ---
 
@@ -57,16 +69,16 @@ const products = [
   {
     products.map((product) => (
       <article class="product">
-        <a href={`https://firsttris.github.io/${product.id}/`} target="_blank" class="shot">
-          <Image src={product.image} alt={product.alt} widths={[360, 720]} sizes="(min-width: 720px) 240px, 100vw" loading="eager" />
+        <a href={product.url} target="_blank" class="shot">
+          <Image src={product.image} alt={product.alt} widths={[360, 720]} sizes="(min-width: 720px) 180px, 100vw" loading="eager" />
         </a>
         <h3>{product.name}</h3>
         <p class="tagline">{product.tagline}</p>
         <p class="desc">{product.desc}</p>
         <p class="links">
-          <a href={`https://firsttris.github.io/${product.id}/`} target="_blank">{content.docs}</a>
+          <a href={product.url} target="_blank">{content.docs}</a>
           {" · "}
-          <a href={`https://github.com/firsttris/${product.id}`} target="_blank">GitHub</a>
+          <a href={`https://github.com/Speicherstadt/${product.id}`} target="_blank">GitHub</a>
         </p>
       </article>
     ))
@@ -76,7 +88,7 @@ const products = [
 <style>
   .products {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 16px;
     margin: 12px 0 4px;
   }
