@@ -59,9 +59,9 @@ const content = {
 
 const products = [
   { id: "haben", name: "Haben", image: haben, url: "https://haben.app/", ...content.haben },
-  { id: "kontext", name: "Kontext", image: kontext, url: "https://kontext.email/", ...content.kontext },
-  { id: "schreibzeug", name: "Schreibzeug", image: schreibzeug, url: "https://schreibzeug.app/", ...content.schreibzeug },
-  { id: "belegt", name: "Belegt", image: belegt, url: "https://belegt.store/", ...content.belegt },
+  { id: "kontext", name: "Kontext", image: kontext, url: "https://kontext.email/", demo: "https://kontext.email/demo/", ...content.kontext },
+  { id: "schreibzeug", name: "Schreibzeug", image: schreibzeug, url: "https://schreibzeug.app/", demo: "https://schreibzeug.app/demo/", ...content.schreibzeug },
+  { id: "belegt", name: "Belegt", image: belegt, url: "https://belegt.store/", demo: "https://belegt.store/demo/", ...content.belegt },
 ];
 ---
 
@@ -77,6 +77,12 @@ const products = [
         <p class="desc">{product.desc}</p>
         <p class="links">
           <a href={product.url} target="_blank">{content.docs}</a>
+          {product.demo && (
+            <>
+              {" · "}
+              <a href={product.demo} target="_blank">Demo</a>
+            </>
+          )}
           {" · "}
           <a href={`https://github.com/Speicherstadt/${product.id}`} target="_blank">GitHub</a>
         </p>
